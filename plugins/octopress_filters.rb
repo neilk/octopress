@@ -130,6 +130,11 @@ module OctopressLiquidFilters
     input.titlecase
   end
 
+  # Returns MD5 digest of a string
+  def md5(input)
+    input.md5
+  end
+
 end
 Liquid::Template.register_filter OctopressLiquidFilters
 
