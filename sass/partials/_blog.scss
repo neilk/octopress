@@ -128,7 +128,6 @@ article + article {
     a { color: #555555; &:hover { text-decoration:none } }
   }
   a[rel=full-article] {
-    background: darken($main-bg, 5);
     display: inline-block;
     padding: .4em .8em;
     margin-right: .5em;
