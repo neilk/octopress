@@ -1,15 +1,22 @@
+$font: 'museo_sans_500regular';
 
 @font-face {
-  font-family: "League";
-  src: url('/font/LeagueGothic.otf');
+  font-family: 'museo_sans_500regular';
+  src: url('/font/MuseoSans_500-webfont.eot');
+  src: url('/font/MuseoSans_500-webfont.eot?#iefix') format('embedded-opentype'),
+        url('/font/MuseoSans_500-webfont.woff') format('woff'),
+        url('/font/MuseoSans_500-webfont.ttf') format('truetype'),
+        url('/font/MuseoSans_500-webfont.svg#museo_sans_500regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
 $blockquote: $type-border !default;
-$sans: "Lato", sans-serif;
-$serif: "Lato", sans-serif;
-$mono: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace !default;
-$heading-font-family: 'Lato', sans-serif;
-$header-title-font-family: "League", Helvetica, Arial, sans-serif;
+$sans: $font, sans-serif;
+$serif: $font, serif;
+$mono: "Inconsolata", "Andale Mono", "lucida console", "Courier New", monospace !default;
+$heading-font-family: $font, sans-serif;
+$header-title-font-family: $heading-font-family, sans-serif;
 $header-subtitle-font-family: $heading-font-family !default;
 
 

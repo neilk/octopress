@@ -1,5 +1,7 @@
 $img-border: inline-image('dotted-border.png');
 
+$orange: #e1580f;
+
 // Main Link Colors
 $link-color: #3464a4 !default;
 $link-color-hover: adjust-color($link-color, $lightness: 10, $saturation: 25) !default;
@@ -8,14 +10,14 @@ $link-color-active: adjust-color($link-color-hover, $lightness: -15) !default;
 
 // Main Section Colors
 $main-bg: #f2f2f2 !default;
-$page-bg: #262C33 !default;
+$page-bg: #ffffff !default;
 $article-border: #eeeeee !default;
 $content-bg: #F8F8F8;
 
-$header-bg: #333 !default;
+$header-bg: #ffffff !default;
 $header-border: lighten($header-bg, 15) !default;
-$title-color: #f2f2f2 !default;
-$subtitle-color: #aaa !default;
+$title-color: $orange !default;
+$subtitle-color: #999 !default;
 
 $text-color: #222 !default;
 $text-color-light: #aaa !default;
@@ -70,7 +72,7 @@ a {
 }
 
 html {
-  background: $page-bg image-url('line-tile.png') top left;
+  background: $page-bg image-url('lightpaperfibers.png') top left;
 }
 body {
   #main{
