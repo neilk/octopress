@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "Google Transit Heatmap"
-date: 2013-02-10 23:52
+date: 2008-08-01 23:52
 comments: true
-categories: foo bar bazquux
+categories: google flickr datavis map heatmap googlemaps kml
 ---
 This is a test post. It goes on and on. 
 
@@ -21,7 +21,7 @@ Here are the KML files, which can be imported into Google Earth: Downtown, East 
 
 (By the way, I originally tried importing this as KML into Google Maps, but it had an aneurysm trying to display 350 polygons on FF3.0. I spent some time trying to figure out how to coalesce nodes of the same color when I realized that Google Earth would probably handle it just fine as-is. I guess that browser platform vision is still a little ways off.)
 
-### Results
+## Results
 
 My boss-to-be saw this and proclaimed that he'd just hired either the right guy or the really wrong guy. I got laid off eight months later, so I guess that's settled.
 
