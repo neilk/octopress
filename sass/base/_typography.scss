@@ -1,4 +1,4 @@
-$font: 'museo_sans_500regular';
+$font: 'telex';
 
 @font-face {
   font-family: 'museo_sans_500regular';
@@ -10,6 +10,14 @@ $font: 'museo_sans_500regular';
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: $font;
+  src: url('/font/Telex-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 $blockquote: $type-border !default;
 $sans: $font, sans-serif;
