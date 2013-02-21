@@ -16,6 +16,11 @@ article {
       a { text-decoration: none;
         &:hover { text-decoration: underline; } }
     }
+    h2 {
+      @extend .sans;
+      font-size: .9em;
+      font-style: normal;
+    }
     p {
       font-size: .9em;
       color: $text-color-light;

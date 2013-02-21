@@ -1,6 +1,7 @@
 ---
 layout: post
-title: "Google Transit Heatmap"
+title: Google Transit Heatmap
+subtitle: Or, way-too-data-driven-decisions
 date: 2008-08-01 23:52
 comments: true
 categories: google flickr datavis map heatmap googlemaps kml
