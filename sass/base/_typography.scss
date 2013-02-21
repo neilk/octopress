@@ -1,17 +1,6 @@
 $font: 'telex';
 
 @font-face {
-  font-family: 'museo_sans_500regular';
-  src: url('/font/MuseoSans_500-webfont.eot');
-  src: url('/font/MuseoSans_500-webfont.eot?#iefix') format('embedded-opentype'),
-        url('/font/MuseoSans_500-webfont.woff') format('woff'),
-        url('/font/MuseoSans_500-webfont.ttf') format('truetype'),
-        url('/font/MuseoSans_500-webfont.svg#museo_sans_500regular') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
   font-family: $font;
   src: url('/font/Telex-Regular.ttf') format('truetype');
   font-weight: normal;
