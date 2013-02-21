@@ -5,17 +5,27 @@ date: 2008-08-01 23:52
 comments: true
 categories: google flickr datavis map heatmap googlemaps kml
 ---
-This is a test post. It goes on and on. 
+I'm a public transit user. I was moving back to San Francisco to work
+for Flickr. I've read research that says that a short commute has a
+surprisingly large impact on happiness. So, I wondered, what are my
+options?
 
-I'm a public transit user. I was moving back to San Francisco to work for Flickr. I've read research that says that a short commute has a surprisingly large impact on happiness. So, I wondered, what are my options?
+<a name="cutid1"></a>\
+![][]
 
 As you can see, being near light rail or BART really has an impact!
 
-Average waiting times not considered. Multiple transit hops not considered. Number is the average of the three trips Google Transit API suggests if one wants to arrive at the Flickr offices by 9am, Monday 18th August 2008.
+Average waiting times not considered. Multiple transit hops not
+considered. Number is the average of the three trips Google Transit API
+suggests if one wants to arrive at the Flickr offices by 9am, Monday
+18th August 2008.
 
-Somehow I messed up getting the extreme northern bound. It doesn't look like it would be much different from the cells below.
+Somehow I messed up getting the extreme northern bound. It doesn't look
+like it would be much different from the cells below.
 
-Data copyright everybody but me. This is a mashup of the Google Transit API and Google Earth.
+Data copyright everybody but me. This is a mashup of the Google Transit
+API and Google Earth.
+
 
 Here are the KML files, which can be imported into Google Earth: Downtown, East Bay. They are inefficient and not very clever. Barely different from the example KML files.
 
@@ -32,3 +42,4 @@ This map did have an impact on where I eventually got an apartment. I hadn't eve
 By request: the East Bay. Click for higher resolution.
 
 
+  []: http://brevity.org/pic/misc/downtown-transit.png
