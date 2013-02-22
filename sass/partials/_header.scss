@@ -1,9 +1,6 @@
 body > header {
-  text-align: center;
-  padding-left:0;
   h1 {
     display: inline-block;
-    text-align: center;
     background: url('/images/avatar.png') no-repeat 0 0;
     padding-left: 60px;
     margin-bottom: 0px;
@@ -17,10 +14,8 @@ body > header {
     }
   }
   h2 {
-    margin-top: -10px;
-    text-align: center;
     @extend .sans;
-    font-size: 0.6em;
+    display: inline-block;
     color: $subtitle-color;
     font-weight: normal;
   }

@@ -17,7 +17,7 @@ $serif: $titlingFont, serif;
 $mono: "Inconsolata", "Andale Mono", "lucida console", "Courier New", monospace !default;
 $heading-font-family: $titlingFont, serif;
 $header-title-font-family: $titlingFont, serif;
-$header-subtitle-font-family: $titlingFont !default;
+$header-subtitle-font-family: $bodyFont !default;
 
 
 // Fonts
@@ -39,6 +39,9 @@ body > header h1 {
 }
 body > header h2 {
   font-family: $header-subtitle-font-family;
+  font-size: 0.8em;
+  font-style: normal;
+  margin-left: 0.5em;
 }
 
 body {
