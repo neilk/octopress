@@ -11,7 +11,7 @@ for Flickr. I've read research that says that a short commute has a
 surprisingly large impact on happiness. So, I wondered, what are my
 options?
 
-<a name="cutid1"></a>\
+<a name="cutid1"></a>
 ![][]
 
 As you can see, being near light rail or BART really has an impact!
