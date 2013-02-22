@@ -2,8 +2,8 @@ body > footer {
   @extend .sans;
   font-size: .8em;
   color: $footer-color;
-  text-shadow: lighten($footer-bg, 5) 0 1px;
   background-color: $footer-bg;
+  border-top: 1px solid $footer-border-top;
   @include background($footer-bg-back);
   position: relative;
   padding-top: 1em;
