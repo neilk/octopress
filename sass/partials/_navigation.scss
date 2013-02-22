@@ -16,13 +16,17 @@ body > nav {
       font-family: $sans;
       line-height: 1em;
       width: 95%;
-      border: 1px solid $nav-border;
+      border: 1px solid $nav-search;
+      background-color: $nav-search;
       color: #888;
+      -moz-border-radius: 0.4em;
+      -webkit-border-radius: 0.4em;
+      border-radius: 0.4em;
       &:focus {
         color: #444;
-        border-color: #80b1df;
         @include box-shadow(#80b1df 0 0 4px, #80b1df 0 0 3px inset);
         background-color: #fff;
+        border: 1px solid $nav-border;
         outline: none;
       }
     }
@@ -33,7 +37,7 @@ body > nav {
   }
   ul { display: none; }
   @media only screen and (min-width: 550px) {
-    font-size: .9em;
+    font-size: 1em;
     ul {
       @include horizontal-list(0);
       float: left;
@@ -52,7 +56,6 @@ body > nav {
     a {
       @include link-colors($nav-color, $nav-color-hover, $visited: $nav-color);
       font-family: $sans;
-      text-shadow: lighten($nav-bg, 12) 0 1px;
       float: left;
       text-decoration: none;
       font-size: 1.1em;
