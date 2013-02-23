@@ -1,0 +1,101 @@
+---
+layout: post
+title: "HaloWall"
+date: 2009-10-18
+comments: false
+categories: burningman art rainbows
+---
+{% img right /images/halowall-test.jpg 240 320 'halowall test' 'halowall test' %}
+
+This all started when I saw a rainbow on the ground. It appeared after some workers
+had finished sandblasting there.
+ 
+I researched this phenomenon and found out it was a ["glass bead bow"](http://space.mit.edu/~lewin/apod/), a special kind of rainbow
+formed by glass microspheres. It's just like the rainbow you see in the sky, except it's more intense and at a tighter
+radius than a water rainbow. But because it seems to be embedded in a nearby surface, it's more obvious that the rainbow 
+"follows" you around, and is centered exactly on your shadow's head. It looks just like a rainbow halo.
+
+I thought this could definitely be a Thing we could bring to [Burning Man](http://burningman.org/). The Black Rock desert has intense sun, and I like the idea of 
+art that uses the environment. But mainly because I just love colors and light and science and I don't care if it
+isn't art exactly. But, despite that, it ended up illuminating (ha ha) some surprising aspects of reality anyway... in many ways some disturbing ones.
+
+And, deep down, I wanted to do "an art" because I was afraid of asking others to believe in my ideas.
+
+## Burning Man and dust, dust, dust
+
+{% img left /images/halowall-nnooiissee.jpg 180 240 it's done %}
+
+Right from the start great people jumped in to help. I started working with Casey Hutchinson
+([nnooiissee](http://twitter.com/nnooiissee/)) to
+make this happen. Casey was attracted to constructing the thing, and I focused on all the R&amp;D and planning. 
+We got some fantastic support from the [Ardent](http://ardentheavyindustries.com/) community, 
+and built the whole thing at [NIMBY](http://nimbyspace.org/).
+
+On the face of it, this seems like a simple project, but there were a hundred details to get right. How to communicate to Burners
+what you were even supposed to do with it? Exactly how should it be oriented to maximize the sun? What about ensuring that
+people can't climb on it, while also making it sturdy enough? What medium should we use to hold the beads? And how do we protect
+that surface?
+
+Some of my favorite moments were during build season. When I showed the first working prototype to [Audrey](http://audreypenven.net/), she exclaimed that
+it was going to freak people out. And then, when the first tall board was ready, another random person, working on 
+her own art project, walked by and glanced at what I was doing. She almost tripped and fell over when she saw shimmering bands of color, like it was something 
+physical in front of her.
+
+Except, on playa, those lovely panels had to be placed behind plastic, which reduced the rainbow effect and attracted dust. 
+I didn't plan adequately for that, and either Casey or I spent some time cleaning the damn thing every day. I'd also brought a solar lamp with me, but (a) it broke 
+(b) it was nowhere near bright enough for nighttime viewings. On the whole, while a handful of people actually got what it was about, for the most
+part it was a bit disappointing. But those who saw it at the right times were
+[delighted](http://www.flickr.com/photos/brevity/3907233296/in/set-72157622329642662/).
+
+## Decompression: victory!
+
+{% img right /images/halowall-decom.jpg 240 180 halowall at decom %}
+
+But then we knew how to make it work. We took this to [SF Decompression](http://www.burningman.com/blackrockcity_yearround/special_events/decompression/decom2009.html), the post-Burning-Man event,
+in a slightly different form, with better results.
+[Cubes](http://twitter.com/cubesebuc/) and
+[Eden](http://www.theroadtothegoodlife.com/) joined the team for
+the SF Decompression run. I borrowed an extremely powerful light bulb and learned enough about things like ballasts to make a super-intense light that would appear to be a
+point source, just like the sun.
+
+The day of Decompression was absolute madness as practically everything went wrong, but by the end of the day it worked... perfectly. People loved playing with it. The effect was as stunning as we'd hoped, and Eden made some graphics that guided people to use the wall in the 
+right way. You can see some of this in the final videos in the photoset below.
+
+## An unintentional perception test
+
+And yet there was something else a little bit disturbing. Some people were simply unable to see the effect. At least half of the people were bewildered, until the rainbow was pointed out to
+them, by us or by their friends.
+
+The rainbow is not subtle. It's hard to capture in photos, but if you are a few inches away from the wall, it's overwhelming. We sat
+on the sidelines wondering what was *wrong* with people.
+
+
+{% img right /images/halowall-hippie-kids.jpg 320 240 'happy hippie kids' %}
+
+You see, the weird and wonderful thing about these rainbows is that you can
+only see your own. (Another favorite moment: a bunch of hippie kids hugged me and demanded to know why they couldn't see
+their friends' rainbows.)
+
+If you are even a few meters away, it looks like a bunch of crazed people are playing with their shadows. (If this thing had any artistic merit at all, that's 
+the thing I was going for, by the way. That's why it's built so large, and with silhouettes already embedded in it - to emphasize that you have a unique perspective that no one
+else can know or share.)
+
+My theory: the only people who "got it" were ready to perceive new things about the world. Photographers, artists, scientists, and the
+Decom volunteer community - they all got it. An engineer who brought his solar car to Decom didn't even believe me when I told him that half the Decom-goers couldn't see it. People
+who came to Decom for a party, to dance, to see and be seen, to wear clothing they could never wear elsewhere - they tended not to get it. If you asked them "and is there a giant 
+shimmering rainbow in front of you?" they'd *jump* and say "Oh yes!" Somehow, I think, they carried their initial conclusion (featureless black wall) forward, and the very different stimulus they were now getting was just ignored, because they'd already concluded what it was.
+
+It got to the point where I could easily predict who would get it. A couple of volunteer Decom staffers were sitting nearby in a golf cart squinting at this bizarre behavior,
+so I insisted that they get out and try it. I knew that, as longtime Burners and community-minded people, they'd be able to see it. One of them did, and 
+when she got close she immediately started giggling, and returned back smiling to report what she'd seen.
+
+I'm not sure what to do with this knowledge. It seems that we have a pretty good test to distinguish people who look at the world with slightly fresher eyes, who are alive to 
+new and surprising experiences. This happens to be exactly the sort of person I like to have around me, so maybe I need to make a pocket version for all social situations.
+
+
+----
+
+The [photo set on Flickr](http://www.flickr.com/photos/brevity/sets/72157622329642662/) tells more of 
+the story, especially all the stages of building and testing. Here's a slideshow - if you want to read the descriptions, fullscreen it and then click "Show info".
+
+<object width="400" height="300"> <param name="flashvars" value="text=true&offsite=true&lang=en-us&page_show_url=%2Fphotos%2Fbrevity%2Fsets%2F72157622329642662%2Fshow%2F&page_show_back_url=%2Fphotos%2Fbrevity%2Fsets%2F72157622329642662%2F&set_id=72157622329642662&jump_to="></param> <param name="movie" value="http://www.flickr.com/apps/slideshow/show.swf?v=124984"></param> <param name="allowFullScreen" value="true"></param><embed type="application/x-shockwave-flash" src="http://www.flickr.com/apps/slideshow/show.swf?v=124984" allowFullScreen="true" flashvars="text=true&offsite=true&lang=en-us&page_show_url=%2Fphotos%2Fbrevity%2Fsets%2F72157622329642662%2Fshow%2F&page_show_back_url=%2Fphotos%2Fbrevity%2Fsets%2F72157622329642662%2F&set_id=72157622329642662&jump_to=" width="400" height="300"></embed></object></object>
