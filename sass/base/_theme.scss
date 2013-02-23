@@ -3,7 +3,7 @@ $img-border: inline-image('dotted-border.png');
 $orange: #e1580f;
 
 // Main Link Colors
-$link-color: #3464a4 !default;
+$link-color: #e1580f !default;
 $link-color-hover: adjust-color($link-color, $lightness: 10, $saturation: 25) !default;
 $link-color-visited: $link-color;
 $link-color-active: adjust-color($link-color-hover, $lightness: -15) !default;
@@ -58,6 +58,10 @@ $page-border-bottom: none;
 
 a {
   @include link-colors($link-color, $hover: $link-color-hover, $focus: $link-color-hover, $visited: $link-color-visited, $active: $link-color-active);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
 }
 aside.sidebar a {
   @include link-colors($sidebar-link-color, $hover: $sidebar-link-color-hover, $focus: $sidebar-link-color-hover, $active: $sidebar-link-color-active);
