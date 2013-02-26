@@ -1,18 +1,10 @@
 require "flickraw"
+require "singleton"
 # require "debugger"
 
-class FlickrImage < Liquid::Tag
+class FlickrRawAuth
 
-  def initialize(tag_name, markup, tokens)
-     super
-     @markup = markup
-     @id   = markup.split(" ")[0]
-     @size = markup.split(" ")[1]
-     @desc = markup.split(" ")[2]
-     @meta = markup.split(" ")[3]
-  end
-
-  def getSecret(key)
+  def self.getSecret(key)
     passwordLine = `/usr/bin/security 2>&1 >/dev/null find-generic-password -ga #{key}`
     if passwordLine =~ /^password: "([^"]+)"/
       return $1
@@ -21,12 +13,27 @@ class FlickrImage < Liquid::Tag
     end
   end
 
-  def render(context)
-    FlickRaw.api_key        = 'c2380b5846d972cb12e8e37645f01bfe'
-    FlickRaw.shared_secret  = getSecret(FlickRaw.api_key)
+  def self.getCredentials
+    if FlickRaw.shared_secret.nil?
+      FlickRaw.api_key        = 'c2380b5846d972cb12e8e37645f01bfe'
+      FlickRaw.shared_secret  = self.getSecret(FlickRaw.api_key)
+    end
+  end
+
+end
+
+class FlickrPhoto
+  def initialize(id, size='m', desc=nil, meta=nil)
+    @id = id
+    @size = size || 'm'
+    @desc = desc
+    @meta = meta
+  end
+
+  def toHtml
+    FlickrRawAuth.getCredentials()
 
     output = []
-    
     # Basic info
     info = flickr.photos.getInfo(photo_id: @id)
     
@@ -86,4 +93,52 @@ class FlickrImage < Liquid::Tag
   end
 end
 
+
+class FlickrImage < Liquid::Tag
+
+  def initialize(tag_name, markup, tokens)
+    super
+    args = markup.split(" ")
+    @id   = args[0]
+    @size = args[1]
+    @desc = args[2]
+    @meta = args[3]
+  end
+
+  def render(context)
+    FlickrPhoto.new(@id, @size, @desc, @meta).toHtml
+  end
+
+end
+
+
+class FlickrSet < Liquid::Tag
+  def initialize(tag_name, markup, tokens)
+    super
+    @markup = markup
+    @id   = markup.split(" ")[0]
+    @size = markup.split(" ")[1]
+  end
+
+  def render(context)
+    output = []
+
+    info = flickr.photosets.getInfo(photoset_id: @id)
+    title = info.title
+    description = info.description
+
+    output.push(title)
+    output.push(description)
+
+    response = flickr.photosets.getPhotos(photoset_id: @id)
+    response['photo'].each do |photo|
+      output.push(FlickrPhoto.new(photo.id, @size).toHtml)
+    end
+
+    output.join
+  end
+
+end
+
 Liquid::Template.register_tag("flickr_image", FlickrImage)
+Liquid::Template.register_tag("flickr_set", FlickrSet)
