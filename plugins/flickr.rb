@@ -31,7 +31,6 @@ class FlickrPhoto
   end
 
   def toHtml
-    FlickrRawAuth.getCredentials()
 
     output = []
     # Basic info
@@ -95,8 +94,8 @@ end
 
 
 class FlickrImage < Liquid::Tag
-
   def initialize(tag_name, markup, tokens)
+    FlickrRawAuth.getCredentials()
     super
     args = markup.split(" ")
     @id   = args[0]
@@ -114,6 +113,7 @@ end
 
 class FlickrSet < Liquid::Tag
   def initialize(tag_name, markup, tokens)
+    FlickrRawAuth.getCredentials()
     super
     @markup = markup
     @id   = markup.split(" ")[0]
