@@ -1,7 +1,8 @@
 require "flickraw"
-require "debugger"
+# require "debugger"
 
 class FlickrImage < Liquid::Tag
+
   def initialize(tag_name, markup, tokens)
      super
      @markup = markup
@@ -11,10 +12,19 @@ class FlickrImage < Liquid::Tag
      @meta = markup.split(" ")[3]
   end
 
+  def getSecret(key)
+    passwordLine = `/usr/bin/security 2>&1 >/dev/null find-generic-password -ga #{key}`
+    if passwordLine =~ /^password: "([^"]+)"/
+      return $1
+    else
+      raise 'Could not find secret for Flickr API key' 
+    end
+  end
+
   def render(context)
-    FlickRaw.api_key        = ENV["FLICKR_KEY"]
-    FlickRaw.shared_secret  = ENV["FLICKR_SECRET"]
-    
+    FlickRaw.api_key        = 'c2380b5846d972cb12e8e37645f01bfe'
+    FlickRaw.shared_secret  = getSecret(FlickRaw.api_key)
+
     output = []
     
     # Basic info
