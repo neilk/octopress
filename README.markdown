@@ -1,3 +1,11 @@
+This version of Octopress has been hacked significantly for [neilk.net](http://neilk.net). I have not made much 
+effort into keeping my changes easily modularized or within the customization framework, so if I were you 
+I wouldn't fork this.
+
+And, back to your regularly scheduled README.
+
+
+
 ## What is Octopress?
 
 Octopress is [Jekyll](https://github.com/mojombo/jekyll) blogging at its finest.
