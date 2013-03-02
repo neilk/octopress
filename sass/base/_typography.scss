@@ -1,14 +1,20 @@
 $bodyFont: 'Telex';
 $titlingFont: 'Alegreya';
 
-/*
 @font-face {
-  font-family: $font;
+  font-family: $bodyFont;
   src: url('/font/Telex-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
-*/
+
+@font-face {
+  font-family: $bodyFont;
+  src: url('/font/Telex-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
 
 
 $blockquote: $type-border !default;

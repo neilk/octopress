@@ -5,6 +5,12 @@ date: 2012-04-21
 comments: true
 categories: flickr gastown autostitch
 ---
+Summary:
+
+* These are __important words__.
+* And you should __listen__ to them.
+* They help __speed reading__.
+
 I made these with the [AutoStitch app](http://www.cloudburstresearch.com/autostitch/autostitch.html) on my iPhone, but instead of standing in one place and pivoting, I walked around objects. 
 
 I had tried doing something similar a long time ago, back when it was a free program you could download from UBC... but in 2005, AutoStitch's SIFT algorithm tended to reject photo sets like this. The iPhone version seems to be more forgiving.
