@@ -1,5 +1,4 @@
 require "flickraw"
-require "singleton"
 # require "debugger"
 
 class FlickrRawAuth
@@ -23,75 +22,81 @@ class FlickrRawAuth
 end
 
 class FlickrPhoto
-  def initialize(id, size='m', desc=nil, meta=nil)
-    @id = id
-    @size = size || 'm'
-    @desc = desc
-    @meta = meta
+  def initialize(src, params)
+    @src = src
+    @size = params['size'] || 's'
+
+    unless params['title'].nil? or params['title'].empty?
+      @title = params['title']
+    end
+
+    unless params['class'].nil? or params['class'].empty?
+      @klass = params['class']
+    end
+    unless params['desc'].nil? or params['desc'].empty?
+      @desc = params['desc']
+    end
+    unless params['width'].nil? or (params['width'].is_a? String and params['width'].empty?)
+      @width = params['width']
+    end
+    unless params['height'].nil? or (params['height'].is_a? String and params['height'].empty?)
+      @height = params['height']
+    end
+    
+    unless params['page_url'].nil? or params['page_url'].empty?
+      @page_url = params['page_url']
+    end
   end
 
   def toHtml
 
     output = []
-    # Basic info
-    info = flickr.photos.getInfo(photo_id: @id)
-    
-    title         = info["title"]
-    description   = info["description"]
 
-    src           = FlickRaw.send("url_#{@size}", info)
-    page_url      = FlickRaw.url_photopage(info)
-
-    img_tag       = "<img src=\"#{src}\" title=\"#{title}\"/>"
-    output[0]     = "<a href=\"#{page_url}\">#{img_tag}</a>"
-    
-    output[1]     = "<p>#{description}</p>" if @desc == "y"
-    
-    if @meta == "y"
-      # EXIF
-      exif          = flickr.photos.getExif(photo_id: @id)
-      camera        = exif["camera"]
-    
-      f_number, exposure_time, iso, focal_length = ""
-
-      exif["exif"].each do |exif_line|
-        f_number =  exif_line["clean"] if exif_line["tag"] == "FNumber"
-        exposure_time = exif_line["clean"] if exif_line["tag"] == "ExposureTime"
-        iso = exif_line["raw"] if exif_line["tag"] == "ISO"
-        focal_length = exif_line["clean"] if exif_line["tag"] == "FocalLength"
-      end
-    
-      exif_table = "<table class=\"flickr-exif\">
-        <tr>
-          <td>Camera</td>
-          <td>#{camera}</td>
-        </tr>
-        <tr>
-          <td>Exposure</td>
-          <td>#{exposure_time}</td>
-        </tr>
-        <tr>
-          <td>Aperture</td>
-          <td>#{f_number}</td>
-        </tr>
-        <tr>
-          <td>Focal Length</td>
-          <td>#{focal_length}</td>
-        </tr>
-        <tr>
-          <td>ISO</td>
-          <td>#{iso}</td>
-        </tr>
-      </table>".gsub("\n", "")
-    
-      output[2] = exif_table
+    # TODO use a real HTML builder here - Nokogiri?
+    klassAttr = '';
+    unless @klass.nil? or @klass.empty?
+      klassAttr = "class=\"#{@klass}\""
     end
+
+    cssAttrs = {};
+    unless @width.nil?
+      cssAttrs['width'] = @width;
+    end
+    unless @height.nil?
+      cssAttrs['height'] = @height;
+    end
+    styleAttr = cssAttrs.map { |(k, v)|
+      k.to_s + '="' + v.to_s + '"'
+    }.join " "
+
+    img_tag       = "<img src=\"#{@src}\" title=\"#{@title}\" #{klassAttr} #{styleAttr} />"
+    output[0]     = "<a href=\"#{@page_url}\">#{img_tag}</a>"
+    
+    # description?
+    # output[1]     = "<p>#{description}</p>" if @desc == "y"
     
     # Build output
     output.join
   end
 end
 
+class FlickrSizes 
+  @@sizes = {
+    "s" => "Square",
+    "q" => "Large Square",
+    "t" => "Thumbnail",
+    "m" => "Small",
+    "n" => "Small 320",
+    "__NONE__" => "Medium",
+    "z" => "Medium 640",
+    "c" => "Medium 800",
+    "b" => "Large",
+    "o" => "Original"
+  }
+  def self.sizes
+    @@sizes
+  end
+end
 
 class FlickrImage < Liquid::Tag
   def initialize(tag_name, markup, tokens)
@@ -99,25 +104,49 @@ class FlickrImage < Liquid::Tag
     super
     args = markup.split(" ")
     @id   = args[0]
-    @size = args[1]
-    @desc = args[2]
-    @meta = args[3]
+    @size = args[1] || 'm'
+    @klass = args[2]
+    @desc = args[3]
+
+    unless FlickrSizes.sizes.keys.include? @size
+      raise "did not recognize photo size for s: #{@size}";
+    end
+
+    # @src = FlickRaw.send('url_' + @size)
+    info = flickr.photos.getInfo(photo_id: @id)
+    @title = info['title']
+    if @desc.nil? or @desc.empty?
+      @desc = info['description']
+    end
+
+    # get the dimensions
+    desiredSizeLabel = FlickrSizes.sizes[@size]
+    sizes = flickr.photos.getSizes(photo_id: @id);
+    desiredSize = sizes.select{ |item| item["label"] == desiredSizeLabel }[0]
+    @src = desiredSize["source"]
+    @width = desiredSize["width"]
+    @height = desiredSize["height"]
   end
 
   def render(context)
-    FlickrPhoto.new(@id, @size, @desc, @meta).toHtml
+    FlickrPhoto.new(@src, {"title" => @title, "width" => @width, "height" => @height, "class" => @klass, "desc" => @desc}).toHtml
   end
 
 end
 
-
 class FlickrSet < Liquid::Tag
+  # these are the sizes we can get in the photosets extra info
+
   def initialize(tag_name, markup, tokens)
     FlickrRawAuth.getCredentials()
     super
     @markup = markup
     @id   = markup.split(" ")[0]
-    @size = markup.split(" ")[1]
+    @size = markup.split(" ")[1] || 'm'
+
+    unless FlickrSizes.sizes.keys.include? @size
+      raise "did not recognize photo size for sets: #{@size}";
+    end
   end
 
   def render(context)
@@ -134,9 +163,21 @@ class FlickrSet < Liquid::Tag
     end
 
     setPhotosHtml = [];
-    response = flickr.photosets.getPhotos(photoset_id: @id)
+    # pathalias will give us pretty urls to the photo page
+    # note, you have to request 'path_alias' but the returned prop is "pathalias"
+    apiExtras = ['url_' + @size, 'path_alias'].join(',');
+    response = flickr.photosets.getPhotos(photoset_id: @id, extras: apiExtras)
     response['photo'].each do |photo|
-      setPhotosHtml.push(FlickrPhoto.new(photo.id, @size).toHtml)
+      src = photo["url_" + @size]
+      params = {
+        "width" => photo["width_" + @size],
+        "height" => photo["height_" + @size],
+        "title" => photo["title"],
+        # this doesn't call the api, it constructs the URL from info retrieved
+        "page_url" => FlickRaw.url_photopage(photo)
+      }
+      # get description?
+      setPhotosHtml.push(FlickrPhoto.new(src, params).toHtml)
     end
 
     setHtml = '<p class="flickr-set">' + setPhotosHtml.join + '</p>'
