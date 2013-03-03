@@ -121,21 +121,28 @@ class FlickrSet < Liquid::Tag
   end
 
   def render(context)
-    output = []
-
     info = flickr.photosets.getInfo(photoset_id: @id)
-    title = info.title
-    description = info.description
+    
+    outputHtml = []
 
-    output.push(title)
-    output.push(description)
-
-    response = flickr.photosets.getPhotos(photoset_id: @id)
-    response['photo'].each do |photo|
-      output.push(FlickrPhoto.new(photo.id, @size).toHtml)
+    # assume the title is in the blog post title?
+    # titleHtml = '<p>' + info.title + '</p>'
+    # outputHtml.push(titleHtml)
+    
+    unless info.description.empty?
+      outputHtml.push('<p>' + info.description + '</p>')
     end
 
-    output.join
+    setPhotosHtml = [];
+    response = flickr.photosets.getPhotos(photoset_id: @id)
+    response['photo'].each do |photo|
+      setPhotosHtml.push(FlickrPhoto.new(photo.id, @size).toHtml)
+    end
+
+    setHtml = '<p class="flickr-set">' + setPhotosHtml.join + '</p>'
+    outputHtml.push(setHtml)
+
+    outputHtml.join
   end
 
 end
