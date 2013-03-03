@@ -1,8 +1,13 @@
 // This File is imported last, and will override other styles in the cascade
 // Add styles here to make changes without digging in too much
 
+.flickr-set {
+  text-align: center;
+}
+
 .flickr-set a {
   display: inline-block;
   margin-right: 2em;
   margin-bottom: 2em;
+  vertical-align: middle;
 }
