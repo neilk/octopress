@@ -119,12 +119,19 @@ class FlickrImage < Liquid::Tag
     end
 
     # get the dimensions
-    desiredSizeLabel = FlickrSizes.sizes[@size]
-    sizes = flickr.photos.getSizes(photo_id: @id);
-    desiredSize = sizes.select{ |item| item["label"] == desiredSizeLabel }[0]
-    @src = desiredSize["source"]
-    @width = desiredSize["width"]
-    @height = desiredSize["height"]
+    sizeInfo = flickr.photos.getSizes(photo_id: @id);
+    desiredSizeInfo = pickSize(sizeInfo, @size)
+    if (desiredSizeInfo.nil?) 
+      desiredSizeInfo = pickSize(sizeInfo, 'o')
+    end
+    @src = desiredSizeInfo["source"]
+    @width = desiredSizeInfo["width"]
+    @height = desiredSizeInfo["height"]
+  end
+
+  def pickSize(sizes, desiredSize) 
+    desiredSizeLabel = FlickrSizes.sizes[desiredSize]
+    sizes.select{ |item| item["label"] == desiredSizeLabel }[0]
   end
 
   def render(context)
