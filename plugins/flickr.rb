@@ -1,5 +1,4 @@
 require "flickraw"
-# require "debugger"
 
 class FlickrRawAuth
 
