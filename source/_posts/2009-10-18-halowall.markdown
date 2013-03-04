@@ -5,7 +5,7 @@ date: 2009-10-18
 comments: false
 categories: burningman art rainbows
 ---
-{% img right /images/halowall-test.jpg 240 320 'halowall test' 'halowall test' %}
+{% flickr_image 3906771341 n right %}
 
 This all started when I saw a rainbow on the ground. It appeared after some workers
 had finished sandblasting there.
@@ -23,7 +23,7 @@ And, deep down, I wanted to do "an art" because I was afraid of asking others to
 
 ## Burning Man and dust, dust, dust
 
-{% img left /images/halowall-nnooiissee.jpg 180 240 it's done %}
+{% flickr_image 3696071951 m left %}
 
 Right from the start great people jumped in to help. I started working with Casey Hutchinson
 ([nnooiissee](http://twitter.com/nnooiissee/)) to
@@ -50,7 +50,7 @@ that shoot fire. But those who saw it at the right times were
 
 ## Decompression: victory!
 
-{% img right /images/halowall-decom.jpg 240 180 halowall at decom %}
+{% flickr_image 4029667917 m right %}
 
 But then we knew how to make it work. We took this to [SF Decompression](http://www.burningman.com/blackrockcity_yearround/special_events/decompression/decom2009.html), the post-Burning-Man event,
 in a slightly different form, with better results.
@@ -70,8 +70,7 @@ them, by us or by their friends.
 The rainbow is not subtle. It's hard to capture in photos, but if you are a few inches away from the wall, it's overwhelming. We sat
 on the sidelines wondering what was *wrong* with people.
 
-
-{% img right /images/halowall-hippie-kids.jpg 320 240 'happy hippie kids' %}
+{% flickr_image 4029667805 m right %}
 
 You see, the weird and wonderful thing about these rainbows is that you can
 only see your own. (Another favorite moment: a bunch of hippie kids hugged me and demanded to know why they couldn't see
