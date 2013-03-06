@@ -13,6 +13,8 @@ options?
 
 ![Heatmap of San Francisco, colored by transit time to Flickr offices](/images/downtown-transit.png)
 
+<!-- more -->
+
 As you can see, being near light rail or BART really has an impact!
 
 Average waiting times not considered. Multiple transit hops not
@@ -33,7 +35,7 @@ Here are the KML files, which can be imported into Google Earth: [Downtown](/ima
 
 ## Results
 
-My [boss-to-be](http://www.flickr.com/photos/george/382926276/) saw this and proclaimed that he'd just hired either the right guy or the really wrong guy. I got laid off eight months later, so I guess that's settled.
+My [boss-to-be](http://www.flickr.com/photos/george/382926276/) saw this and proclaimed that he'd just hired either the right guy or the really wrong guy. I got [laid off](http://gigaom.com/2009/04/29/flickr-hit-hard-by-yahoo-layoffs/) eight months later, so I guess that's settled.
 
 This map did have an impact on where I eventually got an apartment. I hadn't even considered the Inner Richmond / Laurel Heights area, since none of my friends live there. But it's very close to green spaces and has express buses that dropped me off right in front of the Flickr offices. I eventually did get a place there, and haven't regretted the unhip neighborhood (much).
 
