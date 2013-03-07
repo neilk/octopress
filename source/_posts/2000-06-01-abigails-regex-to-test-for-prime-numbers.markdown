@@ -30,6 +30,8 @@ This was mind-blowing, because regular expressions are tools for testing if stri
 
 I couldn't rest until I figured it out. So, here's how it works - with some obscure features of Perl explained as we go.
 
+<!-- more -->
+
 ## How it works
 
 ``` perl
