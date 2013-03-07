@@ -26,7 +26,7 @@ $ perl -wle 'print "Prime" if (1 x shift) !~ /^1?$|^(11+?)\1+$/' 23
 Prime
 ```
 
-This was mind-blowing, because regular expressions are tools for testing if strings of characters match a certain specification. How could they do math?
+But regular expressions are tools for testing if strings of characters match a certain specification. How could they do math?
 
 I couldn't rest until I figured it out. So, here's how it works - with some obscure features of Perl explained as we go.
 
