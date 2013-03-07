@@ -15,7 +15,7 @@
 
 td.gutter {
   width: 3px;
-  background: #cccccc;
+  background: none; // #e0e0e0;
   overflow: hidden;
   display: inline-block;
   white-space: nowrap;
@@ -25,7 +25,6 @@ td.gutter pre {
   overflow: hidden;
 }
 
-td.gutter:hover {
+figure.code:hover td.gutter {
   width: auto;
-  background: none;
 }
