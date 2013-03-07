@@ -61,8 +61,8 @@ See [`perldoc -tf shift`](http://perldoc.perl.org/functions/shift.html).
 !~
 ```
 
-The logical negation of `=~`, will succeed if the regex does NOT match. Since we are looking for
-primes, the regex will should match all NON-primes.
+The logical negation of `=~`, will succeed if the regex does *not* match. Since we are looking for
+primes, the regex will match all *non*-primes.
 
 ## The regular expression
 
