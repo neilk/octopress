@@ -5,7 +5,7 @@ date: 2000-06-01 16:16
 comments: true
 categories: perl regex prime math
 ---
-The prolific Perl hacker who goes by "Abigail" was famous for posting enigmatic but ingenious one-liner scripts in her signatures on newsgroups. 
+The prolific Perl hacker [Abigail](http://abigail.be/) is famous for posting enigmatic but ingenious one-liner scripts in her signatures on newsgroups. 
 
 Here's one that blew my mind, from [comp.lang.perl.misc](http://diswww.mit.edu/bloom-picayune.mit.edu/perl/10138):
 
