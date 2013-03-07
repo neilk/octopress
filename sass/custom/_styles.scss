@@ -11,3 +11,21 @@
   margin-bottom: 2em;
   vertical-align: middle;
 }
+
+
+td.gutter {
+  width: 3px;
+  background: #cccccc;
+  overflow: hidden;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+td.gutter pre {
+  overflow: hidden;
+}
+
+td.gutter:hover {
+  width: auto;
+  background: none;
+}
