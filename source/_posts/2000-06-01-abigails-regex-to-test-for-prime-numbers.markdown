@@ -33,10 +33,11 @@ I couldn't rest until I figured it out. So, here's how it works - with some obsc
 ## How it works
 
 ``` perl
-STATEMENT if COND
+STATEMENT if CONDITION
 ```
 
-Cool perl syntax, a statement may have 'modifiers' at the end like this. See [`man perlsyn`](http://perldoc.perl.org/perlsyn.html).
+A quirk of Perl syntax; a statement may have 'modifiers' at the end like this. This is identical to `if CONDITION { STATEMENT }`. 
+See [`man perlsyn`](http://perldoc.perl.org/perlsyn.html).
 
 ``` perl
 shift
@@ -52,7 +53,7 @@ See [`perldoc -tf shift`](http://perldoc.perl.org/functions/shift.html).
 ```
 
 `x` is the repetition operator. In this context, `1` is treated as a string `"1"`. If the number was
-`9`, `"1" x 9` yields "111111111". (see [`man perlop`](http://perldoc.perl.org/perlop.html), grep for 'repetition operator'.)
+`9`, `"1" x 9` yields `"111111111"`. (see [`man perlop`](http://perldoc.perl.org/perlop.html), grep for 'repetition operator'.)
 
 ``` perl
 !~
@@ -89,7 +90,10 @@ To see how it works let's consider the case of N = 9. This generates a string li
  1 1 1 1 1 1 1 1 1
 </pre>
 
-The `^` in the regex will match the start of the string. 
+The only reason why Abigail generated a string of `1`s was to make the regular expression confusing, since it also makes use of `\1`.
+It could just as easily have been `x`s or any other character.
+
+Anyway, let's follow along with the regular expression matching engine. First, the `^` in the regex will match the start of the string. 
 
 <pre>
 /<span style="padding: 0.25em; border-radius: 4px; background: #d0ddd0; margin: 0.125em">^</span>(11+?)\1+$/
@@ -98,7 +102,7 @@ The `^` in the regex will match the start of the string.
 </pre>
 
 
-`(11+?)` will match two ones at the start, and call it `\1`.
+`(11+?)` will match two ones at the start.
 
 <pre>
 /<span style="margin: 0.125em; padding: 0.25em; border-radius: 4px; background: #d0ddd0">^</span><span style="margin: 0.125em; padding: 0.25em; border-radius: 4px; background:#dddad0">(11+?)</span>\1+$/
@@ -106,7 +110,7 @@ The `^` in the regex will match the start of the string.
 <span style="margin: 0.125em; padding: 0.25em; border-radius: 4px; background: #d0ddd0"></span><span style="margin: 0.125em; padding: 0.25em; border-radius: 4px; background: #dddad0">1 1</span><span style="padding: 0.25em; margin: 0.125em">1 1 1 1 1 1 1</span>
 </pre>
 
-Next, `\1+` matches one or more strings identical to `\1`.
+Next, `\1+` matches one or more strings identical to the first matched grouping, which in this case is `1 1`.
 
 <pre>
 /<span style="margin: 0.125em; padding: 0.25em; border-radius: 4px; background: #d0ddd0">^</span><span style="margin: 0.125em; padding: 0.25em; border-radius: 4px; background:#dddad0">(11+?)</span><span style="margin: 0.125em; padding: 0.25em; border-radius: 4px; background: #eeeae0">\1+</span>$/
@@ -119,7 +123,7 @@ Oops, but the string doesn't end there!
 <pre>
 /<span style="margin: 0.125em; padding: 0.25em; border-radius: 4px; background: #d0ddd0">^</span><span style="margin: 0.125em; padding: 0.25em; border-radius: 4px; background:#dddad0">(11+?)</span><span style="margin: 0.125em; padding: 0.25em; border-radius: 4px; background: #eeeae0">\1+</span><span style="margin: 0.125em; padding: 0.25em; border-radius: 4px; background: #d0ddd0">$</span>/
 
-<span style="margin: 0.125em; padding: 0.25em; border-radius: 4px; background: #d0ddd0"></span><span style="margin: 0.125em; padding: 0.25em; border-radius: 4px; background: #dddad0">1 1</span><span style="margin: 0.125em; padding: 0.25em; border-radius: 4px; background: #eeeae0">1 1</span><span style="margin: 0.125em; padding: 0.25em; border-radius: 4px; background: #eeeae0">1 1</span><span style="color: #ff0000 padding: 0.25em; margin:0.125em;">1</span> 
+<span style="margin: 0.125em; padding: 0.25em; border-radius: 4px; background: #d0ddd0"></span><span style="margin: 0.125em; padding: 0.25em; border-radius: 4px; background: #dddad0">1 1</span><span style="margin: 0.125em; padding: 0.25em; border-radius: 4px; background: #eeeae0">1 1</span><span style="margin: 0.125em; padding: 0.25em; border-radius: 4px; background: #eeeae0">1 1</span><span style="color: #ff0000; padding: 0.25em; margin:0.125em;">1</span> 
 </pre>
 
 We'll have to backtrack. This doesn't work...
@@ -130,7 +134,7 @@ We'll have to backtrack. This doesn't work...
 <span style="margin: 0.125em; padding: 0.25em; border-radius: 4px; background: #d0ddd0"></span><span style="margin: 0.125em; padding: 0.25em; border-radius: 4px; background: #dddad0">1 1</span><span style="margin: 0.125em; padding: 0.25em; border-radius: 4px; background: #eeeae0">1 1</span><span style="padding: 0.25em; margin: 0.125em"><span style="color: #ff0000">1</span> 1 1</span>
 </pre>
 
-Okay, we have nothing left to backtrack to. How about that `11+?`, let's try matching three ones, and calling that \1:
+Okay, we have nothing left to backtrack to. How about that `11+?`, let's try matching three ones, and calling that `\1`:
 
 <pre>
 /<span style="margin: 0.125em; padding: 0.25em; border-radius: 4px; background: #d0ddd0">^</span><span style="margin: 0.125em; padding: 0.25em; border-radius: 4px; background:#dddad0">(11+?)</span>\1+$/
