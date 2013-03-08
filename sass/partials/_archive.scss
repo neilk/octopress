@@ -12,16 +12,17 @@
     }
     footer { font-size: 0.9em; padding: 0; margin: 0;}
   }
-  h1 { color: $text-color; margin-bottom: .3em; }
+  h1 { margin-bottom: .3em; }
   h2 { display: none; }
   h1 {
     font-size: 1.1em;
     a {
       @include hover-link;
-      color: inherit;
       &:hover { color: $link-color-hover; }
       font-weight: normal;
       display: inline-block;
+      font-family: $bodyFont;
+      font-style: normal;
     }
   }
   a.category, time {
@@ -37,7 +38,7 @@
     .month { text-transform: uppercase; }
   }
   p { margin-bottom: 1em; }
-  &, .entry-content { a { @include link-colors(inherit, $link-color-hover); }}
+  .entry-content { a { @include link-colors(inherit, $link-color-hover); }}
   a:hover { color: $link-color-hover; }
   @media only screen and (min-width: 550px) {
     article { margin-left: 5em; }
@@ -45,10 +46,9 @@
       margin-bottom: .3em;
       font-weight: normal;
       display: inline-block;
-      padding-top: 0.70em;
+      padding-top: 0.40em;
       position: relative; top: -1px;
       float: left;
-      &:first-child { padding-top: .75em; }
     }
     time {
       position: absolute;
