@@ -237,7 +237,9 @@ that disallowed backtracking, `(?>)`. Benchmarking shows it is slightly faster t
 
 And even the dumbest prime-finding function shouldn't bother to check numbers greater than the square root of the length. There's no point in checking if 32003 can be divided by 25123. Nor should it check if the string is divisible by 4 when if we already know it isn't divisible by 2. So this is hardly a practical technique. 
 
-But it's great because it illuminates the hidden "state machine" nature of regular expressions. Naive programmers often flounder when trying to debug regular expressions, but if you think of them as state machines, you can make them do exactly what you want.
+But it's great because it illuminates the true nature of regular expressions. Programmers who are new to regular expressions often flounder when they have to debug them. Or they expect
+the computer to have insight into the problem, and thus don't understand why `/(<(.*)>.*<\1>)*/` not only doesn't grab all the HTML in a string, but might even take centuries to run. 
+That's why regular expressions have a reputation for being scary and dangerous. But regular expressions can be very powerful - within their limits - once you keep in mind that they are just state machines. 
 
 <p><br/></p>
 ----
