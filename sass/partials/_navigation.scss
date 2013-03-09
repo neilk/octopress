@@ -6,7 +6,6 @@ body > nav {
     bottom: 1px solid $nav-border; }
   padding-top: .15em;
   padding-bottom: .15em;
-  padding-right: 0.9em !important;
   form {
     @include background-clip(padding-box);
     margin: 0; padding: 0;
@@ -72,7 +71,7 @@ body > nav {
       float: right;
       text-align: left;
       padding-left: .8em;
-      width: $sidebar-width-medium - $pad-medium*2 - $sidebar-pad-medium;
+      width: $sidebar-width-medium - $sidebar-pad-medium;
       .search {
         width: 93%;
         font-size: .95em;
@@ -88,7 +87,7 @@ body > nav {
   }
   @media only screen and (min-width: 992px) {
     form {
-      width: $sidebar-width-wide - $pad-wide - $sidebar-pad-wide*2;
+      width: $sidebar-width-wide - 32px;
     }
     ul[data-subscription$=email] + form {
       width: $sidebar-width-wide - $pad-wide - $sidebar-pad-wide*2 - 58px;
