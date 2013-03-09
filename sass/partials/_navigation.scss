@@ -10,7 +10,7 @@ body > nav {
     @include background-clip(padding-box);
     margin: 0; padding: 0;
     .search {
-      padding: .1em .5em .2em .5em;
+      padding: .1em .25em .2em .5em;
       font-size: .85em;
       font-family: $sans;
       line-height: 1em;
@@ -124,9 +124,10 @@ body > nav {
       ul[data-subscription$=email] + form {
         width: $sidebar-width-wide - $pad-wide - $sidebar-pad-wide*2 - 32px;
       }
+      ul.subscription { top: 0px; }
     }
   }
-  ul.subscription { position: relative; top: 0; li, a { border: 0; padding: 0; }}
+  ul.subscription { position: relative; top: 2px; li, a { border: 0; padding: 0; }}
   a[rel=subscribe-rss]{ @include mask-subscription-nav('rss.png'); }
   a[rel=subscribe-email]{ @include mask-subscription-nav('email.png'); }
 }
