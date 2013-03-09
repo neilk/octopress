@@ -90,18 +90,6 @@ article {
       overflow: hidden;
       a.articlenav{
         background: #ffffff;
-        border: 1px solid #e8e8e8;
-        -moz-border-radius: 0.4em;
-        -webkit-border-radius: 0.4em;
-        border-radius: 0.4em;
-        color: #555555;
-        padding: .4em .8em;
-        text-decoration: none;
-        &:hover{
-          background: #4e7cb2;
-          border: 1px solid #ffffff;
-          color: #FFFFFF;
-        }
         @media only screen and (max-width: 550px) {
           float: none !important;
           display: block;
