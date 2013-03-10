@@ -107,7 +107,7 @@ class FlickrPhoto
       x.a(anchorAttrs) { |x|
         x.img(imgAttrs)
       }
-      x.caption(captionAttrs) { |x|
+      x.figcaption(captionAttrs) { |x|
         if @page_url.nil?
           x.h5(@title)
         else
