@@ -21,6 +21,7 @@ class FlickrRawAuth
 end
 
 class FlickrPhoto
+
   def initialize(src, params)
     @src = src
     @size = params['size'] || 's'
@@ -45,6 +46,17 @@ class FlickrPhoto
     unless params['page_url'].nil? or params['page_url'].empty?
       @page_url = params['page_url']
     end
+
+    unless params['zoom_src'].nil? or params['zoom_src'].empty?
+      @zoom_src = params['zoom_src']
+      unless params['zoom_width'].nil? or (params['zoom_width'].is_a? String and params['zoom_width'].empty?)
+        @zoom_width = params['zoom_width']
+      end
+      unless params['zoom_height'].nil? or (params['zoom_height'].is_a? String and params['zoom_height'].empty?)
+        @zoom_height = params['zoom_height']
+      end
+    end
+
   end
 
   def toHtml
@@ -69,7 +81,7 @@ class FlickrPhoto
     }.join " "
 
     img_tag       = "<img src=\"#{@src}\" title=\"#{@title}\" #{klassAttr} #{styleAttr} />"
-    output[0]     = "<a href=\"#{@page_url}\">#{img_tag}</a>"
+    output[0]     = "<a class=\"fancybox\" href=\"#{@zoom_src}\">#{img_tag}</a>"
     
     # description?
     # output[1]     = "<p>#{description}</p>" if @desc == "y"
@@ -88,7 +100,7 @@ class FlickrSizes
     "n" => "Small 320",
     "__NONE__" => "Medium",
     "z" => "Medium 640",
-    "c" => "Medium 800",
+    # "c" => "Medium 800",  # FlickrRaw doesn't know about this size
     "b" => "Large",
     "o" => "Original"
   }
@@ -98,6 +110,8 @@ class FlickrSizes
 end
 
 class FlickrImage < Liquid::Tag
+  @@zoom_size = 'z'
+
   def initialize(tag_name, markup, tokens)
     FlickrRawAuth.getCredentials()
     super
@@ -119,23 +133,39 @@ class FlickrImage < Liquid::Tag
     end
 
     # get the dimensions
-    sizeInfo = flickr.photos.getSizes(photo_id: @id);
-    desiredSizeInfo = pickSize(sizeInfo, @size)
-    if (desiredSizeInfo.nil?) 
-      desiredSizeInfo = pickSize(sizeInfo, 'o')
-    end
-    @src = desiredSizeInfo["source"]
-    @width = desiredSizeInfo["width"]
-    @height = desiredSizeInfo["height"]
+    sizes = flickr.photos.getSizes(photo_id: @id);
+    @src, @width, @height = self.class.getSourceAndDimensionsForSize(sizes, @size)
+    @zoomSrc, @zoomWidth, @zoomHeight = self.class.getSourceAndDimensionsForSize(sizes, @@zoom_size)
   end
 
-  def pickSize(sizes, desiredSize) 
+  def self.getSourceAndDimensionsForSize(sizes, size)
+    # n.b. within this class method, 'self' is the class
+    sizeInfo = self.pickSize(sizes, size)
+    if (sizeInfo.nil?) 
+      sizeInfo = pickSize(sizes, 'o')
+      if (sizeInfo.nil?)
+        raise "could not get a size"
+      end
+    end
+    [ sizeInfo["source"], sizeInfo["width"], sizeInfo["height"] ]
+  end
+
+  def self.pickSize(sizes, desiredSize)
     desiredSizeLabel = FlickrSizes.sizes[desiredSize]
     sizes.select{ |item| item["label"] == desiredSizeLabel }[0]
   end
 
   def render(context)
-    FlickrPhoto.new(@src, {"title" => @title, "width" => @width, "height" => @height, "class" => @klass, "desc" => @desc}).toHtml
+    FlickrPhoto.new(@src, {
+      "title" => @title, 
+      "width" => @width, 
+      "height" => @height, 
+      "class" => @klass, 
+      "desc" => @desc,
+      "zoom_src" => @zoomSrc, 
+      "zoom_width" => @zoomWidth, 
+      "zoom_height" => @zoomHeight
+    }).toHtml
   end
 
 end
