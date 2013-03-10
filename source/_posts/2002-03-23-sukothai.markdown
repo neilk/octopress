@@ -1,0 +1,9 @@
+---
+layout: post
+title: "sukothai"
+date: 2002-03-23 21:07
+comments: true
+categories: photo
+---
+
+<a class="fancybox" href="http://farm1.staticflickr.com/4/4506255_b77e652bd1_b.jpg"><img src="http://farm1.staticflickr.com/4/4506255_b77e652bd1_n.jpg" alt="sukothai"/></a>
