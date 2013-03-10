@@ -1,4 +1,5 @@
 require "flickraw"
+require "builder"
 
 class FlickrRawAuth
 
@@ -22,20 +23,27 @@ end
 
 class FlickrPhoto
 
-  def initialize(src, params)
+  def initialize(id, src, params)
+    @id = id
     @src = src
     @size = params['size'] || 's'
 
-    unless params['title'].nil? or params['title'].empty?
+    if params['title'].nil? or params['title'].empty?
+      @title = "Flickr photo at @src"
+    else 
       @title = params['title']
     end
 
     unless params['class'].nil? or params['class'].empty?
       @klass = params['class']
     end
-    unless params['desc'].nil? or params['desc'].empty?
+
+    if params['desc'].nil? or params['desc'].empty?
+      @desc = ""
+    else
       @desc = params['desc']
     end
+
     unless params['width'].nil? or (params['width'].is_a? String and params['width'].empty?)
       @width = params['width']
     end
@@ -43,6 +51,10 @@ class FlickrPhoto
       @height = params['height']
     end
     
+    unless params['gallery_id'].nil? or params['gallery_id'].empty?
+      @gallery_id = params['gallery_id']
+    end
+
     unless params['page_url'].nil? or params['page_url'].empty?
       @page_url = params['page_url']
     end
@@ -61,14 +73,10 @@ class FlickrPhoto
 
   def toHtml
 
-    output = []
-
-    # TODO use a real HTML builder here - Nokogiri?
-    klassAttr = '';
+    imgAttrs = {src: @src, title: @title}
     unless @klass.nil? or @klass.empty?
-      klassAttr = "class=\"#{@klass}\""
+      imgAttrs[:class] = @klass
     end
-
     cssAttrs = {};
     unless @width.nil?
       cssAttrs['width'] = @width;
@@ -76,18 +84,44 @@ class FlickrPhoto
     unless @height.nil?
       cssAttrs['height'] = @height;
     end
-    styleAttr = cssAttrs.map { |(k, v)|
-      k.to_s + '="' + v.to_s + '"'
+    imgAttrs["style"] = cssAttrs.map { |(k, v)|
+      k.to_s + ': ' + v.to_s + '; '
     }.join " "
 
-    img_tag       = "<img src=\"#{@src}\" title=\"#{@title}\" #{klassAttr} #{styleAttr} />"
-    output[0]     = "<a class=\"fancybox\" href=\"#{@zoom_src}\">#{img_tag}</a>"
-    
-    # description?
-    # output[1]     = "<p>#{description}</p>" if @desc == "y"
-    
-    # Build output
-    output.join
+    xmlBuffer = ""
+    x = Builder::XmlMarkup.new( :target => xmlBuffer )
+
+  
+    dataTitleId = 'flickr-photo-' + @id 
+
+    anchorAttrs = {
+      'href' => @zoom_src,
+      'class' => 'fancybox',
+      'data-title-id' => dataTitleId
+    }
+    captionAttrs = {
+      'id' => dataTitleId
+    }
+
+    x.figure{ |x| 
+      x.a(anchorAttrs) { |x|
+        x.img(imgAttrs)
+      }
+      x.caption(captionAttrs) { |x|
+        if @page_url.nil?
+          x.h5(@title)
+        else
+          x.h5{ |x|
+            x.a( @title, { 'class' => 'flickr-link', 'href' => @page_url })
+          }
+          unless @desc.nil?
+            x.span( @desc, { 'class' => 'flickr-desc' } )
+          end
+        end
+      }
+    }
+   
+    xmlBuffer
   end
 end
 
@@ -156,7 +190,7 @@ class FlickrImage < Liquid::Tag
   end
 
   def render(context)
-    FlickrPhoto.new(@src, {
+    FlickrPhoto.new(@id, @src, {
       "title" => @title, 
       "width" => @width, 
       "height" => @height, 
@@ -212,8 +246,9 @@ class FlickrSet < Liquid::Tag
         # this doesn't call the api, it constructs the URL from info retrieved
         "page_url" => FlickRaw.url_photopage(photo)
       }
-      # get description?
-      setPhotosHtml.push(FlickrPhoto.new(src, params).toHtml)
+      photoInfoResponse = flickr.photos.getInfo(photo_id: photo["id"])
+      params["desc"] = photoInfoResponse["description"] 
+      setPhotosHtml.push(FlickrPhoto.new(photo["id"], src, params).toHtml)
     end
 
     setHtml = '<p class="flickr-set">' + setPhotosHtml.join + '</p>'
