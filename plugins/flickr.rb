@@ -1,6 +1,12 @@
 require "flickraw"
 require "builder"
 
+# CAUTION: This entire plugin is an XSS vector, as we accept HTML from the Flickr API and
+# republish it without any transformation or sanitization on our site. If someone can control
+# the HTML in titles or descriptions on Flickr they can inject arbitrary HTML into our site.
+# The risk is relatively low, since Flickr goes to great lengths to sanitize their inputs. But
+# an attacker could exploit some difference between the two sites (encoding, maybe) to do XSS.
+
 class FlickrRawAuth
 
   def self.getSecret(key)
@@ -108,16 +114,15 @@ class FlickrPhoto
         x.img(imgAttrs)
       }
       x.figcaption(captionAttrs) { |x|
+        # append title and desc, unescaped, because they are already escaped, and can contain HTML
         if @page_url.nil?
-          x.h5(@title)
+          x.h5{ |x| x << @title}  
         else
           x.h5{ |x|
-            x.a( @title, { 'class' => 'flickr-link', 'href' => @page_url })
+            x.a('class' => 'flickr-link', 'href' => @page_url) { |x| x << @title }
           }
         end
-        unless @desc.nil?
-          x.span( @desc, { 'class' => 'flickr-desc' } )
-        end
+        x << @desc
       }
     }
    
