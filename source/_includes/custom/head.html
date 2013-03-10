@@ -38,6 +38,11 @@ $(document).ready(
               this.title = el.html();
             }
           }
+        },
+        helpers: {
+          title: {
+            type: 'inside'
+          }
         }
       });
     })(jQuery);
