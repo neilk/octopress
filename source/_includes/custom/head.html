@@ -23,19 +23,25 @@
 
 <!-- Custom Scripts -->
 <script language="Javascript" type="text/javascript">
-  $(document).ready(function() {
-    jQuery(".fancybox").fancybox({
-      beforeLoad: function() {
-        var el, id = $(this.element).data('title-id');
+$(document).ready(
+  function() {
+    (function($) {
+      $(".fancybox").fancybox({
+        beforeLoad: function() {
+          debugger;
+          var el, id = $(this.element).data('title-id');
 
-        if (id) {
-          el = $('#' + id);
+          console.log('title-id', id)
+          if (id) {
+            el = $('#' + id);
 
-          if (el.length) {
-            this.title = el.html();
+            if (el.length) {
+              this.title = el.html();
+            }
           }
         }
-      }
-    });
-  });
+      });
+    })(jQuery);
+  }
+);
 </script>
