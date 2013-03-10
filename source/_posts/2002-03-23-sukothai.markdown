@@ -6,4 +6,4 @@ comments: true
 categories: photo
 ---
 
-<a class="fancybox" href="http://farm1.staticflickr.com/4/4506255_b77e652bd1_b.jpg"><img src="http://farm1.staticflickr.com/4/4506255_b77e652bd1_n.jpg" alt="sukothai"/></a>
+{% flickr_image 4506255 %}
