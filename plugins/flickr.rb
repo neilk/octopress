@@ -107,7 +107,7 @@ class FlickrPhoto
       'id' => dataTitleId
     }
 
-    x.figure{ |x| 
+    x.figure( {'class' => 'flickr-thumbnail'} ) { |x| 
       x.a(anchorAttrs) { |x|
         x.img(imgAttrs)
       }
@@ -250,7 +250,7 @@ class FlickrSet < Liquid::Tag
       setPhotosHtml.push(FlickrPhoto.new(photo["id"], src, params).toHtml)
     end
 
-    setHtml = '<p class="flickr-set">' + setPhotosHtml.join + '</p>'
+    setHtml = '<section class="flickr-set">' + setPhotosHtml.join + '</section>'
     outputHtml.push(setHtml)
 
     outputHtml.join
