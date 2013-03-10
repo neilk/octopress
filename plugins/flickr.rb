@@ -114,9 +114,9 @@ class FlickrPhoto
           x.h5{ |x|
             x.a( @title, { 'class' => 'flickr-link', 'href' => @page_url })
           }
-          unless @desc.nil?
-            x.span( @desc, { 'class' => 'flickr-desc' } )
-          end
+        end
+        unless @desc.nil?
+          x.span( @desc, { 'class' => 'flickr-desc' } )
         end
       }
     }
@@ -161,6 +161,7 @@ class FlickrImage < Liquid::Tag
 
     # @src = FlickRaw.send('url_' + @size)
     info = flickr.photos.getInfo(photo_id: @id)
+    @page_url = FlickRaw.url_photopage(info)
     @title = info['title']
     if @desc.nil? or @desc.empty?
       @desc = info['description']
@@ -191,6 +192,7 @@ class FlickrImage < Liquid::Tag
 
   def render(context)
     FlickrPhoto.new(@id, @src, {
+      "page_url" => @page_url, 
       "title" => @title, 
       "width" => @width, 
       "height" => @height, 
