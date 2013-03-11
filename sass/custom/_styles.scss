@@ -25,7 +25,7 @@
 .fancybox-title, .fancybox-title h5 {
   font-family: $sans;
   text-align: center;
-  max-height: 4em;
+  max-height: 6em;
   overflow-y: scroll;
 }
 
@@ -33,6 +33,27 @@
   margin-bottom: 0px;
 }
 
+/* always show navigation */
+.fancybox-nav {
+  width: 60px;       
+}
+
+.fancybox-nav span {
+  visibility: visible;
+  opacity: 0.5;
+}
+
+.fancybox-nav:hover span {
+  opacity: 1;
+}
+
+.fancybox-next {
+  right: -60px;
+}
+
+.fancybox-prev {
+  left: -60px;
+}
 
 
 td.gutter {
