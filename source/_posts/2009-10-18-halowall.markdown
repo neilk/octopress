@@ -94,10 +94,11 @@ when she got close she immediately started giggling, and returned back smiling t
 I'm not sure what to do with this knowledge. It seems that we have a pretty good test to distinguish people who look at the world with slightly fresher eyes, who are alive to 
 new and surprising experiences. This happens to be exactly the sort of person I like to have around me, so maybe I need to make a pocket version for all social situations.
 
+<p><br/></p>
 
-----
+## Build diary
 
 The [photo set on Flickr](http://www.flickr.com/photos/brevity/sets/72157622329642662/) tells more of 
-the story, especially all the stages of building and testing. Here's a slideshow - if you want to read the descriptions, fullscreen it and then click "Show info".
+the story, especially all the stages of building and testing. 
 
-<object width="400" height="300"> <param name="flashvars" value="text=true&offsite=true&lang=en-us&page_show_url=%2Fphotos%2Fbrevity%2Fsets%2F72157622329642662%2Fshow%2F&page_show_back_url=%2Fphotos%2Fbrevity%2Fsets%2F72157622329642662%2F&set_id=72157622329642662&jump_to="></param> <param name="movie" value="http://www.flickr.com/apps/slideshow/show.swf?v=124984"></param> <param name="allowFullScreen" value="true"></param><embed type="application/x-shockwave-flash" src="http://www.flickr.com/apps/slideshow/show.swf?v=124984" allowFullScreen="true" flashvars="text=true&offsite=true&lang=en-us&page_show_url=%2Fphotos%2Fbrevity%2Fsets%2F72157622329642662%2Fshow%2F&page_show_back_url=%2Fphotos%2Fbrevity%2Fsets%2F72157622329642662%2F&set_id=72157622329642662&jump_to=" width="400" height="300"></embed></object></object>
+{% flickr_set 72157622329642662 t nodesc %}
