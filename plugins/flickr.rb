@@ -87,16 +87,6 @@ class FlickrPhoto
     unless @klass.nil? or @klass.empty?
       imgAttrs[:class] = @klass
     end
-    cssAttrs = {};
-    unless @width.nil?
-      cssAttrs['width'] = @width.to_s + 'px';
-    end
-    unless @height.nil?
-      cssAttrs['height'] = @height.to_s + 'px';
-    end
-    imgAttrs["style"] = cssAttrs.map { |(k, v)|
-      k.to_s + ': ' + v.to_s + ';'
-    }.join " "
 
     xmlBuffer = ""
     x = Builder::XmlMarkup.new( :target => xmlBuffer )
