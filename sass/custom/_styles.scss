@@ -25,6 +25,8 @@
 .fancybox-title, .fancybox-title h5 {
   font-family: $sans;
   text-align: center;
+  max-height: 4em;
+  overflow-y: scroll;
 }
 
 .fancybox-title h5 {
