@@ -11,7 +11,7 @@ for Flickr. I've read research that says that a short commute has a
 surprisingly large impact on happiness. So, I wondered, what are my
 options?
 
-![Heatmap of San Francisco, colored by transit time to Flickr offices](/images/downtown-transit.png)
+{% photo /images/downtown-transit.png /images/downtown-transit.png Heatmap of San Francisco, colored by transit time to Flickr offices %}
 
 <!-- more -->
 
@@ -43,5 +43,5 @@ This map did have an impact on where I eventually got an apartment. I hadn't eve
 
 By request: the East Bay. Click for higher resolution.
 
-![Heatmap of San Francisco, Oakland, and Berkeley, colored by transit time to Flickr offices](/images/downtown-transit-eastbay.png)
+{% photo /images/downtown-transit-eastbay.png /images/downtown-transit-eastbay.png H Heatmap of San Francisco, Oakland, and Berkeley, colored by transit time to Flickr offices %}
 
