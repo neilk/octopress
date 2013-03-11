@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "sukothai"
+title: "sukhothai"
 date: 2002-03-23 21:07
 comments: true
 categories: photo
