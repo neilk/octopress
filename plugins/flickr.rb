@@ -89,13 +89,13 @@ class FlickrPhoto
     end
     cssAttrs = {};
     unless @width.nil?
-      cssAttrs['width'] = @width;
+      cssAttrs['width'] = @width.to_s + 'px';
     end
     unless @height.nil?
-      cssAttrs['height'] = @height;
+      cssAttrs['height'] = @height.to_s + 'px';
     end
     imgAttrs["style"] = cssAttrs.map { |(k, v)|
-      k.to_s + ': ' + v.to_s + '; '
+      k.to_s + ': ' + v.to_s + ';'
     }.join " "
 
     xmlBuffer = ""
