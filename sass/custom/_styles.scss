@@ -5,12 +5,32 @@
   text-align: center;
 }
 
-.flickr-set a {
+.flickr-set figure {
   display: inline-block;
   margin-right: 2em;
   margin-bottom: 2em;
   vertical-align: middle;
 }
+
+.flickr-set figcaption {
+  display: none;
+}
+
+.flickr-link {
+  padding-left: 18px;
+  background: url('/images/flickr-icon.png') center left no-repeat;
+}
+
+/* TODO integrate this with fancybox css */
+.fancybox-title, .fancybox-title h5 {
+  font-family: $sans;
+  text-align: center;
+}
+
+.fancybox-title h5 {
+  margin-bottom: 0px;
+}
+*/
 
 
 td.gutter {
@@ -53,7 +73,4 @@ ul.gallery {
   display: none;
 }
 
-.fancybox-title a {
-  color: #0f0;
-}
 
