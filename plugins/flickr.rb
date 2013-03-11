@@ -197,6 +197,7 @@ class FlickrImage < Liquid::Tag
       "height" => @height, 
       "class" => @klass, 
       "desc" => @desc,
+      "size" => @size
     }).toHtml
   end
 
@@ -238,6 +239,7 @@ class FlickrSet < Liquid::Tag
     response['photo'].each do |photo|
       src = photo["url_" + @size]
       params = {
+        "size" => @size,
         "width" => photo["width_" + @size],
         "height" => photo["height_" + @size],
         "title" => photo["title"],
