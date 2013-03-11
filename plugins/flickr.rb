@@ -240,7 +240,7 @@ class FlickrSet < Liquid::Tag
   end
 
   def render(context)
-    getHtml(@id, @size, @showSetDec)
+    getHtml(@id, @size, @showSetDesc)
   end
 
   def getHtml(id, size, showSetDesc)
