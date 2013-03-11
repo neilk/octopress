@@ -1,11 +1,20 @@
-require "flickraw"
 require "builder"
+require "flickraw"
+require "memoize"
 
 # CAUTION: This entire plugin is an XSS vector, as we accept HTML from the Flickr API and
 # republish it without any transformation or sanitization on our site. If someone can control
 # the HTML in titles or descriptions on Flickr they can inject arbitrary HTML into our site.
 # The risk is relatively low, since Flickr goes to great lengths to sanitize their inputs. But
 # an attacker could exploit some difference between the two sites (encoding, maybe) to do XSS.
+
+class FlickrCache
+  def self.cacheFile(name)
+    cache_folder     = File.expand_path "../.flickr-cache", File.dirname(__FILE__)
+    FileUtils.mkdir_p cache_folder
+    return "#{cache_folder}/#{name}"
+  end
+end
 
 class FlickrRawAuth
 
@@ -166,6 +175,7 @@ class FlickrSizes
 end
 
 class FlickrImage < Liquid::Tag
+  include Memoize
 
   def initialize(tag_name, markup, tokens)
     FlickrRawAuth.getCredentials()
@@ -179,20 +189,26 @@ class FlickrImage < Liquid::Tag
     unless FlickrSizes.sizes.keys.include? @size
       raise "did not recognize photo size for s: #{@size}";
     end
+    
+    memoize(:getHtml, FlickrCache.cacheFile("image"))
+  end
 
+  def render(context)
+    self.getHtml(@id, @size, @klass, @desc)
+  end
+
+  def getHtml(id, size, klass, desc)
     # @src = FlickRaw.send('url_' + @size)
-    info = flickr.photos.getInfo(photo_id: @id)
-    @page_url = FlickRaw.url_photopage(info)
-    @title = info['title']
+    info = flickr.photos.getInfo(photo_id: id)
+    page_url = FlickRaw.url_photopage(info)
+    title = info['title']
     if @desc.nil? or @desc.empty?
       @desc = info['description']
     end
 
-  end
-  def render(context)
     FlickrPhoto.new(@id, @src, {
-      "page_url" => @page_url, 
-      "title" => @title, 
+      "page_url" => page_url, 
+      "title" => title, 
       "width" => @width, 
       "height" => @height, 
       "class" => @klass, 
@@ -204,10 +220,9 @@ class FlickrImage < Liquid::Tag
 end
 
 class FlickrSet < Liquid::Tag
-  # these are the sizes we can get in the photosets extra info
+  include Memoize
 
   def initialize(tag_name, markup, tokens)
-    FlickrRawAuth.getCredentials()
     super
     args = markup.split(" ")
     @id = args[0]
@@ -220,10 +235,17 @@ class FlickrSet < Liquid::Tag
     unless FlickrSizes.sizes.keys.include? @size
       raise "did not recognize photo size for sets: #{@size}";
     end
+
+    memoize(:getHtml, FlickrCache.cacheFile("set"))
   end
 
   def render(context)
-    info = flickr.photosets.getInfo(photoset_id: @id)
+    getHtml(@id, @size, @showSetDec)
+  end
+
+  def getHtml(id, size, showSetDesc)
+    FlickrRawAuth.getCredentials()
+    info = flickr.photosets.getInfo(photoset_id: id)
     
     outputHtml = []
 
@@ -231,25 +253,25 @@ class FlickrSet < Liquid::Tag
     # titleHtml = '<p>' + info.title + '</p>'
     # outputHtml.push(titleHtml)
     
-    if @showSetDesc and not info.description.empty?
+    if showSetDesc and not info.description.empty?
       outputHtml.push('<p>' + info.description + '</p>')
     end
 
     setPhotosHtml = [];
     # pathalias will give us pretty urls to the photo page
     # note, you have to request 'path_alias' but the returned prop is "pathalias"
-    apiExtras = ['url_' + @size, 'path_alias'].join(',');
-    response = flickr.photosets.getPhotos(photoset_id: @id, extras: apiExtras)
+    apiExtras = ['url_' + size, 'path_alias'].join(',');
+    response = flickr.photosets.getPhotos(photoset_id: id, extras: apiExtras)
     response['photo'].each do |photo|
-      src = photo["url_" + @size]
+      src = photo["url_" + size]
       params = {
-        "size" => @size,
-        "width" => photo["width_" + @size],
-        "height" => photo["height_" + @size],
+        "size" => size,
+        "width" => photo["width_" + size],
+        "height" => photo["height_" + size],
         "title" => photo["title"],
         # this doesn't call the api, it constructs the URL from info retrieved
         "page_url" => FlickRaw.url_photopage(photo),
-        "gallery_id" => "flickr-set-" + @id
+        "gallery_id" => "flickr-set-" + id
       }
       photoInfoResponse = flickr.photos.getInfo(photo_id: photo["id"])
       params["desc"] = photoInfoResponse["description"] 
@@ -261,6 +283,7 @@ class FlickrSet < Liquid::Tag
 
     outputHtml.join
   end
+  
 
 end
 
