@@ -209,9 +209,13 @@ class FlickrSet < Liquid::Tag
   def initialize(tag_name, markup, tokens)
     FlickrRawAuth.getCredentials()
     super
-    @markup = markup
-    @id   = markup.split(" ")[0]
-    @size = markup.split(" ")[1] || 'm'
+    args = markup.split(" ")
+    @id = args[0]
+    @size = args[1] || 'm'
+    @showSetDesc = true
+    if (args[2] == 'nodesc')
+      @showSetDesc = false 
+    end
 
     unless FlickrSizes.sizes.keys.include? @size
       raise "did not recognize photo size for sets: #{@size}";
@@ -227,7 +231,7 @@ class FlickrSet < Liquid::Tag
     # titleHtml = '<p>' + info.title + '</p>'
     # outputHtml.push(titleHtml)
     
-    unless info.description.empty?
+    if @showSetDesc and not info.description.empty?
       outputHtml.push('<p>' + info.description + '</p>')
     end
 
