@@ -243,4 +243,4 @@ That's why regular expressions have a reputation for being scary and dangerous. 
 
 <p><br/></p>
 ----
-_A version of this was originally posted to the [Montreal.pm.org](Montreal Perl Mongers) mailing list._
+_A version of this was originally posted to the [Montreal Perl Mongers](http://montreal.pm.org/) mailing list._
