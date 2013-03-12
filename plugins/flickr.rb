@@ -88,15 +88,20 @@ class FlickrPhoto
       imgAttrs[:class] = @klass
     end
     cssAttrs = {};
-    unless @width.nil?
+    # Including width and height helps with a certain webkit rendering bug when laying out
+    # lots of inline-block items. But explicit width and height causes large images to scale improperly at
+    # small device widths.
+    # So, we include width and height only for smallish images, less than iPhone 3 width minus some padding.
+    # Using 450 because it's 480 (iPhone 3 width) with some padding
+    if (not (@width.nil?)) and @width.to_i < 450
       cssAttrs['width'] = @width.to_s + 'px';
+      unless @height.nil?
+        cssAttrs['height'] = @height.to_s + 'px';
+      end
+      imgAttrs["style"] = cssAttrs.map { |(k, v)|
+        k.to_s + ': ' + v.to_s + ';'
+      }.join " "
     end
-    unless @height.nil?
-      cssAttrs['height'] = @height.to_s + 'px';
-    end
-    imgAttrs["style"] = cssAttrs.map { |(k, v)|
-      k.to_s + ': ' + v.to_s + ';'
-    }.join " "
 
     xmlBuffer = ""
     x = Builder::XmlMarkup.new( :target => xmlBuffer )
