@@ -5,4 +5,4 @@ date: 2012-06-23 00:42
 comments: true
 categories: 
 ---
-{% flickr_image 7429579820 o %}
+{% flickr_image 7429579820 z %}

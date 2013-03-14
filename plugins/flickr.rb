@@ -1,4 +1,5 @@
 require "builder"
+require "cgi"
 require "flickraw"
 require "memoize"
 
@@ -36,7 +37,7 @@ class FlickrRawAuth
 
 end
 
-class FlickrPhoto
+class FlickrPhotoHtml
   @@zoom_size = 'z'
 
   def initialize(id, src, params)
@@ -60,13 +61,6 @@ class FlickrPhoto
       @desc = params['desc']
     end
 
-    unless params['width'].nil? or (params['width'].is_a? String and params['width'].empty?)
-      @width = params['width']
-    end
-    unless params['height'].nil? or (params['height'].is_a? String and params['height'].empty?)
-      @height = params['height']
-    end
-    
     unless params['gallery_id'].nil? or params['gallery_id'].empty?
       @gallery_id = params['gallery_id']
     end
@@ -142,18 +136,72 @@ class FlickrPhoto
   end
 end
 
+class FlickrVideoHtml
+  @@type="application/x-shockwave-flash" 
+  @@playerSwf="http://www.flickr.com/apps/video/stewart.swf?v=109786" 
+  @@classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+  @@bgcolor="#000000" 
+  @@allowfullscreen="true" 
+  @@size = '__video__'
+
+  def initialize(id, photoSecret, size, origWidth, origHeight)
+    @id = id
+    @photoSecret = photoSecret
+    @size = size
+    @origWidth = origWidth
+    @origHeight = origHeight
+  end
+
+  def toHtml
+    width, height = FlickrSizes.calculateDimensions(@size, @origWidth, @origHeight)
+
+    flashvarsHash = {
+      intl_lang: 'en-us',
+      photo_secret: @photoSecret,
+      photo_id: @id
+    }
+    flashvars = flashvarsHash.map { | (k, v) | 
+      CGI.escape(k.to_s) + '=' + CGI.escape(v.to_s)
+    }.join "&"
+
+    xmlBuffer = ""
+    x = Builder::XmlMarkup.new( :target => xmlBuffer )
+
+    x.object( { 'type' => @@type, 
+                'width' => width, 
+                'height' => height,
+                'data' => @@playerSwf,
+                'classid' => @@classid } ) { |x|
+      x.param( { 'name' => 'flashvars', 'value' => flashvars } )
+      x.param( { 'name' => 'movie', 'value' => @@playerSwf } )
+      x.param( { 'name' => 'bgcolor', 'value' => @@bgcolor } )
+      x.param( { 'name' => 'allowFullScreen', 'value' => @@allowfullscreen } )
+      x.embed( { 'type' => @@type, 
+                 'src' => @@playerSwf, 
+                 'bgcolor' => @@bgcolor,
+                 'allowfullscreen' => @@allowfullscreen,
+                 'flashvars' => flashvars,
+                 'width' => width,
+                 'height' => height } )
+    }
+
+    xmlBuffer
+  end
+end
+
+
 class FlickrSizes 
   @@sizes = {
-    "s" => "Square",
-    "q" => "Large Square",
-    "t" => "Thumbnail",
-    "m" => "Small",
-    "n" => "Small 320",
-    "__NONE__" => "Medium",
-    "z" => "Medium 640",
-    # "c" => "Medium 800",  # FlickrRaw doesn't know about this size
-    "b" => "Large",
-    "o" => "Original"
+    "s" => { label: "Square", max: 75 },
+    "q" => { label: "Large Square", max: 150 },
+    "t" => { label: "Thumbnail", max: 100 },
+    "m" => { label: "Small", max: 240 },
+    "n" => { label: "Small 320", max: 320 },
+    "__NONE__" => { label: "Medium", max: 500 },
+    "z" => { label: "Medium 640", max: 640 },
+    # "c" => { label: "Medium 800", max: 75 },  # FlickrRaw doesn't know about this size
+    "b" => { label: "Large", max: 1024 },
+    "o" => { label: "Original", max: nil }
   }
 
   def self.sizes
@@ -173,13 +221,22 @@ class FlickrSizes
   end
 
   def self.pickSize(sizes, desiredSize)
-    desiredSizeLabel = @@sizes[desiredSize]
+    desiredSizeLabel = @@sizes[desiredSize]['label']
     sizes.select{ |item| item["label"] == desiredSizeLabel }[0]
   end
 
+  def self.calculateDimensions(desiredSize, width, height)
+    size = @@sizes.select{ |item| item["label"] == desiredSize }[0]
+    maxDim = [width, height].max
+    factor = 1
+    unless size == nil or size['max'].nil?
+      factor = size['max'] / [width, height].max
+    end
+    return [width, height].map { |dim| (dim * factor).to_i }
+  end
 end
 
-class FlickrImage < Liquid::Tag
+class FlickrImageTag < Liquid::Tag
   include Memoize
 
   def initialize(tag_name, markup, tokens)
@@ -195,7 +252,7 @@ class FlickrImage < Liquid::Tag
       raise "did not recognize photo size for s: #{@size}";
     end
     
-    memoize(:getHtml, FlickrCache.cacheFile("image"))
+    memoize(:getHtml, FlickrCache.cacheFile("photo"))
   end
 
   def render(context)
@@ -210,21 +267,29 @@ class FlickrImage < Liquid::Tag
     if @desc.nil? or @desc.empty?
       @desc = info['description']
     end
-
-    FlickrPhoto.new(@id, @src, {
-      "page_url" => page_url, 
-      "title" => title, 
-      "width" => @width, 
-      "height" => @height, 
-      "class" => @klass, 
-      "desc" => @desc,
-      "size" => @size
-    }).toHtml
+    
+    html = "HTML should go here"
+    if info['video']
+      secret = info['video']['secret']
+      width = info['video']['width']
+      height = info['video']['height']
+      html = FlickrVideoHtml.new(@id, secret, @size, width, height).toHtml
+    else 
+      html = FlickrPhotoHtml.new(@id, @src, {
+        "page_url" => page_url, 
+        "title" => title, 
+        "class" => @klass, 
+        "desc" => @desc,
+        "size" => @size
+      }).toHtml
+    end
+  
+    html
   end
 
 end
 
-class FlickrSet < Liquid::Tag
+class FlickrSetTag < Liquid::Tag
   include Memoize
 
   def initialize(tag_name, markup, tokens)
@@ -292,5 +357,5 @@ class FlickrSet < Liquid::Tag
 
 end
 
-Liquid::Template.register_tag("flickr_image", FlickrImage)
-Liquid::Template.register_tag("flickr_set", FlickrSet)
+Liquid::Template.register_tag("flickr_image", FlickrImageTag)
+Liquid::Template.register_tag("flickr_set", FlickrSetTag)
