@@ -221,11 +221,13 @@ class FlickrSizes
   end
 
   def self.pickSize(sizes, desiredSize)
-    desiredSizeLabel = @@sizes[desiredSize]['label']
+    desiredSizeLabel = @@sizes[desiredSize][:label]
     sizes.select{ |item| item["label"] == desiredSizeLabel }[0]
   end
 
   def self.calculateDimensions(desiredSize, width, height)
+    width = width.to_i
+    height = height.to_i
     size = @@sizes[desiredSize]
     factor = 1
     unless size == nil or size[:max].nil?
