@@ -5,4 +5,4 @@ date: 1993-06-01
 comments: true
 categories: photo travel
 ---
-{% flickr_set 313702 t %}
+{% flickr_set 313702 %}
