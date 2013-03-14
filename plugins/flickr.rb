@@ -226,11 +226,10 @@ class FlickrSizes
   end
 
   def self.calculateDimensions(desiredSize, width, height)
-    size = @@sizes.select{ |item| item["label"] == desiredSize }[0]
-    maxDim = [width, height].max
+    size = @@sizes[desiredSize]
     factor = 1
-    unless size == nil or size['max'].nil?
-      factor = size['max'] / [width, height].max
+    unless size == nil or size[:max].nil?
+      factor = size[:max].to_f / [width, height].max
     end
     return [width, height].map { |dim| (dim * factor).to_i }
   end
