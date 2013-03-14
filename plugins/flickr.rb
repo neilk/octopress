@@ -17,6 +17,36 @@ class FlickrCache
   end
 end
 
+class FlickrApiCached
+  def initialize 
+    FlickrRawAuth.getCredentials()
+    @photos = FlickrApiCachedPrefix.new(:photos)
+    @photosets = FlickrApiCachedPrefix.new(:photosets)
+  end
+
+  def photos
+    return @photos
+  end
+
+  def photosets
+    return @photosets
+  end
+end
+
+class FlickrApiCachedPrefix
+  include Memoize
+
+  def initialize(sym)
+    @prefix = flickr.send(sym)
+    memoize(:method_missing, FlickrCache.cacheFile("api_#{sym}"))
+  end
+
+  def method_missing(sym, *args, &block)
+    @prefix.send sym, *args, &block
+  end
+
+end
+
 class FlickrRawAuth
 
   def self.getSecret(key)
@@ -70,7 +100,7 @@ class FlickrPhotoHtml
     end
 
     # get the dimensions
-    @sizes = flickr.photos.getSizes(photo_id: @id)
+    @sizes = flickrCached.photos.getSizes(photo_id: @id)
     @src, @width, @height = FlickrSizes.getSourceAndDimensionsForSize(@sizes, @size)
   end
 
@@ -303,7 +333,7 @@ class FlickrImageTag < Liquid::Tag
 
   def getHtml(id, size, klass, desc)
     # @src = FlickRaw.send('url_' + @size)
-    info = flickr.photos.getInfo(photo_id: id)
+    info = flickrCached.photos.getInfo(photo_id: id)
     page_url = FlickRaw.url_photopage(info)
     title = info['title']
     if @desc.nil? or @desc.empty?
@@ -349,7 +379,7 @@ class FlickrSetTag < Liquid::Tag
 
   def getHtml(id, size, showSetDesc)
     FlickrRawAuth.getCredentials()
-    info = flickr.photosets.getInfo(photoset_id: id)
+    info = flickrCached.photosets.getInfo(photoset_id: id)
     
     outputHtml = []
 
@@ -365,7 +395,7 @@ class FlickrSetTag < Liquid::Tag
     # pathalias will give us pretty urls to the photo page
     # note, you have to request 'path_alias' but the returned prop is "pathalias"
     apiExtras = ['url_' + size, 'url_o', 'path_alias', 'media'].join(',');
-    response = flickr.photosets.getPhotos(photoset_id: id, extras: apiExtras)
+    response = flickrCached.photosets.getPhotos(photoset_id: id, extras: apiExtras)
     response['photo'].each do |photo|
       src = photo["url_" + size]
       params = {
@@ -379,7 +409,7 @@ class FlickrSetTag < Liquid::Tag
         "page_url" => FlickRaw.url_photopage(photo),
         "gallery_id" => "flickr-set-" + id
       }
-      photoInfoResponse = flickr.photos.getInfo(photo_id: photo["id"])
+      photoInfoResponse = flickrCached.photos.getInfo(photo_id: photo["id"])
       params["desc"] = photoInfoResponse["description"] 
       html = "<!-- thumbail here -->"
       if photo['media'] == 'video'
@@ -399,5 +429,6 @@ class FlickrSetTag < Liquid::Tag
 
 end
 
+def flickrCached; $flickrCached ||= FlickrApiCached.new end
 Liquid::Template.register_tag("flickr_image", FlickrImageTag)
 Liquid::Template.register_tag("flickr_set", FlickrSetTag)
