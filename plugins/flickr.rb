@@ -70,9 +70,18 @@ class FlickrPhotoHtml
     end
 
     # get the dimensions
-    sizes = flickr.photos.getSizes(photo_id: @id)
-    @src, @width, @height = FlickrSizes.getSourceAndDimensionsForSize(sizes, @size)
-    @zoomSrc, @zoomWidth, @zoomHeight = FlickrSizes.getSourceAndDimensionsForSize(sizes, @@zoom_size)
+    @sizes = flickr.photos.getSizes(photo_id: @id)
+    @src, @width, @height = FlickrSizes.getSourceAndDimensionsForSize(@sizes, @size)
+  end
+
+  def getAnchorAttrs(dataTitleId)
+    zoomUrl, zoomWidth, zoomHeight = FlickrSizes.getSourceAndDimensionsForSize(@sizes, @@zoom_size)
+    return {
+      'href' => zoomUrl,
+      'class' => 'fancybox',
+      'data-title-id' => dataTitleId,
+      'data-media' => 'photo'
+    }
   end
 
   def toHtml
@@ -103,11 +112,7 @@ class FlickrPhotoHtml
   
     dataTitleId = 'flickr-photo-' + @id 
 
-    anchorAttrs = {
-      'href' => @zoomSrc,
-      'class' => 'fancybox',
-      'data-title-id' => dataTitleId
-    }
+    anchorAttrs = self.getAnchorAttrs(dataTitleId) 
     if @gallery_id
       anchorAttrs['rel'] = @gallery_id;
     end
@@ -133,6 +138,42 @@ class FlickrPhotoHtml
     }
    
     xmlBuffer
+  end
+end
+
+
+class FlickrVideoPreviewHtml < FlickrPhotoHtml
+  @@zoom_size = 'z'
+
+  def initialize(id, src, params)
+    super(id, src, params)
+    @secret = params['secret']
+    @width = params['origWidth']
+    @height = params['origHeight']
+    @contentId = 'flickr-video-content-' + @id
+  end
+
+  def getAnchorAttrs(dataTitleId)
+    return {
+      'href' => @page_url,
+      'class' => 'fancybox',
+      'data-title-id' => dataTitleId,
+      'data-media' => 'video',
+      'data-content-id' => '#' + @contentId
+    }
+  end
+
+  def getZoomLink
+    return @page_url
+  end
+
+  def toHtml
+    html = ""
+    html << super 
+    html << "<div style='display:none'><div id='#{@contentId}'>"
+    html << FlickrVideoHtml.new(@id, @secret, @@zoom_size, @width, @height).toHtml
+    html << "</div></div>"          
+    html
   end
 end
 
@@ -270,22 +311,14 @@ class FlickrImageTag < Liquid::Tag
     end
     
     html = "HTML should go here"
-    if info['video']
-      secret = info['video']['secret']
-      width = info['video']['width']
-      height = info['video']['height']
-      html = FlickrVideoHtml.new(@id, secret, @size, width, height).toHtml
-    else 
-      html = FlickrPhotoHtml.new(@id, @src, {
-        "page_url" => page_url, 
-        "title" => title, 
-        "class" => @klass, 
-        "desc" => @desc,
-        "size" => @size
-      }).toHtml
-    end
-  
-    html
+    params = {
+      "page_url" => page_url, 
+      "title" => title, 
+      "class" => @klass, 
+      "desc" => @desc,
+      "size" => @size
+    }
+    FlickrPhotoHtml.new(@id, @src, params).toHtml
   end
 
 end
@@ -331,7 +364,7 @@ class FlickrSetTag < Liquid::Tag
     setPhotosHtml = [];
     # pathalias will give us pretty urls to the photo page
     # note, you have to request 'path_alias' but the returned prop is "pathalias"
-    apiExtras = ['url_' + size, 'path_alias'].join(',');
+    apiExtras = ['url_' + size, 'url_o', 'path_alias', 'media'].join(',');
     response = flickr.photosets.getPhotos(photoset_id: id, extras: apiExtras)
     response['photo'].each do |photo|
       src = photo["url_" + size]
@@ -339,6 +372,8 @@ class FlickrSetTag < Liquid::Tag
         "size" => size,
         "width" => photo["width_" + size],
         "height" => photo["height_" + size],
+        "origWidth" => photo["width_o"],
+        "origHeight" => photo["height_o"],
         "title" => photo["title"],
         # this doesn't call the api, it constructs the URL from info retrieved
         "page_url" => FlickRaw.url_photopage(photo),
@@ -346,7 +381,13 @@ class FlickrSetTag < Liquid::Tag
       }
       photoInfoResponse = flickr.photos.getInfo(photo_id: photo["id"])
       params["desc"] = photoInfoResponse["description"] 
-      setPhotosHtml.push(FlickrPhotoHtml.new(photo["id"], src, params).toHtml)
+      html = "<!-- thumbail here -->"
+      if photo['media'] == 'video'
+        html = FlickrVideoPreviewHtml.new(photo["id"], src, params).toHtml
+      else
+        html = FlickrPhotoHtml.new(photo["id"], src, params).toHtml
+      end
+      setPhotosHtml.push(html)
     end
 
     setHtml = '<section class="flickr-set">' + setPhotosHtml.join + '</section>'

@@ -26,17 +26,23 @@
 $(document).ready(
   function() {
     (function($) {
+      $(".fancybox[data-content-id]").each(function() {
+        this.href = $(this).data('content-id');
+      });
       $(".fancybox").fancybox({
         beforeLoad: function() {
-          var el, id = $(this.element).data('title-id');
+          var el, 
+              id = $(this.element).data('title-id');
 
-          console.log('title-id', id)
           if (id) {
             el = $('#' + id);
 
             if (el.length) {
               this.title = el.html();
             }
+          }
+          if ($(this).data('content')) {
+            this.content = $(this).data('content');
           }
         },
         helpers: {
