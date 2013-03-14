@@ -148,8 +148,8 @@ class FlickrVideoPreviewHtml < FlickrPhotoHtml
   def initialize(id, src, params)
     super(id, src, params)
     @secret = params['secret']
-    @width = params['origWidth']
-    @height = params['origHeight']
+    @origWidth = params['origWidth']
+    @origHeight = params['origHeight']
     @contentId = 'flickr-video-content-' + @id
   end
 
@@ -171,7 +171,7 @@ class FlickrVideoPreviewHtml < FlickrPhotoHtml
     html = ""
     html << super 
     html << "<div style='display:none'><div id='#{@contentId}'>"
-    html << FlickrVideoHtml.new(@id, @secret, @@zoom_size, @width, @height).toHtml
+    html << FlickrVideoHtml.new(@id, @secret, @@zoom_size, @origWidth, @origHeight).toHtml
     html << "</div></div>"          
     html
   end
