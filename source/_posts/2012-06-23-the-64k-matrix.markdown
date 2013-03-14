@@ -6,3 +6,23 @@ comments: true
 categories: 
 ---
 {% flickr_image 7429579820 z %}
+
+At the Vancouver Mini Maker Faire, this old Apple //e was showing
+a simple demo:
+
+    10 PRINT "Maker Faire ": GOTO 10
+
+I decided a green-screen Matrix effect would be way cooler, so I
+busted out some quarter-century old skillz to whip up this demo.
+
+We downloaded an AppleSoft Basic PDF manual onto our phones, but
+it turned out not be necessary. I remembered about half of what was
+needed and another guy supplied the other half. Most of AppleSoft
+Basic is burned into my neurons -- I started programming when I was
+11.
+
+I put the [source code](http://github.com/neilk/apple-ii-matrix)
+up on Github. I find it hilarious that I'm putting an AppleSoft
+BASIC program on Github.
+
+
