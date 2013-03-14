@@ -344,7 +344,7 @@ class FlickrSetTag < Liquid::Tag
       }
       photoInfoResponse = flickr.photos.getInfo(photo_id: photo["id"])
       params["desc"] = photoInfoResponse["description"] 
-      setPhotosHtml.push(FlickrPhoto.new(photo["id"], src, params).toHtml)
+      setPhotosHtml.push(FlickrPhotoHtml.new(photo["id"], src, params).toHtml)
     end
 
     setHtml = '<section class="flickr-set">' + setPhotosHtml.join + '</section>'
