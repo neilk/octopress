@@ -341,14 +341,20 @@ class FlickrImageTag < Liquid::Tag
     end
     
     html = "HTML should go here"
-    params = {
-      "page_url" => page_url, 
-      "title" => title, 
-      "class" => @klass, 
-      "desc" => @desc,
-      "size" => @size
-    }
-    FlickrPhotoHtml.new(@id, @src, params).toHtml
+    if info['video']
+      secret = info['video']['secret']
+      width = info['video']['width']
+      height = info['video']['height']
+      html = FlickrVideoHtml.new(@id, secret, @size, width, height).toHtml
+    else 
+      html = FlickrPhotoHtml.new(@id, @src, {
+        "page_url" => page_url, 
+        "title" => title, 
+        "class" => @klass, 
+        "desc" => @desc,
+        "size" => @size
+      }).toHtml
+    end
   end
 
 end
