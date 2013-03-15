@@ -1,7 +1,7 @@
 require "builder"
 require "cgi"
 require "flickraw"
-require "memoize"
+require "persistent_memoize"
 
 # CAUTION: This entire plugin is an XSS vector, as we accept HTML from the Flickr API and
 # republish it without any transformation or sanitization on our site. If someone can control
@@ -34,7 +34,7 @@ class FlickrApiCached
 end
 
 class FlickrApiCachedPrefix
-  include Memoize
+  include PersistentMemoize
 
   def initialize(sym)
     @prefix = flickr.send(sym)
@@ -309,7 +309,7 @@ class FlickrSizes
 end
 
 class FlickrImageTag < Liquid::Tag
-  include Memoize
+  include PersistentMemoize
 
   def initialize(tag_name, markup, tokens)
     FlickrRawAuth.getCredentials()
@@ -360,7 +360,7 @@ class FlickrImageTag < Liquid::Tag
 end
 
 class FlickrSetTag < Liquid::Tag
-  include Memoize
+  include PersistentMemoize
 
   def initialize(tag_name, markup, tokens)
     super
