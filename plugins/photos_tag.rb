@@ -114,7 +114,7 @@ module Jekyll
 
     def render(context)
       # Convert the entire content array into one large string
-      lines = super.map(&:strip).join("\n")
+      lines = super.split("\n").map(&:strip).join("\n")
       # Get a unique identifier based on content
       md5 = Digest::MD5.hexdigest(lines)
       # split the text by newlines
