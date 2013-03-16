@@ -6,4 +6,4 @@ comments: true
 categories: photo
 ---
 
-{% flickr_image 4506255 %}
+{% flickr_image 4506255 n center %}
