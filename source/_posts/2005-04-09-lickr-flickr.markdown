@@ -58,11 +58,11 @@ Dear designers: if you could read my in-box, you'd see how overjoyed people are 
 
 The further I went, the more I asked myself, how far can the users push a website? How much can it be made to be a thing of almost mutual ownership? Here's a new feature I added in version 0.22.
 
-{% flickr_image 10744176 z %}
+{% flickr_image 10744176 z center %}
 
 The thumbnail is a link to that photo's page. Other URLs in notes are also [turned into hyperlinks](http://flickr.com/photos/brevity/10826112/).
 
-{% flickr_image 10826112 %}
+{% flickr_image 10826112 m center %}
 
 I hope it will inspire some creative uses. Given all that we know about the web, any sort of linking ought to be a win... and this has a lot of visual appeal.
 
