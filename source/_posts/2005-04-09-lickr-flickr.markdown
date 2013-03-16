@@ -8,15 +8,13 @@ categories: flickr javascript
 
 [Flickr](http://flickr.com/) is a popular photo hosting service that uses embedded [Flash](http://www.macromedia.com/software/flash) files as part of their interface. On every page, there will be a little delay while a new Flash file loads.
 
-**Lickr** removes the need for Flash. It runs within the web browser Firefox, stripping the Flash before the user can even see it, and replacing it with an equivalent interface in pure HTML and Javascript.
+_Lickr_ removes the need for Flash. It runs within the web browser Firefox, stripping the Flash before the user can even see it, and replacing it with an equivalent interface in pure HTML and Javascript.
 
-{% gallery %}
-/images/flickr-screenshot.jpg[/images/flickr-screenshot-tn.jpg]: Flickr screenshot, April 9, 2005 
-/images/lickr-screenshot.jpg[/images/lickr-screenshot-tn.jpg]: Flickr, modified by Lickr 0.2, April 9, 2005 
-{% endgallery %}
+{% flickr_set 72157633003368091 m nodesc %}
 
+Lickr combines [Flickr](http://flickr.com/), [Greasemonkey](http://greasemonkey.mozdev.org/), and [Ajax](http://www.adaptivepath.com/publications/essays/archives/000385.php), and is worth triple points in buzzword bingo.
 
-**Lickr** combines [Flickr](http://flickr.com/), [Greasemonkey](http://greasemonkey.mozdev.org/), and [Ajax](http://www.adaptivepath.com/publications/essays/archives/000385.php), and is worth triple points in buzzword bingo.
+<!-- more -->
 
 ## How to install
 
