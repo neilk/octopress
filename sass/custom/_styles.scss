@@ -1,15 +1,19 @@
 // This File is imported last, and will override other styles in the cascade
 // Add styles here to make changes without digging in too much
 
-.flickr-set {
+.flickr-set, .gallery {
   text-align: center;
 }
 
-.flickr-set figure {
+.flickr-set figure, .gallery li {
   display: inline-block;
   margin-right: 2em;
   margin-bottom: 2em;
   vertical-align: middle;
+}
+
+.gallery li {
+  list-style-type: none;
 }
 
 .flickr-thumbnail figcaption {
