@@ -21,7 +21,8 @@
   background: url('/images/flickr-icon.png') center left no-repeat;
 }
 
-/* TODO integrate this with fancybox css */
+/* customization for fancybox */
+/* fonts  and layout */
 .fancybox-title, .fancybox-title h5 {
   font-family: $sans;
   text-align: center;
@@ -40,7 +41,7 @@
 
 .fancybox-nav span {
   visibility: visible;
-  opacity: 0.5;
+  opacity: 0.20;
 }
 
 .fancybox-nav:hover span {
@@ -48,11 +49,11 @@
 }
 
 .fancybox-next {
-  right: -60px;
+  right: -100px;
 }
 
 .fancybox-prev {
-  left: -60px;
+  left: -100px;
 }
 
 
