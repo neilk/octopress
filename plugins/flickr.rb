@@ -342,7 +342,7 @@ class FlickrImageTag < Liquid::Tag
     
     html = "HTML should go here"
     if info['video']
-      secret = info['video']['secret']
+      secret = info['secret']
       width = info['video']['width']
       height = info['video']['height']
       html = FlickrVideoHtml.new(@id, secret, @size, width, height).toHtml
