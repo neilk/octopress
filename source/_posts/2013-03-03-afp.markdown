@@ -1,0 +1,9 @@
+---
+layout: post
+title: "AFP!"
+date: 2013-03-03 09:00
+comments: true
+external-url: https://twitter.com/amandapalmer/status/308253071803305985
+categories: tweet celebrity art
+---
+{% tweet https://twitter.com/amandapalmer/status/308253071803305985 %}
