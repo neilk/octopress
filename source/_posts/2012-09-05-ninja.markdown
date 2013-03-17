@@ -1,0 +1,11 @@
+---
+layout: post
+title: "ninja"
+date: 2012-09-05 15:21
+comments: true
+categories: tweet, snark
+external-url: https://twitter.com/flipzagging/status/243238766536433664 
+---
+
+<blockquote class="twitter-tweet"><p>When a recruiter asks for a ninja, arrange an interview and don't go. When they ask where you were, say "Exactly!"</p>&mdash; Neil Kandalgaonkar (@flipzagging) <a href="https://twitter.com/flipzagging/status/243238766536433664">September 5, 2012</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
