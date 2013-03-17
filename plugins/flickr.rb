@@ -70,9 +70,8 @@ end
 class FlickrPhotoHtml
   @@zoom_size = 'z'
 
-  def initialize(id, src, params)
+  def initialize(id, params)
     @id = id
-    @src = src
     @size = params['size'] || 's'
 
     if params['title'].nil? or params['title'].empty?
@@ -117,9 +116,13 @@ class FlickrPhotoHtml
   def toHtml
 
     imgAttrs = {src: @src, title: @title}
+
+    figureClass = ['flickr-thumbnail']
     unless @klass.nil? or @klass.empty?
-      imgAttrs[:class] = @klass
+      figureClass.push(@klass)
     end
+    figureAttrs = { 'class' => figureClass.join(" ") }
+
     cssAttrs = {};
     # Including width and height helps with a certain webkit rendering bug when laying out
     # lots of inline-block items. But explicit width and height causes large images to scale improperly at
@@ -150,7 +153,7 @@ class FlickrPhotoHtml
       'id' => dataTitleId
     }
 
-    x.figure( {'class' => 'flickr-thumbnail'} ) { |x| 
+    x.figure(figureAttrs) { |x| 
       x.a(anchorAttrs) { |x|
         x.img(imgAttrs)
       }
@@ -175,12 +178,13 @@ end
 class FlickrVideoPreviewHtml < FlickrPhotoHtml
   @@zoom_size = 'z'
 
-  def initialize(id, src, params)
-    super(id, src, params)
+  def initialize(id, params)
+    super(id, params)
     @secret = params['secret']
     @origWidth = params['origWidth']
     @origHeight = params['origHeight']
     @contentId = 'flickr-video-content-' + @id
+    @klass = 'video-preview'
   end
 
   def getAnchorAttrs(dataTitleId)
@@ -221,6 +225,10 @@ class FlickrVideoHtml
     @size = size
     @origWidth = origWidth
     @origHeight = origHeight
+
+    @sizes = flickrCached.photos.getSizes(photo_id: @id)
+    @src, dummy1, dummy2 = FlickrSizes.getSourceAndDimensionsForSize(@sizes, 'site_mp4')
+    @poster, @width, @height = FlickrSizes.getSourceAndDimensionsForSize(@sizes, @size)
   end
 
   def toHtml
@@ -238,22 +246,27 @@ class FlickrVideoHtml
     xmlBuffer = ""
     x = Builder::XmlMarkup.new( :target => xmlBuffer )
 
-    x.object( { 'type' => @@type, 
-                'width' => width, 
-                'height' => height,
-                'data' => @@playerSwf,
-                'classid' => @@classid } ) { |x|
-      x.param( { 'name' => 'flashvars', 'value' => flashvars } )
-      x.param( { 'name' => 'movie', 'value' => @@playerSwf } )
-      x.param( { 'name' => 'bgcolor', 'value' => @@bgcolor } )
-      x.param( { 'name' => 'allowFullScreen', 'value' => @@allowfullscreen } )
-      x.embed( { 'type' => @@type, 
-                 'src' => @@playerSwf, 
-                 'bgcolor' => @@bgcolor,
-                 'allowfullscreen' => @@allowfullscreen,
-                 'flashvars' => flashvars,
-                 'width' => width,
-                 'height' => height } )
+    x.video( { 'src' => @src, 
+               'controls' => 'controls', 
+               'preload' => 'none', 
+               'poster' => @poster }) { |x| 
+      x.object( { 'type' => @@type, 
+                  'width' => width, 
+                  'height' => height,
+                  'data' => @@playerSwf,
+                  'classid' => @@classid } ) { |x|
+        x.param( { 'name' => 'flashvars', 'value' => flashvars } )
+        x.param( { 'name' => 'movie', 'value' => @@playerSwf } )
+        x.param( { 'name' => 'bgcolor', 'value' => @@bgcolor } )
+        x.param( { 'name' => 'allowFullScreen', 'value' => @@allowfullscreen } )
+        x.embed( { 'type' => @@type, 
+                   'src' => @@playerSwf, 
+                   'bgcolor' => @@bgcolor,
+                   'allowfullscreen' => @@allowfullscreen,
+                   'flashvars' => flashvars,
+                   'width' => width,
+                   'height' => height } )
+      }
     }
 
     xmlBuffer
@@ -272,7 +285,11 @@ class FlickrSizes
     "z" => { label: "Medium 640", max: 640 },
     # "c" => { label: "Medium 800", max: 75 },  # FlickrRaw doesn't know about this size
     "b" => { label: "Large", max: 1024 },
-    "o" => { label: "Original", max: nil }
+    "o" => { label: "Original", max: nil },
+    "video_player" => { label: "Video Player", max: 640 },
+    "site_mp4" => { label: "Site MP4", max: 640 },
+    "mobile_mp4" => { label: "Mobile MP4", max: 480 },
+    "original_video" => { label: "Original Video", max: nil }
   }
 
   def self.sizes
@@ -332,29 +349,34 @@ class FlickrImageTag < Liquid::Tag
   end
 
   def getHtml(id, size, klass, desc)
-    # @src = FlickRaw.send('url_' + @size)
     info = flickrCached.photos.getInfo(photo_id: id)
-    page_url = FlickRaw.url_photopage(info)
-    title = info['title']
     if @desc.nil? or @desc.empty?
       @desc = info['description']
     end
     
     html = "HTML should go here"
-    if info['video']
-      secret = info['secret']
-      width = info['video']['width']
-      height = info['video']['height']
-      html = FlickrVideoHtml.new(@id, secret, @size, width, height).toHtml
-    else 
-      html = FlickrPhotoHtml.new(@id, @src, {
-        "page_url" => page_url, 
-        "title" => title, 
+    params = {
+        "size" => @size,
+        "secret" => info['secret'],
+        "page_url" => FlickRaw.url_photopage(info),
+        "title" => info['title'], 
         "class" => @klass, 
         "desc" => @desc,
-        "size" => @size
-      }).toHtml
+      }
+    if info['video']
+      # params['origWidth'] = info['video']['width']
+      # params['origHeight'] = info['video']['height']
+      # html = FlickrVideoHtml.new(@id, params).toHtml
+      html = FlickrVideoHtml.new(@id, 
+                                 info['secret'], 
+                                 @size, 
+                                 info['video']['width'],
+                                 info['video']['height'] ).toHtml
+    else 
+      html = FlickrPhotoHtml.new(@id, params).toHtml
     end
+
+    html
   end
 
 end
@@ -403,9 +425,9 @@ class FlickrSetTag < Liquid::Tag
     apiExtras = ['url_' + size, 'url_o', 'path_alias', 'media'].join(',');
     response = flickrCached.photosets.getPhotos(photoset_id: id, extras: apiExtras)
     response['photo'].each do |photo|
-      src = photo["url_" + size]
       params = {
         "size" => size,
+        "secret" => photo['secret'],
         "width" => photo["width_" + size],
         "height" => photo["height_" + size],
         "origWidth" => photo["width_o"],
@@ -419,9 +441,9 @@ class FlickrSetTag < Liquid::Tag
       params["desc"] = photoInfoResponse["description"] 
       html = "<!-- thumbail here -->"
       if photo['media'] == 'video'
-        html = FlickrVideoPreviewHtml.new(photo["id"], src, params).toHtml
+        html = FlickrVideoPreviewHtml.new(photo["id"], params).toHtml
       else
-        html = FlickrPhotoHtml.new(photo["id"], src, params).toHtml
+        html = FlickrPhotoHtml.new(photo["id"], params).toHtml
       end
       setPhotosHtml.push(html)
     end
