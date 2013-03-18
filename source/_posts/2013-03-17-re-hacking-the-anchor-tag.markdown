@@ -6,7 +6,7 @@ comments: true
 categories: security javascript
 ---
 
-{% flickr_image 4076036402 s right %}
+{% flickr_image 6975990896 m right %}
 
 A person going by "Bilaw.al Hameed" [sounded the alarm](http://bilaw.al/2013/03/17/hacking-the-a-tag-in-100-characters.html) over the possibility that the href of an anchor tag could be changed by
 clicking on it. He felt this opened up a security hole and the feature should be disabled.
@@ -14,6 +14,8 @@ clicking on it. He felt this opened up a security hole and the feature should be
 This is not a new trick. This is how Google's search results page works. 
 
 Inspect the results for a [typical search](https://www.google.com/?q=test#hl=en&safe=off&output=search&sclient=psy-ab&q=test&oq=test); you'll see that they look like this:
+
+<div style="clear: both;"></div>
 
     <a 
       href="http://en.wikipedia.org/wiki/Test_cricket"
