@@ -99,3 +99,24 @@ figure.video-preview:after {
   font-style: italic;
   text-align: center;
 }
+
+figure img, figure video, figure .flash-video {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  border: none;
+}
+
+/* otherwise, defaults to bottom, but leaves space for the 
+   descenders in the otherwise empty anchor */
+figure a img, figure a video, figure a .flash-video {
+  vertical-align: middle;
+}

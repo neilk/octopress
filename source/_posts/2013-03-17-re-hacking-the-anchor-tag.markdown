@@ -5,6 +5,9 @@ date: 2013-03-17 12:14
 comments: true
 categories: security javascript
 ---
+
+{% flickr_image 4076036402 m right credit %}
+
 A person going by "Bilaw.al Hameed" [sounded the alarm](http://bilaw.al/2013/03/17/hacking-the-a-tag-in-100-characters.html) over the possibility that the href of an anchor tag could be changed by
 clicking on it. He felt this opened up a security hole and the feature should be disabled.
 
