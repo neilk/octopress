@@ -113,31 +113,56 @@ class FlickrPhotoHtml
     }
   end
 
+  def cssAttrsToStyle(cssAttrs)
+    cssAttrs.map { |(k, v)|
+        k.to_s + ': ' + v.to_s + ';'
+      }.join " "
+  end
+
   def toHtml
 
     imgAttrs = {src: @src, title: @title}
+    imgCssAttrs = {}
 
     figureClass = ['flickr-thumbnail']
     unless @klass.nil? or @klass.empty?
       figureClass.push(@klass)
     end
     figureAttrs = { 'class' => figureClass.join(" ") }
+    figureCssAttrs = {}
 
-    cssAttrs = {};
-    # Including width and height helps with a certain webkit rendering bug when laying out
-    # lots of inline-block items. But explicit width and height causes large images to scale improperly at
-    # small device widths.
-    # So, we include width and height only for smallish images, less than iPhone 3 width minus some padding.
-    # Using 450 because it's 480 (iPhone 3 width) with some padding
+    # The next bit is tricky - working around various browser bugs, and undesirable behavior.
+    # Desiderata
+    #   images and their captions should be surrounded by a nice visual offset, white border with  
+    #     drop shadow. This is a uniform border around the image if no caption, but surrounds caption if it
+    #     exists
+    #   large images should uniformly scale in width and height if viewport is narrow.
+    #   avoid an annoying webkit bug where many inline-blocks, without explicit height and width, sometimes
+    #    shrink to zero size - this happens with big sets
+    # 
+    # Solution : 
+    #   small images: include explicit width and height - avoids layout bug with sets
+    #       Also include explicit width for figures for smaller images 
+    #   large images: 
+    #        Do NOT include explicit width & height for largeish images, because due to other CSS that makes such 
+    #        images want to be 100% of the width, they scale the width only. If there is an explicit height then 
+    #        it is retained, thus we get a distorted image. Instead, use the inline-block trick here, because we don't care about 
+    #        laying out zillions of little images.
+    #
+    # We also add width to the figure element so it doesn't extend for the entire width, if small.
+    # And we make the figure an inline-block if it IS bigger than 450, so it snaps to the size of the image 
     if (not (@width.nil?)) and @width.to_i < 450
-      cssAttrs['width'] = @width.to_s + 'px';
+      imgCssAttrs['width'] = figureCssAttrs['width'] = @width.to_s + 'px';
       unless @height.nil?
-        cssAttrs['height'] = @height.to_s + 'px';
+        imgCssAttrs['height'] = @height.to_s + 'px';
       end
-      imgAttrs["style"] = cssAttrs.map { |(k, v)|
-        k.to_s + ': ' + v.to_s + ';'
-      }.join " "
+    else 
+      figureCssAttrs['display'] = 'inline-block'
     end
+
+    imgAttrs["style"] = self.cssAttrsToStyle(imgCssAttrs)
+    figureAttrs["style"] = self.cssAttrsToStyle(figureCssAttrs)
+
 
     xmlBuffer = ""
     x = Builder::XmlMarkup.new( :target => xmlBuffer )
