@@ -118,6 +118,14 @@ task :new_post, :title do |t, args|
     post.puts "categories: "
     post.puts "---"
   end
+  if ENV['EDITOR']
+    for editor in [ ENV['EDITOR'], `/usr/bin/which #{ENV["EDITOR"]}`.chomp ]
+      if File.exists?(editor)
+        exec "#{editor} #{filename}"
+        break
+      end
+    end
+  end
 end
 
 # usage rake new_page[my-new-page] or rake new_page[my-new-page.html] or rake new_page (defaults to "new-page.markdown")
