@@ -25,9 +25,8 @@ this, yet.)
 
 * * * * *
 
-some pages that appear to be the original sources for\
- The Best Software Writing I
-------------------------------------------------------
+<p style="margin-bottom: 0px; padding-bottom: .25em">some pages that appear to be the original sources for</p>
+<h2 style="padding-top: 0px; margin-top: 0px;">The Best Software Writing I</h2>
 
 Joel Spolsky -
 [Introduction](http://joelonsoftware.com/articles/BestSoftwareWriting.html)
