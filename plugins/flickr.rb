@@ -275,48 +275,56 @@ end
 
 
 class FlickrSizes 
-  @@sizes = {
-    "s" => { label: "Square", max: 75 },
-    "q" => { label: "Large Square", max: 150 },
-    "t" => { label: "Thumbnail", max: 100 },
-    "m" => { label: "Small", max: 240 },
-    "n" => { label: "Small 320", max: 320 },
-    "__NONE__" => { label: "Medium", max: 500 },
-    "z" => { label: "Medium 640", max: 640 },
-    # "c" => { label: "Medium 800", max: 75 },  # FlickrRaw doesn't know about this size
-    "b" => { label: "Large", max: 1024 },
-    "o" => { label: "Original", max: nil },
-    "video_player" => { label: "Video Player", max: 640 },
-    "site_mp4" => { label: "Site MP4", max: 640 },
-    "mobile_mp4" => { label: "Mobile MP4", max: 480 },
-    "original_video" => { label: "Original Video", max: nil }
-  }
+  @@sizes = [    
+    {code: "original_video", label: "Original Video", max: nil },
+    {code: "mobile_mp4", label: "Mobile MP4", max: 480 },
+    {code: "site_mp4", label: "Site MP4", max: 640 },
+    {code: "video_player", label: "Video Player", max: 640 },
+    {code: "o", label: "Original", max: nil },
+    {code: "b", label: "Large", max: 1024 },
+    # {code: "c", label: "Medium 800", max: 75 },  # FlickrRaw doesn't know about this size
+    {code: "z", label: "Medium 640", max: 640 },
+    {code: "__NONE__", label: "Medium", max: 500 },
+    {code: "n", label: "Small 320", max: 320 },
+    {code: "m", label: "Small", max: 240 },
+    {code: "t", label: "Thumbnail", max: 100 },
+    {code: "q", label: "Large Square", max: 150 },
+    {code: "s", label: "Square", max: 75 }
+  ]
 
   def self.sizes
     @@sizes
   end
 
   def self.getSourceAndDimensionsForSize(sizes, size)
-    # n.b. within this class method, 'self' is the class
-    sizeInfo = self.pickSize(sizes, size)
-    if (sizeInfo.nil?) 
-      sizeInfo = pickSize(sizes, 'o')
-      if (sizeInfo.nil?)
-        raise "could not get a size"
+    # try getting the size we wanted, then try getting ANY size, going from largest to smallest
+    sizeCodesToTry = [ size ] + @@sizes.map{ |s| s[:code] }
+    sizeInfo = nil
+    for code in sizeCodesToTry
+      sizeInfo = pickSize(sizes, code)
+      if sizeInfo
+        break
       end
+    end
+    if (sizeInfo.nil?)
+      raise "could not get a size"
     end
     [ sizeInfo["source"], sizeInfo["width"], sizeInfo["height"] ]
   end
 
-  def self.pickSize(sizes, desiredSize)
-    desiredSizeLabel = @@sizes[desiredSize][:label]
+  def self.getSizeByCode(code) 
+    @@sizes.select{ |s| s[:code] == code }[0]
+  end
+
+  def self.pickSize(sizes, desiredSizeCode)
+    desiredSizeLabel = self.getSizeByCode(desiredSizeCode)[:label]
     sizes.select{ |item| item["label"] == desiredSizeLabel }[0]
   end
 
-  def self.calculateDimensions(desiredSize, width, height)
+  def self.calculateDimensions(desiredSizeCode, width, height)
     width = width.to_i
     height = height.to_i
-    size = @@sizes[desiredSize]
+    size = self.getSizeByCode(desiredSizeCode)
     factor = 1
     unless size == nil or size[:max].nil?
       factor = size[:max].to_f / [width, height].max
@@ -337,8 +345,8 @@ class FlickrImageTag < Liquid::Tag
     @klass = args[2]
     @desc = args[3]
 
-    unless FlickrSizes.sizes.keys.include? @size
-      raise "did not recognize photo size for s: #{@size}";
+    unless FlickrSizes.getSizeByCode(@size)
+      raise "did not recognize photo size: #{@size}";
     end
     
     memoize(:getHtml, FlickrCache.cacheFile("photo"))
@@ -394,7 +402,7 @@ class FlickrSetTag < Liquid::Tag
       @showSetDesc = false 
     end
 
-    unless FlickrSizes.sizes.keys.include? @size
+    unless FlickrSizes.getSizeByCode(@size)
       raise "did not recognize photo size for sets: #{@size}";
     end
 
