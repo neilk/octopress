@@ -75,7 +75,7 @@ class FlickrPhotoHtml
     @size = params['size'] || 's'
 
     if params['title'].nil? or params['title'].empty?
-      @title = "Flickr photo"
+      @title = "Untitled photo"
     else 
       @title = params['title']
     end
@@ -96,6 +96,10 @@ class FlickrPhotoHtml
 
     unless params['page_url'].nil? or params['page_url'].empty?
       @page_url = params['page_url']
+    end
+
+    unless params['username'].nil? or params['username'].empty?
+      @username = params['username']
     end
 
     # get the dimensions
@@ -120,7 +124,6 @@ class FlickrPhotoHtml
   end
 
   def toHtml
-
     imgAttrs = {src: @src, title: @title}
     imgCssAttrs = {}
 
@@ -183,14 +186,13 @@ class FlickrPhotoHtml
         x.img(imgAttrs)
       }
       x.figcaption(captionAttrs) { |x|
-        # append title and desc, unescaped, because they are already escaped, and can contain HTML
-        if @page_url.nil?
-          x.h5{ |x| x << @title}  
-        else
-          x.h5{ |x|
-            x.a('class' => 'flickr-link', 'href' => @page_url) { |x| x << @title }
-          }
-        end
+        x.h5{ |x|
+          x.a('class' => 'flickr-link', 'href' => @page_url) { |x| x << @title }
+          if @username
+            x << " by "
+            x << @username
+          end
+        }
         x << @desc
       }
     }
@@ -391,6 +393,7 @@ class FlickrImageTag < Liquid::Tag
     params = {
         "size" => @size,
         "secret" => info['secret'],
+        "username" => info['owner']['username'],
         "page_url" => FlickRaw.url_photopage(info),
         "title" => info['title'], 
         "class" => @klass, 
@@ -472,6 +475,7 @@ class FlickrSetTag < Liquid::Tag
       }
       photoInfoResponse = flickrCached.photos.getInfo(photo_id: photo["id"])
       params["desc"] = photoInfoResponse["description"] 
+      params["username"] = photoInfoResponse["owner"]["username"] 
       html = "<!-- thumbail here -->"
       if photo['media'] == 'video'
         html = FlickrVideoPreviewHtml.new(photo["id"], params).toHtml
