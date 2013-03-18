@@ -1,0 +1,64 @@
+#!/usr/bin/perl -w
+
+use strict;
+
+use Net::Google; # Thanks, Aaron.
+
+use constant LOCAL_GOOGLE_KEY => 'your api key here';
+# get your API key at http://www.google.com/apis/ 
+
+my $google = Net::Google->new(key=>LOCAL_GOOGLE_KEY);
+
+$| = 1;
+
+
+print "<ul>\n";
+
+while (<DATA>) {
+    chomp;
+    warn "looking for $_ ...\n";
+    
+    my $search = $google->search();
+    $search->query(split / / => $_);
+    $search->lr(qw(en));
+    $search->max_results(1);
+
+    foreach my $r (@{$search->response()}) {
+	# I'm feeling lucky.
+	my $url = $r->resultElements()->[0]->URL();
+    	print qq{<li><a href="$url">$_</a></li>\n}
+    }
+
+}
+
+print "</ul>\n";
+
+__DATA__
+Ken Arnold - Style Is Substance 
+Leon Bambrick - Award for the Silliest User Interface: Windows Search 
+Michael Bean - The Pitfalls of Outsourcing Programmers
+Rory Blyth - Excel as a Database
+Adam Bosworth - ICSOC04 Talk
+danah boyd - Autistic Social Software
+Raymond Chen - Why Not Just Block the Apps That Rely on Undocumented Behavior?
+Kevin Cheng and Tom Chi - Kicking the Llama
+Cory Doctorow - Save Canada's Internet from WIPO
+ea_spouse - EA: The Human Story
+Bruce Eckel - Strong Typing vs. Strong Testing
+Paul Ford - Processing Processing
+Paul Graham - Great Hackers
+John Gruber - The Location Field is the New Command Line
+Gregor Hohpe - Starbucks Does Not Use Two-Phase Commit
+Ron Jeffries - Passion
+Eric Johnson - C++ -- The Forgotten Trojan Horse
+Eric Lippert - How Many Microsoft Employees Does it Take to Change a Lightbulb?
+Michael "Rands" Lopp - What to do when you're screwed
+Larry Osterman - Larry's Rules of Software Engineering #2: Measuring Testers by Test Metrics Doesn't
+Mary Poppendieck - Team Compensation
+Rick Schaut - Mac Word 6.0
+Clay Shirky - A Group is its Own Worst Enemy
+Clay Shirky - Group as User: Flaming and the Design of Social Software
+Eric Sink - Closing the Gap
+Eric Sink - Hazards of Hiring
+Aaron Swartz - PowerPoint Remix
+why the lucky stiff - A Quick (and Hopefully Painless) Ride Through Ruby (with Cartoon Foxes)
