@@ -17,6 +17,7 @@ self.
 An online friend started [analysing blog posts](http://fawx.com/ljArchive/rid.php) like this, using bar graphs. I
 had the idea to try to represent this visually.
 
+<!-- more -->
 ### Results
 
 I wrote this in 2004, and part of my motivation was to make visible some

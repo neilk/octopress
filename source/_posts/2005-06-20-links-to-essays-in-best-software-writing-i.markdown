@@ -12,6 +12,7 @@ came from online sources, but when Spolsky released the chapter listing,
 I didn't see anywhere online where he posted links to the originals. So
 here they are.
 
+<!-- more -->
 **Caveat:** The print edition may have any number of improvements over
 the online versions. Nevertheless, as long as some version of the essays
 exist online, I don't see a reason not to link to them. Readers who

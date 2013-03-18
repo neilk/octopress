@@ -19,6 +19,7 @@ This means you can play a trick of your own: get Google to draw lines of
 your choosing. Here's a perl script that demonstrates how:
 [google-draw.pl](/projects/google-draw/google-draw-pl.txt).
 
+<!-- more -->
 ## How Google Maps' path-drawing works
 
 First Google calculates some path -- a series of (*x,y*) coordinates.
