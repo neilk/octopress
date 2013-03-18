@@ -1,0 +1,4 @@
+SetEnvIfNoCase Referer "^http://www.myspace.com/" myspace
+SetEnvIfNoCase Referer "^http://myspace.com/" myspace
+SetEnvIfNoCase Referer "^http://profile.myspace.com/" myspace
+Deny from env=myspace
