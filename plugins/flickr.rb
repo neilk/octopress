@@ -75,7 +75,7 @@ class FlickrPhotoHtml
     @size = params['size'] || 's'
 
     if params['title'].nil? or params['title'].empty?
-      @title = "Flickr photo at @src"
+      @title = "Flickr photo"
     else 
       @title = params['title']
     end
