@@ -14,18 +14,15 @@ just touches the current that eventually makes the Bay Area so frigid.
 **Things I would never do anywhere else:** program a robot to dance, hold a sword receiving blasts of purple lighting bolts 
 from a Gauss gun, worship at the Church of Robotron, get a preview of a cool interactive 
 toy [Star](http://starsimpson.com/) was working on, help assemble a tower built of pipes to validate one of [Miloh](https://twitter.com/miloh)'s theories
-about constructing large structures with struts of uniform length, attend a bicycle jousting event....
+about constructing large structures with struts of uniform length, play foosball on a table that automatically keeps score and lights up 
+when points are scored, attend a bicycle jousting event....
 
 <!-- more -->
 
-Incidentally, it is fun to terrorize small children with robots. Hacked on MC Hawkings software so it could be remotely controlled.
+Incidentally, it is fun to terrorize small children with robots. Hacked on [MC Hawking](https://www.noisebridge.net/wiki/Noise-Bot)'s 
+software with some other NoiseBridge folks so it could be remotely controlled.
 Was a bit surprised that it was all in Java (it's some standard package for doing robots, apparently). That made consuming a 
 line-oriented protcol super annoying, and my more unixy style of programming is a bit foreign to Java, but we eventually made it work.
-
-**Spontaneously taught:** Haskell, how unix process forking works (I am amazed sometimes at what younger hackers don't know. Almost got into an argument about the 
-existence of copy-on-write and file descriptors. I'm not making this stuff up, people)
-
-**Spontaneously learned:** lock picking, the chemistry of baking, how to turn kelp into a musical instrument, Bitcoin, blinding, LASERS 
 
 **Conversations I would never have anywhere else:** transgender hacker still adapting to her new life, Egyptian activist on 
 exactly how influential the internet was in the 2010-2011 revolution, how to set up your own GSM phone service
@@ -37,6 +34,10 @@ exactly how influential the internet was in the 2010-2011 revolution, how to set
 > -- _Isn't there some quick and dirty way to do this?_
 >
 > -- This IS the quick and dirty way.
+
+**Spontaneously taught:** Haskell, how unix process forking works
+
+**Spontaneously learned:** lock picking, the chemistry of baking, how to turn kelp into a musical instrument, Bitcoin, blinding, LASERS 
 
 It's the kind of conference where you overhear a woman talking about her sex toy experiments and how nobody else seems to do this, and not one but
 two bystanders inform her she should be talking to [qDot](https://twitter.com/qDot).
