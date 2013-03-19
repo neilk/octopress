@@ -394,19 +394,19 @@ class FlickrImageTag < Liquid::Tag
 
   def getHtml(id, size, klass, desc)
     info = flickrCached.photos.getInfo(photo_id: id)
-    if @desc.nil? or @desc.empty?
-      @desc = info['description']
+    if desc.nil? or desc.empty?
+      desc = info['description']
     end
     
     html = "HTML should go here"
     params = {
-        "size" => @size,
+        "size" => size,
         "secret" => info['secret'],
         "username" => info['owner']['username'],
         "page_url" => FlickRaw.url_photopage(info),
         "title" => info['title'], 
-        "class" => @klass, 
-        "desc" => @desc,
+        "class" => klass, 
+        "desc" => desc,
       }
     if info['video']
       # params['origWidth'] = info['video']['width']
