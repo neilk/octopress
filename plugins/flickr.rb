@@ -2,12 +2,14 @@ require "builder"
 require "cgi"
 require "flickraw"
 require "persistent_memoize"
+require "./plugins/tag_util"
 
 # CAUTION: This entire plugin is an XSS vector, as we accept HTML from the Flickr API and
 # republish it without any transformation or sanitization on our site. If someone can control
 # the HTML in titles or descriptions on Flickr they can inject arbitrary HTML into our site.
 # The risk is relatively low, since Flickr goes to great lengths to sanitize their inputs. But
 # an attacker could exploit some difference between the two sites (encoding, maybe) to do XSS.
+
 
 class FlickrCache
   def self.cacheFile(name)
@@ -363,10 +365,17 @@ end
 class FlickrImageTag < Liquid::Tag
   include PersistentMemoize
 
+  # options we want:
+  # preview size
+  # class=right/left/center
+  # caption
+  # credit (via config)  
+  # popup description
   def initialize(tag_name, markup, tokens)
     FlickrRawAuth.getCredentials()
     super
-    args = markup.split(" ")
+    
+    args = TagUtil.parseMarkup(markup)
     @id   = args[0]
     @size = args[1] || 'm'
     @klass = args[2]
@@ -422,7 +431,7 @@ class FlickrSetTag < Liquid::Tag
 
   def initialize(tag_name, markup, tokens)
     super
-    args = markup.split(" ")
+    args = TagUtil.parseMarkup(markup)
     @id = args[0]
     @size = args[1] || 'm'
     @showSetDesc = true
