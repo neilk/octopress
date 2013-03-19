@@ -7,7 +7,7 @@ categories: talk
 ---
 Through mutual friends I was invited to speak at [Jennifer Wolowic](https://twitter.com/Wolowic)'s 
 [Anthropology of Digital Media](http://wiki.ubc.ca/Course:Anth378) class last Tuesday. I'm not exactly sure where 
-I fit into the class &ndash; perhaps as a living example of the North American hacker. Let me play you the song of my people.... 
+I fit into the class &ndash; perhaps as a living example of the North American hacker. 
 
 <!-- more -->
   
