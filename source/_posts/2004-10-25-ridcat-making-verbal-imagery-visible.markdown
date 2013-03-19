@@ -81,9 +81,10 @@ philosophical case. [Text](/projects/ridcat/analyses/halfjack.txt) /
 
 ### Etcetera
 
+{% img left /projects/ridcat/anim-algorithm.gif animation of layout %}
 I wanted it to look like a cluster, with an emotional image of the
 appropriate area to match the size. I settled on a physics-based model.
-Here's an [animation](anim-algorithm.gif) of one of my debugging
+Here's an animation of one of my debugging
 sessions. In retrospect there are probably better ways to achieve the
 clustered arrangement, although it was interesting how easy physics
 became when the universe consisted of non-rotatable rectangles.
