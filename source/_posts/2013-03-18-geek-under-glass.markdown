@@ -13,7 +13,7 @@ I fit into the class &ndash; perhaps as a living example of the North American h
   
 {% img "right noborder" /images/forkthelaw-screenshot.png %}
 
-Ultimately I kind of skipped around between talking about the [SOPA strike](http://sopastrike.org) and 
+Ultimately I kind of skipped around between talking about the [SOPA strike](http://sopastrike.com) and 
 my insider view of [Wikipedia's protest](http://en.wikipedia.org/wiki/Wikipedia:SOPA_initiative), what it's like to 
 be a hacker, and open source collaboration. 
 
