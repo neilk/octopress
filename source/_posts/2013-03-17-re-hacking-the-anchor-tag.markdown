@@ -13,6 +13,7 @@ clicking on it. He felt this opened up a security hole and the feature should be
 
 This is not a new trick. This is how Google's search results page works. 
 
+<!-- more -->
 Inspect the results for a [typical search](https://www.google.com/?q=test#hl=en&safe=off&output=search&sclient=psy-ab&q=test&oq=test); you'll see that they look like this:
 
 <div style="clear: both;"></div>
