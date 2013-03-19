@@ -115,7 +115,7 @@ article + article {
   article header { background: none; padding-bottom: 0; }
   article h1 {
     font-size: 1.8em;
-    a { color: #555555; &:hover { text-decoration:none } }
+    a { color: #222222; &:hover { text-decoration:none } }
   }
   footer {
     @extend .sans;
