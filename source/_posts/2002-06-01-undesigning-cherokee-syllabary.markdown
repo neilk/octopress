@@ -40,13 +40,40 @@ show the 4 examples
 
 - feedback!!
 
-
-
-![sampler of traditional Cherokee syllabary design](/projects/cherokee/traditional-sample.png)
-
-![sampler of new Cherokee syllabary design](/projects/cherokee/new-sample.png)
-
 ![various versions of Cherokee: original writing by Sequoyah, traditional typeface, modern handwriting, and Uyanvhi](/projects/cherokee/process.png)
+
+<form id="sample-form">
+  <input type="radio" name="sample" value="traditional" id="traditional-sample" checked="checked">
+  <label for="traditional-sample">Traditional</label>
+  <input type="radio" name="sample" value="new" id="new-sample">
+  <label for="new-sample"> New</label>
+</form>
+<img id="sample" src="/projects/cherokee/traditional-sample.png">
+
+
+<form id="affinity-form">
+  <input type="radio" name="affinity" value="traditional" id="traditional-affinity" checked="checked">
+  <label for="traditional-affinity">Traditional</label>
+  <input type="radio" name="affinity" value="new" id="new-affinity">
+  <label for="new-affinity"> New</label>
+</form>
+<img id="affinity" style="padding: 1em;" src="/projects/cherokee/traditional-affinity.png">
+<script type="text/javascript">
+  function bindImgLoader(imgId, name) {
+    var $img = $('#' + imgId);
+    var optionName = name + '-' + imgId;
+    var src = '/projects/cherokee/' + optionName + '.png';
+    $('#' + optionName).click( function() {
+      $img.attr('src', src);
+    });
+  }
+  function makeImgToggle(imgId) {
+    bindImgLoader(imgId, 'traditional');
+    bindImgLoader(imgId, 'new');
+  }
+  makeImgToggle('affinity');
+  makeImgToggle('sample');
+</script>
 
 [![Traditional Cherokee syllabary organized by design affinity](/projects/cherokee/traditional-affinity-preview.png)](/projects/cherokee/traditional-affinity.png)
 
