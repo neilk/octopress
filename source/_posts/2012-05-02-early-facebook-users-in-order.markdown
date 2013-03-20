@@ -35,6 +35,14 @@ You'll get something like this:
 11 Soleio
 12 
 13 Chris Putnam
+...
 ```
 
-And so on, for as long as you want. Eduardo Saverin doesn't appear until #41, by the way.
+And so on, for as long as you want. 
+
+Some of those names are already recognizable as early Facebook employees who've gone on to other things.
+
+You're only getting public information, so it's mostly harmless, and could be of interest
+to researchers looking into the early history of the social network. 
+
+Fun fact: Eduardo Saverin doesn't appear until #41.
