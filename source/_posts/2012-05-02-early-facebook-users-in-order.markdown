@@ -7,11 +7,14 @@ categories: hack facebook
 ---
 Facebook's API allows you to look up a user by their account number (id), with a very simple URL scheme. 
 
-Usually Facebook IDs aren't well known so this is not a huge security issue. However, in the early days of Facebook, 
-the ID was a simple auto-incrementing number. Famously, [Mark Zuckerberg's ID is 4](http://graph.facebook.com/4) - 
-he made three test accounts which were later deleted, presumably.
+```
+https://graph.facebook.com/$id
+```
 
-This leads to a hack which fits in a [tweet](https://twitter.com/flipzagging/status/197730897494163456):
+Usually Facebook IDs aren't well known so this is not a huge security issue. However, in the early days of Facebook, 
+the ID was a simple auto-incrementing number. 
+
+This leads to a hack which fits in a [tweet](https://twitter.com/flipzagging/status/197730897494163456): early Facebook users in order.
 
 ``` sh
 perl -le 'while(++$i){$_=`curl -s https://graph.facebook.com/$i `;print "$i ", $_=~/name":"([^""]+)/}'
