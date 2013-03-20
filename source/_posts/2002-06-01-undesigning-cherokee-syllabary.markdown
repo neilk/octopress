@@ -42,19 +42,22 @@ show the 4 examples
 
 ![various versions of Cherokee: original writing by Sequoyah, traditional typeface, modern handwriting, and Uyanvhi](/projects/cherokee/process.png)
 
-<form id="sample-form">
-  <input type="radio" name="sample" value="traditional" id="traditional-sample" checked="checked" />
-  <label for="traditional-sample">Traditional</label>
-  <input type="radio" name="sample" value="new" id="new-sample" />
-  <label for="new-sample"> New</label>
+
+<form class="btn-group" id="sample-form" style="text-align: center;">
+  <input type="radio" name="sample" value="traditional" id="traditional-sample" checked="checked" /><label class="btn" for="traditional-sample">Traditional</label><input type="radio" name="sample" value="new" id="new-sample" /><label class="btn" for="new-sample"> nkCherokee</label>
 </form>
-<img id="sample" src="/projects/cherokee/traditional-sample.png">
+<p style="text-align: center;">
+  <img id="sample" src="/projects/cherokee/traditional-sample.png">
+</p>
 
 
-<form class="btn-group" id="affinity-form">
-  <input type="radio" name="affinity" value="traditional" id="traditional-affinity" checked="checked" /><label class="btn" for="traditional-affinity">Traditional</label><input type="radio" name="affinity" value="new" id="new-affinity" /><label class="btn" for="new-affinity"> New</label>
+<form class="btn-group" id="affinity-form" style="text-align: center;">
+  <input type="radio" name="affinity" value="traditional" id="traditional-affinity" checked="checked" /><label class="btn" for="traditional-affinity">Traditional</label><input type="radio" name="affinity" value="new" id="new-affinity" /><label class="btn" for="new-affinity"> nkCherokee</label>
 </form>
-<img id="affinity" style="padding: 1em;" src="/projects/cherokee/traditional-affinity.png">
+<p style="text-align: center;">
+  <img id="affinity" style="padding: 1em;" src="/projects/cherokee/traditional-affinity.png">
+</p>
+
 <script type="text/javascript">
   function bindImgLoader(imgId, name) {
     var $img = $('#' + imgId);
@@ -72,9 +75,6 @@ show the 4 examples
   makeImgToggle('sample');
 </script>
 
-[![Traditional Cherokee syllabary organized by design affinity](/projects/cherokee/traditional-affinity-preview.png)](/projects/cherokee/traditional-affinity.png)
-
-[![New Cherokee syllabary organized by design affinity](/projects/cherokee/new-affinity-preview.png)](/projects/cherokee/new-affinity.png)
 
 ![](/projects/cherokee/abosans-vs-nk.png)
 
