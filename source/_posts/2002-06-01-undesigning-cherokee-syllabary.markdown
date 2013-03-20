@@ -33,6 +33,10 @@ show the 4 examples
 
 - verdana
 - go back to Sequoyah -- what happened, he had cursive forms, rendered immediately into mechanical forms
+[Sequoyah's original syllabary](http://www.intertribal.net/nat/cherokee/webpgcc1/original.htm)
+
+[Illustrated timeline of Cherokee Syllabary](http://web.archive.org/web/20110922010441/http://indiancountrytodaymedianetwork.com/2011/09/exclusive-artist-roy-boneys-special-graphic-feature-on-the-cherokee-language/)
+
 
 - liberties taken
   - simplifying
@@ -41,7 +45,6 @@ show the 4 examples
 - feedback!!
 
 ![various versions of Cherokee: original writing by Sequoyah, traditional typeface, modern handwriting, and Uyanvhi](/projects/cherokee/process.png)
-
 
 <form class="btn-group" id="sample-form" style="text-align: center;">
   <input type="radio" name="sample" value="traditional" id="traditional-sample" checked="checked" /><label class="btn" for="traditional-sample">Traditional</label><input type="radio" name="sample" value="new" id="new-sample" /><label class="btn" for="new-sample"> nkCherokee</label>
@@ -80,11 +83,14 @@ show the 4 examples
 
 ## Reaction
 
-A Handbook of the Cherokee Verb: A Preliminary Study (Feeling, Kopris, Lachler, and van Tuyl), Tahlequah, Oklahoma: CHerokee Heritage Center, 2003. Pp 252
+A Handbook of the Cherokee Verb: A Preliminary Study (Feeling, Kopris, Lachler, and van Tuyl), Tahlequah, Oklahoma: Cherokee Heritage Center, 2003. Pp 252
 
 > The typeface chosen for the syllabary is an easy-to-read sans serif
 > font, much more inviting than the commonly used intricate characters
 > derived from nineteenth-century models. Neil Kandalgaonkar, credited
 > with designing the font, has done an admirable job.
 
--- International Journal of American Linguistics - 72(2):pp. 285-287; A Handbook of the Cherokee Verb: A Preliminary Study (Feeling, Kopris, Lachler, and van Tuyl)
+-- _[International Journal of American Linguistics](http://www.press.uchicago.edu/ucp/journals/journal/ijal.html)_ - Volume 72, Issue 2, April 2006, pp. 285-287; 
+A Handbook of the Cherokee Verb: A Preliminary Study (Feeling, Kopris, Lachler, and van Tuyl). [JSTOR archive link](http://www.jstor.org/stable/10.1086/507168)
+
+
