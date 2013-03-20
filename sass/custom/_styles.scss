@@ -73,8 +73,12 @@ td.gutter pre {
   overflow: hidden;
 }
 
-figure.code:hover td.gutter {
-  width: auto;
+figure.code {
+  @include box-shadow(none);
+  @include box-sizing(content-box);
+  &:hover td.gutter {
+    width: auto;
+  }
 }
 
 h3 {
