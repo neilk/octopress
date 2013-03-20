@@ -43,19 +43,16 @@ show the 4 examples
 ![various versions of Cherokee: original writing by Sequoyah, traditional typeface, modern handwriting, and Uyanvhi](/projects/cherokee/process.png)
 
 <form id="sample-form">
-  <input type="radio" name="sample" value="traditional" id="traditional-sample" checked="checked">
+  <input type="radio" name="sample" value="traditional" id="traditional-sample" checked="checked" />
   <label for="traditional-sample">Traditional</label>
-  <input type="radio" name="sample" value="new" id="new-sample">
+  <input type="radio" name="sample" value="new" id="new-sample" />
   <label for="new-sample"> New</label>
 </form>
 <img id="sample" src="/projects/cherokee/traditional-sample.png">
 
 
-<form id="affinity-form">
-  <input type="radio" name="affinity" value="traditional" id="traditional-affinity" checked="checked">
-  <label for="traditional-affinity">Traditional</label>
-  <input type="radio" name="affinity" value="new" id="new-affinity">
-  <label for="new-affinity"> New</label>
+<form class="btn-group" id="affinity-form">
+  <input type="radio" name="affinity" value="traditional" id="traditional-affinity" checked="checked" /><label class="btn" for="traditional-affinity">Traditional</label><input type="radio" name="affinity" value="new" id="new-affinity" /><label class="btn" for="new-affinity"> New</label>
 </form>
 <img id="affinity" style="padding: 1em;" src="/projects/cherokee/traditional-affinity.png">
 <script type="text/javascript">
