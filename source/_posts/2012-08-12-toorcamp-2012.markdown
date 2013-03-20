@@ -29,7 +29,7 @@ exactly how influential the internet was in the 2010-2011 revolution, how to set
 
 > -- _Why isn't the phone network working yet ?_
 >
-> -- We're syncing with the satellite. This will take another six hours.
+> -- [complex explanation about crystals and synchronization]. This will take another six hours.
 > 
 > -- _Isn't there some quick and dirty way to do this?_
 >
