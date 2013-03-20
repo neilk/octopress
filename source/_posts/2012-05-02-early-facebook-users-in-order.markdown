@@ -5,7 +5,8 @@ date: 2012-05-02 09:54
 comments: true
 categories: hack facebook
 ---
-Facebook's API allows you to look up a user by their account number (id), with a very simple URL scheme. 
+Facebook allows programmers to [look up a user](https://developers.facebook.com/docs/reference/api/user/) by their account number (ID), 
+with a very simple URL scheme. 
 
 ```
 https://graph.facebook.com/$id
