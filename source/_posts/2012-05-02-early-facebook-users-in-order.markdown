@@ -11,7 +11,7 @@ Usually Facebook IDs aren't well known so this is not a huge security issue. How
 the ID was a simple auto-incrementing number. Famously, [Mark Zuckerberg's ID is 4](http://graph.facebook.com/4) - 
 he made three test accounts which were later deleted, presumably.
 
-This leads to a hack which fits in a [tweet](https://developers.facebook.com/docs/reference/api/user/):
+This leads to a hack which fits in a [tweet](https://twitter.com/flipzagging/status/197730897494163456):
 
 ``` sh
 perl -le 'while(++$i){$_=`curl -s https://graph.facebook.com/$i `;print "$i ", $_=~/name":"([^""]+)/}'
