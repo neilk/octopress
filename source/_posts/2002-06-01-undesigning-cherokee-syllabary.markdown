@@ -59,8 +59,12 @@ determined to bring the innovation to Cherokee. After a decade experimentation h
 per syllable) which worked well for the language, and soon afterwards it was brought to hot metal type. Cherokee newspapers
 were created, and Bibles printed.
 
-{% img center /projects/cherokee/john316.jpg John 3:16 in Cherokee %}
-<p style="text-align:center">John 3:16</p>
+<div style="text-align: center; margin-bottom: 1em;">
+<figure style="display: inline-block;">
+<img class="center" style="margin-bottom: 0px;" src="/projects/cherokee/john316.jpg" alt="John 3:16 in Cherokee" />
+<figcaption style="text-align:center">John 3:16</figcaption>
+</figure>
+</div>
 
 Although Cherokee syllabary is used to this day, the Bible is still the longest text that most Cherokee have ever encountered
 which uses the script. So the syllabary acquired a religious dimension as well; one needed to learn this not just to be 
@@ -74,7 +78,8 @@ The serifs were mere blobs. Some letters were quite distorted.
 
 Worse still, some (apparently) inherent flaws of the script seemed almost insurmountable.
 
-- Certain characters are nearly identical, such as ![Cherokee E](/projects/cherokee/e.png) and ![Cherokee NV](/projects/cherokee/nv.png). 
+- Certain characters are nearly identical, such as <img class="noborder" src="/projects/cherokee/e.png" title="Cherokee E" alt="Cherokee E"/> 
+  and <img class="noborder" src="/projects/cherokee/nv.png" title="Cherokee NV" alt="Cherokee NV"/>.
   This was particularly nasty, and was apparently a common stumbling block for
   those learning the language. Unfortunately this difficulty was rationalized, and even cherished, as part of the arduous 
   task of getting to understand the word of God.
@@ -85,8 +90,7 @@ And aesthetically, there were other unfortunate aspects:
 
 - The typographic color was very uneven. Some letters were blacker than black, and others had hairline strokes.
 - There seemed to be no logic behind the forms. We are used to scripts having a certain look, to combining a certain set of ideas, but Cherokee 
-  gathered its forms from absolutely everywhere. Some were identical to Latin typography, others seemed almost scribal, and still others  
-  were chimeras.
+  gathered its forms from absolutely everywhere. Some were identical to Latin typography, others seemed almost scribal, and still others were chimeras.
 
 For traditional, book typography, we aim for a harmony of ideas, a minimum of ideas, evenness and balance in color. Getting there seemed like 
 it was going to be difficult indeed.
