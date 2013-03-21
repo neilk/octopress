@@ -149,10 +149,9 @@ the stroke to the left, to highlight where strokes intersected, but it had no de
 ## Restoring, by innovating
 
 It might seem a little bit arrogant for me, a Canadian with mixed Indian and Celtic heritage, to be meddling with one of the great cultural 
-achivements of a Native American people. I don't agree with that criticism. I'm for hybrids, messy experimentation, and responding with
-compassion to the needs of today. An excess of piety had probably kept Sequoyah's syllabary from properly evolving for decades. I think someone
-like Sequoyah would have been shocked that we hadn't improved on his work more. I get very impatient with people who want to honor their 
-innovative ancestors by [making sure that everything stays the same](http://users.rider.edu/~suler/zenstory/ritualcat.html). 
+achivements of a Native American people. I'm not sure about that. An excess of reverential piety had probably kept the script from properly 
+evolving for decades. I think someone like Sequoyah would have been shocked that we hadn't improved on his work more. I get very impatient 
+with people who want to honor their innovative ancestors by [making sure that everything stays the same](http://users.rider.edu/~suler/zenstory/ritualcat.html). 
 
 And in this case, I and my collaborators might have literally found our way *back* to what Sequoyah originally intended. 
 
