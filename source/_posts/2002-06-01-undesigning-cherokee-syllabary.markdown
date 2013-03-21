@@ -71,10 +71,10 @@ which uses the script. So the syllabary acquired a religious dimension as well; 
 true to one's culture, but to get closer to God.
 
 The syllabary was copied, apparently from the original cuts in the 1800s, into various media until it finally landed in 
-digital form in the font shown above.
+digital form in the font shown at the beginning of this article.
 
-Jumping back to 2002 - when I encountered it, the digital font offered by the Cherokee nation was clearly a copy of a copy of a copy.
-The serifs were mere blobs. Some letters were quite distorted. 
+When I encountered it in 2002, the digital font offered by the Cherokee nation was clearly a copy of a copy of a copy.
+The serifs were mere blobs. Some glyphs were quite distorted. 
 
 Worse still, some (apparently) inherent flaws of the script seemed almost insurmountable.
 
@@ -88,12 +88,55 @@ Worse still, some (apparently) inherent flaws of the script seemed almost insurm
 
 And aesthetically, there were other unfortunate aspects:
 
-- The typographic color was very uneven. Some letters were blacker than black, and others had hairline strokes.
+- The typographic color was very uneven. Some glyphs were blacker than black, and others had hairline strokes.
 - There seemed to be no logic behind the forms. We are used to scripts having a certain look, to combining a certain set of ideas, but Cherokee 
   gathered its forms from absolutely everywhere. Some were identical to Latin typography, others seemed almost scribal, and still others were chimeras.
 
 For traditional, book typography, we aim for a harmony of ideas, a minimum of ideas, evenness and balance in color. Getting there seemed like 
 it was going to be difficult indeed.
+
+## My strategy
+
+I'm a believer in the collective genius of people to eventually work around whatever problems technology imposes on us. So I reasoned that *handwritten*
+Cherokee might have sanded away all of the difficulties of the official font. I asked Sean and the other linguists working with him for 
+samples of handwritten Cherokee, which they supplied. For certain rare glyphs, I would write them myself, over and over, until I felt the 
+basic forms of the glyphs emerged.
+
+I decided the basic template would be Microsoft's [Verdana](http://www.microsoft.com/typography/fonts/family.aspx?FID=1), since it was a common 
+font and worked online as well as offline. Making it compatible with a web-ready font would ensure that the basic forms were very, very clear. 
+Also, this would give end users more options, since if it worked with Verdana, it would harmonize well with other free fonts available at the 
+time from Microsoft. In 2002, high quality, online-ready fonts were a rarity.
+ 
+And there were a few other rules. My philosophy of type design is that it's a system for distinguishing glyphs. Thus, how we achieve differences 
+between glyphs is as important as how we make them similar. My rules for this font were as follows.
+
+- Glyphs could not be distinguished by:
+  - variations in weight
+  - presence or absence of stroke terminal
+  - type of terminal (ball versus serif)
+  - anything too subtle to see in a font at reduced size
+- All such decoration would be removed, until the form could be written with a monoline pen. 
+- If this resulted in glyphs that were too similar, subtle differences between glyphs would be exaggerated until they were obvious.
+- Serifs, if they were required, would be exaggerated into a cross. Ball terminals would be eliminated entirely.
+
+I created an "affinity" chart to track my progress. Glyphs which used the same basic forms were grouped together visually, and particularly
+hard-to-distinguish glyphs were highlighted in red:
+
+<form class="btn-group" id="affinity-form" style="text-align: center;">
+  <input type="radio" name="affinity" value="traditional" id="traditional-affinity" checked="checked" /><label class="btn" for="traditional-affinity">Traditional</label><input type="radio" name="affinity" value="new" id="new-affinity" /><label class="btn" for="new-affinity"> nkCherokee</label>
+</form>
+<p style="text-align: center;">
+  <img id="affinity" style="padding: 1em;" src="/projects/cherokee/traditional-affinity.png">
+</p>
+
+<script type="text/javascript">
+  makeImgToggle('affinity');
+</script>
+
+I made one last change to the font, which wasn't necessitated by any of my rules. The glyph *YE* is the only one in the entire syllabary which requires 
+a descender. This seemed to be snatching defeat from the jaws of victory, as this would necessitate extra space between lines, only for this relatively
+rare character. So I made my *YE* exaggerate the stroke to the left, to retain how prominent that intersection was, but it had no descender.
+
 
 
 - in medias res
@@ -110,7 +153,7 @@ You can also follow the project [on Github](http://github.com/neilk/nkCherokee).
 
 - the story
 
-- my method -- look at how people actually use it, handwritten, relying on the genius of everyday people to "rationalize" the letters.
+- my method -- look at how people actually use it, handwritten, relying on the genius of everyday people to "rationalize" the glyphs.
 - mention the book 
 - religious concerns
 
@@ -131,18 +174,6 @@ show the 4 examples
 
 ![various versions of Cherokee: original writing by Sequoyah, traditional typeface, modern handwriting, and Uyanvhi](/projects/cherokee/process.png)
 
-
-
-<form class="btn-group" id="affinity-form" style="text-align: center;">
-  <input type="radio" name="affinity" value="traditional" id="traditional-affinity" checked="checked" /><label class="btn" for="traditional-affinity">Traditional</label><input type="radio" name="affinity" value="new" id="new-affinity" /><label class="btn" for="new-affinity"> nkCherokee</label>
-</form>
-<p style="text-align: center;">
-  <img id="affinity" style="padding: 1em;" src="/projects/cherokee/traditional-affinity.png">
-</p>
-
-<script type="text/javascript">
-  makeImgToggle('affinity');
-</script>
 
 ![](/projects/cherokee/abosans-vs-nk.png)
 
