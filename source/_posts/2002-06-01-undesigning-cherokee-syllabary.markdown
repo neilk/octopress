@@ -15,7 +15,7 @@ abide this one. He had a point.
 Knowing that I was a bit of a typography geek, Sean asked if I could do anything to help. He was working on a book of Cherokee verbs, 
 and was not looking forward to months of staring at the above font. 
 
-I ended up making this font, which broke with more than a hundred years of Cherokee typographic tradition. Click the buttons to see the difference.
+I ended up making [this font](https://github.com/neilk/nkCherokee). Click the buttons to see the difference.
 
 <form class="btn-group" id="sample-form" style="text-align: center;">
   <input type="radio" name="sample" value="traditional" id="traditional-sample" checked="checked" /><label class="btn" for="traditional-sample">Traditional</label><input type="radio" name="sample" value="new" id="new-sample" /><label class="btn" for="new-sample"> nkCherokee</label>
@@ -40,9 +40,8 @@ I ended up making this font, which broke with more than a hundred years of Chero
   makeImgToggle('sample');
 </script>
 
-Ironically, although I thought I was bringing new usability principles to an outmoded technology, I eventually
-found out that I was bringing the script closer to what it was intended to be all along. It wasn't that some
-Western dudes were coming along and fixing a usability problem. It was that the original genius of the inventor
+Ironically, although I thought I was bringing new usability principles to the syllabary, I eventually
+found out that I was bringing the script closer to what it was intended to be all along.  The original genius of the inventor
 of Cherokee script was finally coming through after all these years - both preserved, and obscured, by technology.
 
 <!-- more -->
@@ -56,7 +55,11 @@ few books on the topic. \[[1](#fn-1)\]
 Cherokee is unique in that it's a script for a Native American language invented indigenously, by a person not literate
 in any language. [Sequoyah](http://en.wikipedia.org/wiki/Sequoyah) had seen the "talking leaves" used by Westerners, and
 determined to bring the innovation to Cherokee. After a decade experimentation he created a "syllabary" (one glyph 
-per syllable) which worked well for the language, and soon afterwards it was brought to hot metal type. Cherokee newspapers
+per syllable) which worked well for the language. This intellectual achievement is unprecedented in history. I don't 
+know what kind of a crazy genius you have to be to accomplish this, sometimes against the prejudice of your neighbors,
+who are worried this is some kind of witchcraft. But Sequoyah was that kind of person.
+
+The Cherokee rapidly adopted the syllabary, and it was soon brought to hot metal type. Cherokee newspapers 
 were created, and Bibles printed.
 
 <div style="text-align: center; margin-bottom: 1em;">
@@ -143,38 +146,80 @@ a descender. This seemed to be snatching defeat from the jaws of victory, as thi
 rare syllable. Signage and many other applications would be easier if every word in Cherokee fit neatly into a rectangle. So I made my *YE* exaggerate 
 the stroke to the left, to highlight where strokes intersected, but it had no descender.
 
-## 
+## Restoring, by innovating
 
-![various versions of Cherokee: original writing by Sequoyah, traditional typeface, modern handwriting, and Uyanvhi](/projects/cherokee/process.png)
+It might seem a little bit arrogant for me, a Canadian with mixed Indian and Celtic heritage, to be meddling with one of the great cultural 
+achivements of a Native American people. I don't agree with that criticism. I'm for hybrids, messy experimentation, and responding with
+compassion to the needs of today. An excess of piety had probably kept Sequoyah's syllabary from properly evolving for decades. I think someone
+like Sequoyah would have been shocked that we hadn't improved on his work more. I get very impatient with people who want to honor their 
+innovative ancestors by [making sure that everything stays the same](http://users.rider.edu/~suler/zenstory/ritualcat.html). 
+
+And in this case, I and my collaborators might have literally found our way *back* to what Sequoyah originally intended. 
+
+When this font was almost finished, I had a revelation. Cherokee Syllabary wants to be scribal. It doesn't want to be a roman. It wants to be more like an italic.
+
+Look at the glyphs reminiscent of *S* - when lines cross through them, like ~~S~~, it's hard to read, even a bit brutal. But it becomes graceful when
+that *S* shape is elongated and at an angle, like an integration sign, that is, *~~&#x222b; ~~*. Same thing with *WI*, which resembles an O with a stair-step 
+line inside. Translated to an italic, that stair-step would be a gentle wave.
+
+It made me want to rip up what I did and start over, but the project was near completion so I shelved the idea. 
+
+And then I found out this was more or less what Sequoyah originally designed.
+
+{% img center /projects/cherokee/sequoyah-scribal.jpg %}
+
+The above is a sample of Sequoyah's original design for Cherokee letters. He was working on these for a decade, presumably with ink and paper, so he'd naturally
+created very flowing forms. You can see there is definitely some influence of Latin glyphs, so there is a little bit of bricolage, but the design makes so much
+more sense.
+
+That difficult distinction between <img class="noborder" src="/projects/cherokee/e.png" title="Traditional Cherokee E" alt="Traditional Cherokee E"/> and <img class="noborder" src="/projects/cherokee/nv.png" title="Traditional Cherokee NV" alt="Traditional Cherokee NV"/> just isn't there. Instead the 
+<img class="noborder" src="/projects/cherokee/e-sequoyah.png" title="Sequoyah's original NV" alt="Sequoyah's original E"/> and <img class="noborder" src="/projects/cherokee/nv-sequoyah.png" title="Sequoyah's original NV" alt="Sequoyah's original NV"/> are easily distinguished by an upwards-curved short tail versus a straight tail that reaches the baseline.
+
+Which is exactly what I came to after sweating over that design for weeks, <img class="noborder" src="/projects/cherokee/e-nk.png" title="nkCherokee E" alt="nkCherokee E"/> versus 
+<img class="noborder" src="/projects/cherokee/nv-nk.png" title="nkCherokee NV" alt="nkCherokee NV"/>. It's eerie. It's like the glyphs somehow encoded that information, latently. 
+
+<div style="text-align: center; margin-bottom: 1em;">
+<figure style="display: inline-block;">
+<img class="center" style="margin-bottom: 0px;" src="/projects/cherokee/process.png" alt="Evolution of Cherokee glyph HI" />
+<figcaption style="text-align:center">The evolution of Cherokee glyph <em>HI</em>. From left to right: Sequoyah's original design; as it was rendered in metal type; a handwritten sample from a Cherokee speaker; and the glyph in the nkCherokee font.</figcaption>
+</figure>
+</div>
 
 
+## Reaction
 
-show the 4 examples
+Sean liked it, which was enough for me. The book [2](#fn2) was released in 2003. It's not easy to buy or download, but I think
+academics still use it.
 
-- verdana
-- go back to Sequoyah -- what happened, he had cursive forms, rendered immediately into mechanical forms
-[Sequoyah's original syllabary](http://www.intertribal.net/nat/cherokee/webpgcc1/original.htm)
+An academic review mentioned it:
 
-[Illustrated timeline of Cherokee Syllabary](http://web.archive.org/web/20110922010441/http://indiancountrytodaymedianetwork.com/2011/09/exclusive-artist-roy-boneys-special-graphic-feature-on-the-cherokee-language/)
+> The typeface chosen for the syllabary is an easy-to-read sans serif
+> font, much more inviting than the commonly used intricate characters
+> derived from nineteenth-century models. Neil Kandalgaonkar, credited
+> with designing the font, has done an admirable job.[3](#fn3)
+
+Since then I've 
 
 
 
 
 ![](/projects/cherokee/abosans-vs-nk.png)
 
-## Reaction
 
-A Handbook of the Cherokee Verb: A Preliminary Study (Feeling, Kopris, Lachler, and van Tuyl), Tahlequah, Oklahoma: Cherokee Heritage Center, 2003. Pp 252
+## Notes
 
-> The typeface chosen for the syllabary is an easy-to-read sans serif
-> font, much more inviting than the commonly used intricate characters
-> derived from nineteenth-century models. Neil Kandalgaonkar, credited
-> with designing the font, has done an admirable job.
+<p><a name="#fn1"></a>1. Bender, Margaret. (2002) <em>Signs of Cherokee Culture: Sequoyah's Syllabary in Eastern Cherokee Life.</em>, University of North Carolina Press, 2002. ISBN 978-0-8078-2707-9, ISBN 978-0-8078-5376-4. <a href="http://uncpress.unc.edu/browse/page/208">UNC Press link</a></p>
 
--- _[International Journal of American Linguistics](http://www.press.uchicago.edu/ucp/journals/journal/ijal.html)_ - Volume 72, Issue 2, April 2006, pp. 285-287; 
-A Handbook of the Cherokee Verb: A Preliminary Study (Feeling, Kopris, Lachler, and van Tuyl). [JSTOR archive link](http://www.jstor.org/stable/10.1086/507168)
+<p><a name="#fn2"></a>2. A Handbook of the Cherokee Verb: A Preliminary Study (Feeling, Kopris, Lachler, and van Tuyl), Tahlequah, Oklahoma: Cherokee Heritage Center, 2003. 
+Pp 252. ISBN 0974281808. Search for it on <a href="http://www.worldcat.org/search?q=isbn%3A0974281808">WorldCat</a></p>
+
+<p><a name="#fn3"></a>3. <a href="http://www.press.uchicago.edu/ucp/journals/journal/ijal.html">International Journal of American Linguistics</a> - Volume 72, Issue 2, April 2006, pp. 285-287; 
+A Handbook of the Cherokee Verb: A Preliminary Study (Feeling, Kopris, Lachler, and van Tuyl). <a href="http://www.jstor.org/stable/10.1086/507168">JSTOR archive link</a></p>
 
 
-## Bibliography
+## Other sites
 
-<p><a name="#fn1">1.</a> Bender, Margaret. (2002) Signs of Cherokee Culture: Sequoyah's Syllabary in Eastern Cherokee Life.</a></p>
+The nkCherokee font is available for download (or modifications) at this [Github repository](https://github.com/neilk/nkCherokee).
+
+Roy Boney's [Illustrated timeline of Cherokee Syllabary](http://web.archive.org/web/20110922010441/http://indiancountrytodaymedianetwork.com/2011/09/exclusive-artist-roy-boneys-special-graphic-feature-on-the-cherokee-language/) (Internet Archive link; original seems to be down)
+
