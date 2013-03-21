@@ -50,7 +50,7 @@ of Cherokee script was finally coming through after all these years - both prese
 ## The traditional Cherokee font
 
 I am not a scholar of Cherokee, but here's the story as I understand it, from what research I can do online and from the
-few books on the topic. \[[1](#fn-1)\]
+few books on the topic. \[[1](#fn1)\]
 
 Cherokee is unique in that it's a script for a Native American language invented indigenously, by a person not literate
 in any language. [Sequoyah](http://en.wikipedia.org/wiki/Sequoyah) had seen the "talking leaves" used by Westerners, and
@@ -185,35 +185,60 @@ Which is exactly what I came to after sweating over that design for weeks, <img 
 </figure>
 </div>
 
+So how did Cherokee end up with a font that was so far from the original designs of Cherokee? 
+
+I've not been able to find out exactly what happened between Sequoyah and Samuel Worcester, the person who ultimately cast the Cherokee letters
+in metal. But I imagine the scene -- faced with these unfamiliar glyphs, that will be difficult to typeset, either Sequoyah or Worcester go 
+hunting for existing sorts, combining one here, shaving a bit off another. Eventually assembling the font that became the official look of printed
+Cherokee for the next century.
+
+I wonder if Sequoyah was dismayed by some of the problems, or if he was pragmatic, and just happy to see his designs coming off a printing press and embraced by
+his people. I guess we'll never know.
+
+It's a curious fate that heralds some of the problems with creativity in the 20th and 21st century. Nowadays, we encounter every work of creativity in a form suitable
+for mechanical reproduction. One downside is that the artifacts of this process, the accidents and mistakes, become a nearly immutable part of the work. In previous ages,
+a design, a story, or a song was reproduced from person to person, possibly for centuries, before it was written down. The Latin-speaking countries perfected the
+design of their alphabets over two millenia; someone like Sequoyah has to get it right the first time. Perhaps with digital technology, [open source licenses](http://opensource.org/), 
+movements like [Creative Commons](http://creativecommons.org/), and the meme phenomenon, we are finally getting back to a paradigm where creativity can be the product
+of collective genius. Technology will then obscure who exactly who created things, and it certainly makes it difficult to compensate creators. But neither 
+will it preserve mistakes fixed by one moment in time.
 
 ## Reaction
 
-Sean liked it, which was enough for me. The book [2](#fn2) was released in 2003. It's not easy to buy or download, but I think
-academics still use it.
+Sean liked my font, which was enough for me. 
+
+The book \[[2](#fn2)\] was released in 2003. It's not easy to buy or download, but I think academics still use it.
 
 An academic review mentioned it:
 
 > The typeface chosen for the syllabary is an easy-to-read sans serif
 > font, much more inviting than the commonly used intricate characters
 > derived from nineteenth-century models. Neil Kandalgaonkar, credited
-> with designing the font, has done an admirable job.[3](#fn3)
-
-Since then I've 
+> with designing the font, has done an admirable job.\[[3](#fn3)\]
 
 
+## Future directions
 
+nkCherokee was a drop-in replacement for the old official Cherokee nation typeface, which simply substituted glyphs onto the standard American 
+typewriter keyboard. Since then, we're in a more enlightened age, and proper Unicode encodings are more common. Some very well-design fonts have
+since been produced for Cherokee and are in more common use.
 
-![](/projects/cherokee/abosans-vs-nk.png)
+I still think that some of these projects are missing out by hewing too closely to the traditional Cherokee font. Here's an example of one,
+Aboriginal Sans, in which some of the mistakes and infelicities introduced by printing technology are still preserved.
+
+{% img center /projects/cherokee/abosans-vs-nk.png %}
+
+And there's still a great opportunity for some enterprising typographer who wants to try crafting a more scribal font for Cherokee.
 
 
 ## Notes
 
-<p><a name="#fn1"></a>1. Bender, Margaret. (2002) <em>Signs of Cherokee Culture: Sequoyah's Syllabary in Eastern Cherokee Life.</em>, University of North Carolina Press, 2002. ISBN 978-0-8078-2707-9, ISBN 978-0-8078-5376-4. <a href="http://uncpress.unc.edu/browse/page/208">UNC Press link</a></p>
+<p><a name="fn1"></a>1. Bender, Margaret. (2002) <em>Signs of Cherokee Culture: Sequoyah's Syllabary in Eastern Cherokee Life.</em>, University of North Carolina Press, 2002. ISBN 978-0-8078-2707-9, ISBN 978-0-8078-5376-4. <a href="http://uncpress.unc.edu/browse/page/208">UNC Press link</a></p>
 
-<p><a name="#fn2"></a>2. A Handbook of the Cherokee Verb: A Preliminary Study (Feeling, Kopris, Lachler, and van Tuyl), Tahlequah, Oklahoma: Cherokee Heritage Center, 2003. 
+<p><a name="fn2"></a>2. A Handbook of the Cherokee Verb: A Preliminary Study (Feeling, Kopris, Lachler, and van Tuyl), Tahlequah, Oklahoma: Cherokee Heritage Center, 2003. 
 Pp 252. ISBN 0974281808. Search for it on <a href="http://www.worldcat.org/search?q=isbn%3A0974281808">WorldCat</a></p>
 
-<p><a name="#fn3"></a>3. <a href="http://www.press.uchicago.edu/ucp/journals/journal/ijal.html">International Journal of American Linguistics</a> - Volume 72, Issue 2, April 2006, pp. 285-287; 
+<p><a name="fn3"></a>3. <a href="http://www.press.uchicago.edu/ucp/journals/journal/ijal.html">International Journal of American Linguistics</a> - Volume 72, Issue 2, April 2006, pp. 285-287; 
 A Handbook of the Cherokee Verb: A Preliminary Study (Feeling, Kopris, Lachler, and van Tuyl). <a href="http://www.jstor.org/stable/10.1086/507168">JSTOR archive link</a></p>
 
 
