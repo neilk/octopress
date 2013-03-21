@@ -55,7 +55,7 @@ few books on the topic. \[[1](#fn-1)\]
 
 Cherokee is unique in that it's a script for a Native American language invented indigenously, by a person not literate
 in any language. [Sequoyah](http://en.wikipedia.org/wiki/Sequoyah) had seen the "talking leaves" used by Westerners, and
-determined to bring the innovation to Cherokee. After a decade experimentation he created a "syllabary" (one character 
+determined to bring the innovation to Cherokee. After a decade experimentation he created a "syllabary" (one glyph 
 per syllable) which worked well for the language, and soon afterwards it was brought to hot metal type. Cherokee newspapers
 were created, and Bibles printed.
 
@@ -78,12 +78,12 @@ The serifs were mere blobs. Some glyphs were quite distorted.
 
 Worse still, some (apparently) inherent flaws of the script seemed almost insurmountable.
 
-- Certain characters are nearly identical, such as <img class="noborder" src="/projects/cherokee/e.png" title="Cherokee E" alt="Cherokee E"/> 
+- Certain glyphs are nearly identical, such as <img class="noborder" src="/projects/cherokee/e.png" title="Cherokee E" alt="Cherokee E"/> 
   and <img class="noborder" src="/projects/cherokee/nv.png" title="Cherokee NV" alt="Cherokee NV"/>.
   This was particularly nasty, and was apparently a common stumbling block for
   those learning the language. Unfortunately this difficulty was rationalized, and even cherished, as part of the arduous 
   task of getting to understand the word of God.
-- Many characters are distinguished only by having certain kinds of serifs or terminals. It would be as if an W in Bodoni and a W from 
+- Many glyphs are distinguished only by having certain kinds of serifs or terminals. It would be as if an W in Bodoni and a W from 
   Garamond were in the same character set, meaning different things.
 
 And aesthetically, there were other unfortunate aspects:
@@ -119,6 +119,11 @@ between glyphs is as important as how we make them similar. My rules for this fo
 - If this resulted in glyphs that were too similar, subtle differences between glyphs would be exaggerated until they were obvious.
 - Serifs, if they were required, would be exaggerated into a cross. Ball terminals would be eliminated entirely.
 
+But it wasn't all about change:
+
+- Each glyph should be instantly recognizable to someone already familiar with the traditional Cherokee font.
+- If, given the examples from handwritten Cherokee, certain aspects of these glyphs seem to be important to preserve, then they are preserved. 
+
 I created an "affinity" chart to track my progress. Glyphs which used the same basic forms were grouped together visually, and particularly
 hard-to-distinguish glyphs were highlighted in red:
 
@@ -135,27 +140,14 @@ hard-to-distinguish glyphs were highlighted in red:
 
 I made one last change to the font, which wasn't necessitated by any of my rules. The glyph *YE* is the only one in the entire syllabary which requires 
 a descender. This seemed to be snatching defeat from the jaws of victory, as this would necessitate extra space between lines, only for this relatively
-rare character. So I made my *YE* exaggerate the stroke to the left, to retain how prominent that intersection was, but it had no descender.
+rare syllable. Signage and many other applications would be easier if every word in Cherokee fit neatly into a rectangle. So I made my *YE* exaggerate 
+the stroke to the left, to highlight where strokes intersected, but it had no descender.
+
+## 
+
+![various versions of Cherokee: original writing by Sequoyah, traditional typeface, modern handwriting, and Uyanvhi](/projects/cherokee/process.png)
 
 
-
-- in medias res
-- motivation
-
-- what the problem is -- example of cherokee
-
-- the result!
-You can also follow the project [on Github](http://github.com/neilk/nkCherokee).
-
-- WHY did this happen?
-
-- interactive tool to flip between them
-
-- the story
-
-- my method -- look at how people actually use it, handwritten, relying on the genius of everyday people to "rationalize" the glyphs.
-- mention the book 
-- religious concerns
 
 show the 4 examples
 
@@ -166,13 +158,6 @@ show the 4 examples
 [Illustrated timeline of Cherokee Syllabary](http://web.archive.org/web/20110922010441/http://indiancountrytodaymedianetwork.com/2011/09/exclusive-artist-roy-boneys-special-graphic-feature-on-the-cherokee-language/)
 
 
-- liberties taken
-  - simplifying
-  - eliminated the one descender in the syllabary
-
-- feedback!!
-
-![various versions of Cherokee: original writing by Sequoyah, traditional typeface, modern handwriting, and Uyanvhi](/projects/cherokee/process.png)
 
 
 ![](/projects/cherokee/abosans-vs-nk.png)
