@@ -248,3 +248,4 @@ The nkCherokee font is available for download (or modifications) at this [Github
 
 Roy Boney's [Illustrated timeline of Cherokee Syllabary](http://web.archive.org/web/20110922010441/http://indiancountrytodaymedianetwork.com/2011/09/exclusive-artist-roy-boneys-special-graphic-feature-on-the-cherokee-language/) (Internet Archive link; original seems to be down)
 
+Notes on the design of Microsoft's [Gadugi font](http://blogs.msdn.com/b/michkap/archive/2012/12/19/10379263.aspx), which followed a similar process but with far more feedback with Cherokee authorities.
