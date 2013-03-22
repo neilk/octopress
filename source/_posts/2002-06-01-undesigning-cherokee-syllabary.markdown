@@ -55,9 +55,9 @@ few books on the topic. \[[1](#fn1)\] This is just the story of one amateur typo
 Cherokee is unique in that it's a script for a Native American language invented indigenously, by a person not literate
 in any language. [Sequoyah](http://en.wikipedia.org/wiki/Sequoyah) had seen the "talking leaves" used by Westerners, and
 determined to bring the innovation to Cherokee. After a decade experimentation he created a "syllabary" (one glyph 
-per syllable) which worked well for the language. This intellectual achievement is unprecedented in history. I don't 
-know what kind of a crazy genius you have to be to accomplish this, sometimes against the prejudice of your neighbors,
-who are worried this is some kind of witchcraft. But Sequoyah was that kind of person.
+per syllable) which worked well for the language. This intellectual achievement is unprecedented in history - jumping 
+from illiteracy to Prometheus in a single lifetime. I don't know what kind of a genius you have to be to accomplish this, 
+sometimes against the prejudice of your neighbors, who are worried this is some kind of witchcraft. But Sequoyah was that kind of person.
 
 The Cherokee rapidly adopted the syllabary, and it was soon brought to hot metal type. Cherokee newspapers 
 were created, and Bibles printed.
@@ -81,8 +81,8 @@ The serifs were mere blobs. Some glyphs were quite distorted.
 
 Worse still, some (apparently) inherent flaws of the script seemed almost insurmountable.
 
-- Certain glyphs are nearly identical, such as <img class="noborder" src="/projects/cherokee/e.png" title="Cherokee E" alt="Cherokee E"/> 
-  and <img class="noborder" src="/projects/cherokee/nv.png" title="Cherokee NV" alt="Cherokee NV"/>.
+- Certain glyphs are nearly identical, such as <img class="noborder" src="/projects/cherokee/e.png" title="Cherokee &#x13a1; (E)" alt="Cherokee &#x13a1; (E)"/> 
+  and <img class="noborder" src="/projects/cherokee/nv.png" title="Cherokee &#x13d2; (SV)" alt="Cherokee &#x13d2; (SV)"/>.
   This was particularly nasty, and was apparently a common stumbling block for
   those learning the language. Unfortunately this difficulty was rationalized, and even cherished, as part of the arduous 
   task of getting to understand the word of God.
@@ -141,8 +141,8 @@ hard-to-distinguish glyphs were highlighted in red:
   makeImgToggle('affinity');
 </script>
 
-I made one last change to the font, which wasn't necessitated by any of my rules. The glyph *YE* is the only one in the entire syllabary which requires 
-a descender. This seemed to be snatching defeat from the jaws of victory, as this would necessitate extra space between lines, only for this relatively
+I made one last change to the font, which wasn't necessitated by any of my rules. The glyph &#x13F0; (*YE* ) is the only one in the entire syllabary which 
+always requires a descender. This seemed to be snatching defeat from the jaws of victory, as this would necessitate extra space between lines, only for this relatively
 rare syllable. Signage and many other applications would be easier if every word in Cherokee fit neatly into a rectangle. So I made my *YE* exaggerate 
 the stroke to the left, to highlight where strokes intersected, but it had no descender.
 
@@ -161,7 +161,7 @@ And in this case, by meditating on these glyph forms for a few months, I might h
 When this font was almost finished, I had a revelation. Cherokee Syllabary wants to be scribal. It doesn't want to be a roman. It wants to be more like an italic.
 
 Look at the glyphs reminiscent of *S* - when lines cross through them, like ~~S~~, it's hard to read, even a bit brutal. But it becomes graceful when
-that *S* shape is elongated and at an angle, like an integration sign, that is, *~~&#x222b; ~~*. Same thing with *WI*, which resembles an O with a stair-step 
+that *S* shape is elongated and at an angle, like an integration sign, that is, *~~&#x222b; ~~*. Same thing with &#x13ab; (*WI* ), which resembles an O with a stair-step 
 line inside. Translated to an italic, that stair-step would be a gentle wave.
 
 It made me want to rip up what I did and start over, but the project was near completion so I shelved the idea. 
@@ -174,20 +174,20 @@ The above is a sample of Sequoyah's original design for Cherokee letters. He was
 created very flowing forms. You can see there is definitely some influence of Latin glyphs, so there is a little bit of bricolage, but the design makes so much
 more sense.
 
-That difficult distinction between <img class="noborder" src="/projects/cherokee/e.png" title="Traditional Cherokee E" alt="Traditional Cherokee E"/> and <img class="noborder" src="/projects/cherokee/nv.png" title="Traditional Cherokee NV" alt="Traditional Cherokee NV"/> just isn't there. Instead the 
-<img class="noborder" src="/projects/cherokee/e-sequoyah.png" title="Sequoyah's original NV" alt="Sequoyah's original E"/> and <img class="noborder" src="/projects/cherokee/nv-sequoyah.png" title="Sequoyah's original NV" alt="Sequoyah's original NV"/> are easily distinguished by an upwards-curved short tail versus a straight tail that reaches the baseline.
+That difficult distinction between <img class="noborder" src="/projects/cherokee/e.png" title="Traditional Cherokee &#x13a1; (E)" alt="Traditional Cherokee &#x13a1; (E)"/> and <img class="noborder" src="/projects/cherokee/nv.png" title="Traditional Cherokee &#x13d2; (SV)" alt="Traditional Cherokee &#x13d2; (SV)"/> just isn't there. Instead the 
+<img class="noborder" src="/projects/cherokee/e-sequoyah.png" title="Sequoyah's original &#x13d2; (SV)" alt="Sequoyah's original &#x13a1; (E)"/> and <img class="noborder" src="/projects/cherokee/nv-sequoyah.png" title="Sequoyah's original &#x13d2; (SV)" alt="Sequoyah's original &#x13d2; (SV)"/> are easily distinguished by an upwards-curved short tail versus a straight tail that reaches the baseline.
 
-Which is exactly what I came to after sweating over that design for weeks, <img class="noborder" src="/projects/cherokee/e-nk.png" title="nkCherokee E" alt="nkCherokee E"/> versus 
-<img class="noborder" src="/projects/cherokee/nv-nk.png" title="nkCherokee NV" alt="nkCherokee NV"/>. It's eerie. It's like the glyphs somehow encoded that information, latently. 
+Which is exactly what I came to after sweating over that design for weeks, <img class="noborder" src="/projects/cherokee/e-nk.png" title="nkCherokee &#x13a1; (E)" alt="nkCherokee &#x13a1; (E)"/> versus 
+<img class="noborder" src="/projects/cherokee/nv-nk.png" title="nkCherokee &#x13d2; (SV)" alt="nkCherokee &#x13d2; (SV)"/>. It's eerie. It's like the glyphs somehow encoded that information, latently. 
 
 <div style="text-align: center; margin-bottom: 1em;">
 <figure style="display: inline-block;">
-<img class="center" style="margin-bottom: 0px;" src="/projects/cherokee/process.png" alt="Evolution of Cherokee glyph HI" />
-<figcaption style="text-align:center">The evolution of Cherokee glyph <em>HI</em>. From left to right: Sequoyah's original design; as it was rendered in metal type; a handwritten sample from a Cherokee speaker; and the glyph in the nkCherokee font.</figcaption>
+<img class="center" style="margin-bottom: 0px;" src="/projects/cherokee/process.png" alt="Evolution of Cherokee glyph &#x13af; (HI)" />
+<figcaption style="text-align:center">The evolution of Cherokee glyph &#x13af; (<em>HI </em>). From left to right: Sequoyah's original design; as it was rendered in metal type; a handwritten sample from a Cherokee speaker; and the glyph in the nkCherokee font.</figcaption>
 </figure>
 </div>
 
-So how did Cherokee end up with a font that was so far from the original designs of Cherokee? 
+So how did Cherokee end up with a font that was so far from the initial designs? 
 
 I've not been able to find out exactly what happened between Sequoyah and [Samuel Worcester](http://www.cherokee.org/AboutTheNation/History/Biographies/24485/Information.aspx), the person 
 who ultimately arranged to cast the Cherokee letters in metal. But I imagine the scene -- faced with these unfamiliar glyphs, that will be difficult to typeset, either Sequoyah or Worcester go 
@@ -202,7 +202,7 @@ for mechanical reproduction. One downside is that the artifacts of this process,
 piano bench becomes part of a Beatles song, forever. In previous ages, a design, a story, or a song was reproduced from person to person, possibly for centuries, before 
 it was fixed in a form that is no longer shaped by human hands.
 
-So the Latin-speaking countries perfected the design of their alphabets over two millenia. Someone like Sequoyah has to get it right the first time. Or, if he wanted to change
+So the Latin-speaking countries perfected the design of their alphabets over two millenia. Someone like Sequoyah had to get it right the first time. Or, if he wanted to change
 it, he would have to undertake the expense of labor and materials. And then his new vision would have to compete with the existing, mechanically reproducible works, already making
 copies of themselves in the environment. 
 
@@ -229,14 +229,16 @@ An academic review mentioned it:
 
 nkCherokee was a drop-in replacement for the old official Cherokee nation typeface, which simply substituted glyphs onto the standard American 
 typewriter keyboard. Since then, we're in a more enlightened age, and proper Unicode encodings are more common. Some very well-designed fonts have
-since been produced for Cherokee and are in more common use.
+since been produced for Cherokee.
 
-I still think that some of these projects are missing out by hewing too closely to the traditional Cherokee font. Here's an example of one,
-Aboriginal Sans, in which some of the mistakes and infelicities introduced by printing technology are still preserved.
+I still think that some of these projects are hewing too closely to the traditional Cherokee font. Here's an example of one,
+Aboriginal Sans, in which some of the mistakes and infelicities introduced by printing technology are still preserved. You can see how they 
+make it difficult to distinguish characters at smaller sizes. 
 
 {% img center /projects/cherokee/abosans-vs-nk.png %}
 
-And there's still a great opportunity for some enterprising typographer who wants to try crafting a more scribal font for Cherokee.
+Microsoft's [Gadugi](http://blogs.msdn.com/b/michkap/archive/2012/12/19/10379263.aspx) does a lot better, and seems to compromise between the roman forms that everyone is accustomed to while acknowledging Sequoyah's
+originals. But there's still a great opportunity for some enterprising typographer who wants to try crafting a more scribal font for Cherokee.
 
 
 ## Notes
