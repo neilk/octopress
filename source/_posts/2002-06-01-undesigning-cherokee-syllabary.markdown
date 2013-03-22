@@ -175,7 +175,7 @@ created very flowing forms. You can see there is definitely some influence of La
 more sense.
 
 That difficult distinction between <img class="noborder" src="/projects/cherokee/e.png" title="Traditional Cherokee &#x13a1; (E)" alt="Traditional Cherokee &#x13a1; (E)"/> and <img class="noborder" src="/projects/cherokee/sv.png" title="Traditional Cherokee &#x13d2; (SV)" alt="Traditional Cherokee &#x13d2; (SV)"/> just isn't there. Instead the 
-<img class="noborder" src="/projects/cherokee/e-sequoyah.png" title="Sequoyah's original &#x13d2; (SV)" alt="Sequoyah's original &#x13a1; (E)"/> and <img class="noborder" src="/projects/cherokee/sv-sequoyah.png" title="Sequoyah's original &#x13d2; (SV)" alt="Sequoyah's original &#x13d2; (SV)"/> are easily distinguished by an upwards-curved short tail versus a straight tail that reaches the baseline.
+<img class="noborder" src="/projects/cherokee/e-sequoyah.png" title="Sequoyah's original &#x13a1; (E)" alt="Sequoyah's original &#x13a1; (E)"/> and <img class="noborder" src="/projects/cherokee/sv-sequoyah.png" title="Sequoyah's original &#x13d2; (SV)" alt="Sequoyah's original &#x13d2; (SV)"/> are easily distinguished by an upwards-curved short tail versus a straight tail that reaches the baseline.
 
 Which is exactly what I came to after sweating over that design for weeks, <img class="noborder" src="/projects/cherokee/e-nk.png" title="nkCherokee &#x13a1; (E)" alt="nkCherokee &#x13a1; (E)"/> versus 
 <img class="noborder" src="/projects/cherokee/sv-nk.png" title="nkCherokee &#x13d2; (SV)" alt="nkCherokee &#x13d2; (SV)"/>. It's eerie. It's like the glyphs somehow encoded that information, latently. 
