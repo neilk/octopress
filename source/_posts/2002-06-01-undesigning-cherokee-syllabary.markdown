@@ -47,11 +47,10 @@ of Cherokee script was finally coming through after all these years - both prese
 
 <!-- more -->
 
+I am not a scholar of Cherokee, but here's the story as I understand it, from what research I can do online and from the
+few books on the topic. \[[1](#fn1)\] This is just the story of one amateur typographer, working in 2002 and 2003.
 
 ## The traditional Cherokee font
-
-I am not a scholar of Cherokee, but here's the story as I understand it, from what research I can do online and from the
-few books on the topic. \[[1](#fn1)\]
 
 Cherokee is unique in that it's a script for a Native American language invented indigenously, by a person not literate
 in any language. [Sequoyah](http://en.wikipedia.org/wiki/Sequoyah) had seen the "talking leaves" used by Westerners, and
@@ -150,11 +149,14 @@ the stroke to the left, to highlight where strokes intersected, but it had no de
 ## Restoring, by innovating
 
 It might seem a little bit arrogant for me, a Canadian with mixed Indian and Celtic heritage, to be meddling with one of the great cultural 
-achivements of a Native American people. I'm not sure about that. An excess of reverential piety had probably kept the script from properly 
-evolving for decades. I think someone like Sequoyah would have been shocked that we hadn't improved on his work more. I get very impatient 
-with people who want to honor their innovative ancestors by [making sure that everything stays the same](http://users.rider.edu/~suler/zenstory/ritualcat.html). 
+achivements of a Native American people. One of the flaws in this process was that I wasn't working directly with end users, other than 
+non-Cherokee linguists, and getting some indirect feedback from end users. Others since then have done much better 
+by [directly involving Cherokee community leaders](http://blogs.msdn.com/b/michkap/archive/2012/12/19/10379263.aspx).
 
-And in this case, I and my collaborators might have literally found our way *back* to what Sequoyah originally intended. 
+But, there was one advantage of my isolation. I think an excess of reverential piety had kept the script from properly 
+evolving for decades. I think someone like Sequoyah would have been shocked that we hadn't improved on his work more.
+
+And in this case, by meditating on these glyph forms for a few months, I might have found a way *back* to what Sequoyah originally intended. 
 
 When this font was almost finished, I had a revelation. Cherokee Syllabary wants to be scribal. It doesn't want to be a roman. It wants to be more like an italic.
 
@@ -187,8 +189,8 @@ Which is exactly what I came to after sweating over that design for weeks, <img 
 
 So how did Cherokee end up with a font that was so far from the original designs of Cherokee? 
 
-I've not been able to find out exactly what happened between Sequoyah and Samuel Worcester, the person who ultimately cast the Cherokee letters
-in metal. But I imagine the scene -- faced with these unfamiliar glyphs, that will be difficult to typeset, either Sequoyah or Worcester go 
+I've not been able to find out exactly what happened between Sequoyah and [Samuel Worcester](http://www.cherokee.org/AboutTheNation/History/Biographies/24485/Information.aspx), the person 
+who ultimately arranged to cast the Cherokee letters in metal. But I imagine the scene -- faced with these unfamiliar glyphs, that will be difficult to typeset, either Sequoyah or Worcester go 
 hunting for existing sorts, combining one here, shaving a bit off another. Eventually assembling the font that became the official look of printed
 Cherokee for the next century.
 
@@ -196,11 +198,17 @@ I wonder if Sequoyah was dismayed by some of the problems, or if he was pragmati
 his people. I guess we'll never know.
 
 It's a curious fate that heralds some of the problems with creativity in the 20th and 21st century. Nowadays, we encounter every work of creativity in a form suitable
-for mechanical reproduction. One downside is that the artifacts of this process, the accidents and mistakes, become a nearly immutable part of the work. In previous ages,
-a design, a story, or a song was reproduced from person to person, possibly for centuries, before it was written down. The Latin-speaking countries perfected the
-design of their alphabets over two millenia; someone like Sequoyah has to get it right the first time. Perhaps with digital technology, [open source licenses](http://opensource.org/), 
-movements like [Creative Commons](http://creativecommons.org/), and the meme phenomenon, we are finally getting back to a paradigm where creativity can be the product
-of collective genius. Technology will then obscure who exactly who created things, and it certainly makes it difficult to compensate creators. But neither 
+for mechanical reproduction. One downside is that the artifacts of this process, the accidents and mistakes, become a nearly immutable part of the work. The creak of a
+piano bench becomes part of a Beatles song, forever. In previous ages, a design, a story, or a song was reproduced from person to person, possibly for centuries, before 
+it was fixed in a form that is no longer shaped by human hands.
+
+So the Latin-speaking countries perfected the design of their alphabets over two millenia. Someone like Sequoyah has to get it right the first time. Or, if he wanted to change
+it, he would have to undertake the expense of labor and materials. And then his new vision would have to compete with the existing, mechanically reproducible works, already making
+copies of themselves in the environment. 
+
+Perhaps with digital technology, and movements like [open source licenses](http://opensource.org/), 
+and [Creative Commons](http://creativecommons.org/), the balance of power is shifting, and we'll always think of such works as fluid and alterable. Technology will then 
+obscure who exactly who created things, make it difficult to compensate creators. But neither 
 will it preserve mistakes fixed by one moment in time.
 
 ## Reaction
@@ -220,7 +228,7 @@ An academic review mentioned it:
 ## Future directions
 
 nkCherokee was a drop-in replacement for the old official Cherokee nation typeface, which simply substituted glyphs onto the standard American 
-typewriter keyboard. Since then, we're in a more enlightened age, and proper Unicode encodings are more common. Some very well-design fonts have
+typewriter keyboard. Since then, we're in a more enlightened age, and proper Unicode encodings are more common. Some very well-designed fonts have
 since been produced for Cherokee and are in more common use.
 
 I still think that some of these projects are missing out by hewing too closely to the traditional Cherokee font. Here's an example of one,
