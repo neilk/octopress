@@ -26,12 +26,13 @@ I ended up making [this font](https://github.com/neilk/nkCherokee). Click the bu
 <script type="text/javascript">
   function bindImgLoader(imgId, name) {
     var $img = $('#' + imgId);
-    if ($img[0])
-    var optionName = name + '-' + imgId;
-    var src = '/projects/cherokee/' + optionName + '.png';
-    $('#' + optionName).click( function() {
-      $img.attr('src', src);
-    });
+    if ($img[0]) {
+      var optionName = name + '-' + imgId;
+      var img = new Image; img.src = '/projects/cherokee/' + optionName + '.png';
+      $('#' + optionName).click( function() {
+        $img.attr('src', img.src);
+      });
+    }
   }
   function makeImgToggle(imgId) {
     bindImgLoader(imgId, 'traditional');
