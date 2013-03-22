@@ -54,7 +54,7 @@ few books on the topic. \[[1](#fn1)\] This is just the story of one amateur typo
 
 Cherokee is unique in that it's a script for a Native American language invented indigenously, by a person not literate
 in any language. [Sequoyah](http://en.wikipedia.org/wiki/Sequoyah) had seen the "talking leaves" used by Westerners, and
-determined to bring the innovation to Cherokee. After a decade experimentation he created a "syllabary" (one glyph 
+determined to bring the innovation to Cherokee. After a decade of experimentation he created a "syllabary" (one glyph 
 per syllable) which worked well for the language. This intellectual achievement is unprecedented in history - jumping 
 from illiteracy to Prometheus in a single lifetime. I don't know what kind of a genius you have to be to accomplish this, 
 sometimes against the prejudice of your neighbors, who are worried this is some kind of witchcraft. But Sequoyah was that kind of person.
