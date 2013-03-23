@@ -243,16 +243,20 @@ An academic review mentioned it:
 ## Future directions
 
 nkCherokee was a drop-in replacement for the old official Cherokee nation typeface, which simply substituted glyphs onto the standard American 
-typewriter keyboard. Since then, we're in a more enlightened age, and proper Unicode encodings are more common. Some very well-designed fonts have
-since been produced for Cherokee.
+typewriter keyboard. Since then, we're in a more enlightened age, and proper Unicode encodings are more common. 
+
+My font was at best utilitarian, and since then, some professional, gorgeous fonts have been produced, like 
+[Plantagenet](http://www.tiro.com/Plantagenet/plantagenet_cherokee_purchase.html).
+
 
 I still think that some of these projects are hewing too closely to the traditional Cherokee font. Here's an example of one,
-Aboriginal Sans, in which some of the mistakes and infelicities introduced by printing technology are still preserved. You can see how they 
-make it difficult to distinguish characters at smaller sizes. 
+[Aboriginal Sans](http://www.languagegeek.com/font/abfont/absans.html), in which some of the infelicities of 19th-century printing
+technology are still preserved. You can see how they make it difficult to distinguish characters at smaller sizes. 
 
 {% img center /projects/cherokee/abosans-vs-nk.png %}
 
-Microsoft's [Gadugi](http://blogs.msdn.com/b/michkap/archive/2012/12/19/10379263.aspx) does a lot better, and seems to compromise between the roman forms that everyone is accustomed to while acknowledging Sequoyah's
+Microsoft's [Gadugi](http://blogs.msdn.com/b/michkap/archive/2012/12/19/10379263.aspx) is the best yet in my opinion, 
+and seems to compromise between the roman forms that everyone is accustomed to while acknowledging Sequoyah's
 originals. But there's still a great opportunity for some enterprising typographer who wants to try crafting a more scribal font for Cherokee.
 
 
