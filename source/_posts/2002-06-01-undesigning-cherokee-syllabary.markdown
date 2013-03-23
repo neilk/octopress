@@ -141,6 +141,21 @@ hard-to-distinguish glyphs were highlighted in red:
   makeImgToggle('affinity');
 </script>
 
+You can see some of these principles in the design for <img class="noborder" src="/projects/cherokee/tlu-nk.png" title="nkCherokee &#x13e1; (TLU)" alt="nkCherokee &#x13e1; (TLU)"/>
+and <img class="noborder" src="/projects/cherokee/hv-nk.png" title="nkCherokee &#x13b2; (HV)" alt="nkCherokee &#x13b2; (HV)"/>. The minimum required to distinguish these characters would be 
+a vertical loop ending in a cross, like a "fish" form oriented vertically. But every handwriting sample faithfully preserves the prominent serif on one side. So I was careful to 
+recreate that, but also try to make the glyph seem balanced.
+
+<div style="text-align: center; margin-bottom: 1em;">
+<figure style="display: inline-block;">
+<img class="center" style="margin-bottom: 0px;" src="/projects/cherokee/nk-hv-symmetry.png" alt="Symmetry and asymmetry of nkCherokee glyph &#x13b2; (HV)" />
+<figcaption style="text-align:center">At left, the nkCherokee glyph for &#x13b2; (<em>HV </em>). At right, the same glyph, with its mirror image overlaid. The lower loops are identical, but 
+the inner loop leans away from the prominent serif, to give it room. As with most typefaces, intersections of thick strokes are made narrower, to make the overall color more even. 
+The serif is at a height completely different from the opposing loop, which has no serif. The art of the typographer is often to introduce geometric imbalance to create visual balance.</figcaption>
+</figure>
+</div>
+
+
 I made one last change to the font, which wasn't necessitated by any of my rules. The glyph &#x13F0; (*YE* ) is the only one in the entire syllabary which 
 always requires a descender. This seemed to be snatching defeat from the jaws of victory, as this would necessitate extra space between lines, only for this relatively
 rare syllable. Signage and many other applications would be easier if every word in Cherokee fit neatly into a rectangle. So I made my *YE* exaggerate 
