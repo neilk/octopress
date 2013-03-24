@@ -275,27 +275,22 @@ class FlickrVideoHtml
     xmlBuffer = ""
     x = Builder::XmlMarkup.new( :target => xmlBuffer )
 
-    x.video( { 'src' => @src, 
-               'controls' => 'controls', 
-               'preload' => 'none', 
-               'poster' => @poster }) { |x| 
-      x.object( { 'type' => @@type, 
-                  'width' => width, 
-                  'height' => height,
-                  'data' => @@playerSwf,
-                  'classid' => @@classid } ) { |x|
-        x.param( { 'name' => 'flashvars', 'value' => flashvars } )
-        x.param( { 'name' => 'movie', 'value' => @@playerSwf } )
-        x.param( { 'name' => 'bgcolor', 'value' => @@bgcolor } )
-        x.param( { 'name' => 'allowFullScreen', 'value' => @@allowfullscreen } )
-        x.embed( { 'type' => @@type, 
-                   'src' => @@playerSwf, 
-                   'bgcolor' => @@bgcolor,
-                   'allowfullscreen' => @@allowfullscreen,
-                   'flashvars' => flashvars,
-                   'width' => width,
-                   'height' => height } )
-      }
+    x.object( { 'type' => @@type, 
+                'width' => width, 
+                'height' => height,
+                'data' => @@playerSwf,
+                'classid' => @@classid } ) { |x|
+      x.param( { 'name' => 'flashvars', 'value' => flashvars } )
+      x.param( { 'name' => 'movie', 'value' => @@playerSwf } )
+      x.param( { 'name' => 'bgcolor', 'value' => @@bgcolor } )
+      x.param( { 'name' => 'allowFullScreen', 'value' => @@allowfullscreen } )
+      x.embed( { 'type' => @@type, 
+                 'src' => @@playerSwf, 
+                 'bgcolor' => @@bgcolor,
+                 'allowfullscreen' => @@allowfullscreen,
+                 'flashvars' => flashvars,
+                 'width' => width,
+                 'height' => height } )
     }
 
     xmlBuffer
