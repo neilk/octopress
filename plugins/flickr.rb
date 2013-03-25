@@ -125,6 +125,10 @@ class FlickrPhotoHtml
       }.join " "
   end
 
+  def icon(x)
+    # do nothing
+  end
+
   def toHtml
     imgAttrs = {src: @src, title: @title}
     imgCssAttrs = {}
@@ -186,6 +190,7 @@ class FlickrPhotoHtml
     x.figure(figureAttrs) { |x| 
       x.a(anchorAttrs) { |x|
         x.img(imgAttrs)
+        self.icon(x)
       }
       x.figcaption(captionAttrs) { |x|
         x.h5{ |x|
@@ -230,6 +235,14 @@ class FlickrVideoPreviewHtml < FlickrPhotoHtml
 
   def getZoomLink
     return @page_url
+  end
+
+  def icon(x) 
+    x.span( { 
+      'class' => 'video-icon', 
+    } ) {
+      x << '&#x25b6;'
+    }
   end
 
   def toHtml
