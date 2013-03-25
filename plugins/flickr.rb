@@ -195,7 +195,9 @@ class FlickrPhotoHtml
             x << @username
           end
         }
-        x << @desc
+        x.div({'class' => 'description'}) { |x| 
+          x << @desc
+        } 
       }
     }
    

@@ -18,29 +18,50 @@
 
 figcaption {
   font-size: smaller;
-  max-width: 50em;
   line-height: 1.6em;
 }
 
-.flickr-thumbnail figcaption {
+.illustration figcaption {
+  max-width: 40em;
+}
+
+.flickr-thumbnail {
+  box-sizing: content-box;
+}
+
+.flickr-thumbnail .description {
   display: none;
 }
 
-.flickr-link {
+.flickr-thumbnail h5 {
+  font-size: xx-small;
+  font-family: $sans;
+  text-align: center;
+}
+
+.flickr-set figcaption {
+  display: none;
+}
+
+.fancybox .flickr-link {
   padding-left: 18px;
   background: url('/images/flickr-icon.png') center left no-repeat;
 }
+
 
 /* customization for fancybox */
 /* fonts  and layout */
 .fancybox-title, .fancybox-title h5 {
   font-family: $sans;
   text-align: center;
-  max-height: 6em;
-  overflow-y: scroll;
 }
 
-.fancybox-title h5 {
+.fancybox-title {
+  max-height: 6em;
+  overflow-y: auto;
+}
+
+.flickr-thumbnail h5, .fancybox-title h5 {
   margin-bottom: 0px;
 }
 
