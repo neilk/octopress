@@ -5,6 +5,7 @@ date: 2005-04-09 22:37
 comments: true
 categories: flickr javascript
 ---
+<div class="alert">This post is from the dark ages, when Flickr used Flash extensively. Historical interest only.</div> 
 
 [Flickr](http://flickr.com/) is a popular photo hosting service that uses embedded [Flash](http://www.macromedia.com/software/flash) files as part of their interface. On every page, there will be a little delay while a new Flash file loads.
 
