@@ -63,7 +63,7 @@ The Cherokee rapidly adopted the syllabary, and it was soon brought to hot metal
 were created, and Bibles printed.
 
 <div style="text-align: center; margin-bottom: 1em;">
-<figure style="display: inline-block;">
+<figure class="illustration" style="display: inline-block;">
 <img class="center" style="margin-bottom: 0px;" src="/projects/cherokee/john316.jpg" alt="John 3:16 in Cherokee" />
 <figcaption style="text-align:center">John 3:16</figcaption>
 </figure>
@@ -147,7 +147,7 @@ a vertical loop ending in a cross, like a "fish" form oriented vertically. But e
 recreate that, but also try to make the glyph seem balanced.
 
 <div style="text-align: center; margin-bottom: 1em;">
-<figure style="display: inline-block;">
+<figure class="illustration" style="display: inline-block;">
 <img class="center" style="margin-bottom: 0px;" src="/projects/cherokee/nk-hv-symmetry.png" alt="Symmetry and asymmetry of nkCherokee glyph &#x13b2; (HV)" />
 <figcaption style="text-align:center">At left, the nkCherokee glyph for &#x13b2; (<em>HV </em>). At right, the same glyph, with its mirror image overlaid. The lower loops are identical, but 
 the inner loop leans away from the prominent serif, to give it room. As with most typefaces, intersections of thick strokes are made narrower, to make the overall color more even. 
@@ -196,7 +196,7 @@ Which is exactly what I came to after sweating over that design for weeks, <img 
 <img class="noborder" src="/projects/cherokee/sv-nk.png" title="nkCherokee &#x13d2; (SV)" alt="nkCherokee &#x13d2; (SV)"/>. It's eerie. It's like the glyphs somehow encoded that information, latently. 
 
 <div style="text-align: center; margin-bottom: 1em;">
-<figure style="display: inline-block;">
+<figure class="illustration" style="display: inline-block;">
 <img class="center" style="margin-bottom: 0px;" src="/projects/cherokee/process.png" alt="Evolution of Cherokee glyph &#x13af; (HI)" />
 <figcaption style="text-align:center">The evolution of Cherokee glyph &#x13af; (<em>HI </em>). From left to right: Sequoyah's original design; as it was rendered in metal type; a handwritten sample from a Cherokee speaker; and the glyph in the nkCherokee font.</figcaption>
 </figure>
