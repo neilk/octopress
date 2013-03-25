@@ -43,12 +43,6 @@ figcaption {
   display: none;
 }
 
-.fancybox .flickr-link {
-  padding-left: 18px;
-  background: url('/images/flickr-icon.png') center left no-repeat;
-}
-
-
 /* customization for fancybox */
 /* fonts  and layout */
 .fancybox-title, .fancybox-title h5 {
@@ -64,6 +58,12 @@ figcaption {
 .flickr-thumbnail h5, .fancybox-title h5 {
   margin-bottom: 0px;
 }
+
+.fancybox-title .flickr-link {
+  padding-left: 18px;
+  background: url('/images/flickr-icon.png') center left no-repeat;
+}
+
 
 /* always show navigation */
 .fancybox-nav {
