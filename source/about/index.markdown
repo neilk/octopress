@@ -25,7 +25,7 @@ But I think it's time for me to get back into creating new things, to make
 those early mistakes, rather than be the one who shows up later to fix them.
 
 So now is the time for new ideas, both serious and frivolous, things that I hope
-will change the world, and some things that I hope just make you smile.
+will have great impact, and some things that I hope just make you smile.
 
 
 ## Contact info
