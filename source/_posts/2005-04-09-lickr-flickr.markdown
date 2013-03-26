@@ -28,7 +28,7 @@ harm your data. Please make sure you have backups of your photos.
 Use this at your own risk. (I've been using various incarnations
 of Lickr for about a month, and I have had no problems so far.)
 
-1. Save [`lickr.user.js`](/images/lickr.user.js) to your computer.
+1. Save [`lickr.user.js`](/projects/lickr/lickr.user.js) to your computer.
 2. Get [Firefox](http://www.mozilla.org/firefox/).
 3. Install [Greasemonkey](http://greasemonkey.mozdev.org/) into Firefox.
 4. Restart Firefox.
