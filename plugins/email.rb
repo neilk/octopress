@@ -84,9 +84,7 @@ module Jekyll
       # not work as expected.
       linkTextReversed = encode(@linkText.each_char.to_a.reverse.join)
       emailObfuscated = encode(@email)
-      "<script type=\"text/javascript\">" +
-      " document.write('<a style=\"#{STYLE}\" href=\"#{MAIL_TO}#{emailObfuscated}\">#{linkTextReversed}</a>');" + 
-      "</script>"
+      return "<a style=\"#{STYLE}\" href=\"#{MAIL_TO}#{emailObfuscated}\">#{linkTextReversed}</a>";
     end
 
     private 
