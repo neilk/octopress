@@ -5,9 +5,14 @@ date: 2008-06-01 00:00
 comments: true
 categories: internationalization i18n
 ---
-{% flickr_image 8473066033 m right %}
+<figure class="right" style="display: inline-block;">
+  <a title="By Diego Guti&eacute;rrez, Hieronymus Cock, Library of Congress (hdl.loc.gov/loc.gmd/g3290.ct000342) / Jaybear (File:1562 Americ&aesc;¦ Guti&eacute;rrez.JPG) [Public domain or Public domain], via Wikimedia Commons" href="http://commons.wikimedia.org/wiki/File%3A1562_Americae-Gutierrez_02_01hrs-mid_Badge-with-Monster-Fish-and-Ships.jpg"><img width="281" style="width: 281px; height: 240px;" alt="1562 Americae-Gutierrez 02 01hrs-mid Badge-with-Monster-Fish-and-Ships" src="//upload.wikimedia.org/wikipedia/commons/thumb/c/cb/1562_Americae-Gutierrez_02_01hrs-mid_Badge-with-Monster-Fish-and-Ships.jpg/563px-1562_Americae-Gutierrez_02_01hrs-mid_Badge-with-Monster-Fish-and-Ships.jpg"/></a>
+  <figcaption style="text-align: center">
+    Here be dragons. (Image via <a title="By Diego Guti&eacute;rrez, Hieronymus Cock, Library of Congress (hdl.loc.gov/loc.gmd/g3290.ct000342) / Jaybear (File:1562 Americ&aesc;¦ Guti&eacute;rrez.JPG) [Public domain or Public domain], via Wikimedia Commons" href="http://commons.wikimedia.org/wiki/File%3A1562_Americae-Gutierrez_02_01hrs-mid_Badge-with-Monster-Fish-and-Ships.jpg">Wikimedia Commons</a>)
+  </figcaption>
+</figure>
 
-Creating a simple address form on the web can lead you into dangerous waters.
+Programmers might assume there is a simple list of all the countries in the world. There isn't.
 
 For example, China and Taiwan don't recognize each other as legitimate
 governments. If, for instance, your organization were to
