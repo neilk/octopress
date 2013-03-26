@@ -1,0 +1,156 @@
+                               Neil Kandalgaonkar
+
+   [1]http://brevity.org/
+   Based in San Francisco, CA
+   [2]email · [3]PDF · [4]Word · [5]text · [6]LinkedIn · [7]Facebook
+
+Goal
+
+   Help people to cooperate at internet scale.
+
+Work Experience
+
+  Software Engineer, Wikimedia Foundation
+
+    December 2009 - present
+
+   The [8]Wikimedia Foundation is the organization behind [9]Wikipedia. I
+   have been working on multimedia usability issues, by adding features to
+   the PHP backend and creating a jQuery-based frontends. All work open
+   source. Most work concentrated in [10]UploadWizard extension and
+   [11]UploadStash module, or see my full [12]commit log.
+
+  Software Engineer, Yahoo (Flickr)
+
+    August 2008 - April 2009
+
+   [13]Flickr is one of the leading photo-sharing websites in the world. I
+   joined the PHP team and made various improvements to Flickr's payment
+   system and FlickrMail. I was let go as part of Yahoo-wide layoffs in
+   April 2009.
+
+  Software Engineer, Yahoo (Upcoming.org)
+
+    December 2006 - August 2008
+
+   [14]Upcoming.org is a collaborative events calendar, acquired by Yahoo
+   in 2005, using PHP and Perl. I integrated event listings into Yahoo
+   Search, redesigned the event data and geographic models, improved user
+   interface and responsiveness, wrote a deploy system to automatically
+   optimize site load time, wrote a Facebook app in the first weeks of the
+   platform's existence, and mentored new hires. Received Excellence and
+   Hack Day Awards in 2008.
+
+  Software Engineer, Google
+
+    September 2005 - October 2006
+
+   I was part of the team that launched [15]Google Checkout, a Java-based
+   commerce and payments system. My role was to refactor Google Checkout
+   for international markets. This included the frontend, the data store,
+   order processing and taxation policy, the Merchant API, and even
+   customized ways to create your Google Account.
+
+  Developer, Enfold Systems
+
+    April 2005 - July 2005
+
+   [16]Enfold Systems provides consulting and enterprise tools for Plone,
+   an open source, Python-based content management system. I left the
+   company amicably when I got a job offer from Google.
+
+  Lickr, open source project
+
+    April 2005
+
+   [17]Lickr was the first complete AJAX interface for [18]Flickr,
+   implemented as a Greasemonkey extension for Firefox. Previously, Flickr
+   had relied on Flash and it was an [19]open question whether an AJAX
+   interface was even possible or desirable. Flickr followed soon after
+   with their own AJAX interface for all browsers.
+
+  Self-employed Consultant
+
+    May 2002 - November 2004
+
+   During this period I consulted for a number of clients, particularly
+   Vision2Hire Solutions (acquired by [20]BrainHunter), a maker of online
+   human resources software.
+
+  Developer, ActiveState Corporation
+
+    September 2000 - December 2001
+
+   [21]ActiveState produces tools for scripting language programmers. I
+   re-engineered [22]Programmer's Package Manager Server, part of a system
+   for installing Perl and Python software libraries. I also helped
+   architect and code the [23]ActiveState Programmer Network, a site which
+   aggregated knowledge about such languages.
+
+  Systems Architect, Stylus Strategic Communications
+
+    June 1997 - November 1999
+
+   At Stylus, I designed and programmed web applications for some of
+   Canada's most successful corporations.
+
+Other experience
+
+     * Assisted or instigated various projects with [24]Ardent Heavy
+       Industries, a Bay Area art collective, 2007 - present
+     * Volunteer tutor with [25]Frontier College, at Britannia High School
+       in East Vancouver, 2005
+     * [26]Font designer, A Handbook of the Cherokee Verb: A Preliminary
+       Study, Cherokee National Historical Society, 2002
+
+Education
+
+   Bachelor of Arts, Communication Studies, Spring 2000
+   Concordia University, Montreal, Quebec
+
+Languages
+
+   English, French
+
+Buzzword-compliant section
+
+   Java, Javascript, jQuery, AJAX, Perl, PHP, Python, XSLT, JasmineBDD,
+   PHPUnit, JUnit, XML, HTTP, HTML, HTML5, CSS, CSS2, CSS3, SMTP, REST,
+   Apache, mod_perl, Java servlets, MySQL, Oracle, MSSQL, Unix (Linux,
+   Solaris, *BSD), GLaDOS, Subversion (SVN), Perforce, CVS, Postscript,
+   Smarty, Plone, Zope, Facebook [DEL: moving target :DEL] API, Flickr
+   API, UX, User Experience
+
+References and letters of recommendation
+
+   Available upon [27]request.
+
+References
+
+   1. http://brevity.org/
+   2. mailto:resume@brevity.org
+   3. file://localhost/home/brevity/brevity.org/resume/neilk-resume.pdf
+   4. file://localhost/home/brevity/brevity.org/resume/neilk-resume.txt
+   5. file://localhost/home/brevity/brevity.org/resume/neilk-resume.txt
+   6. http://www.linkedin.com/in/neilkandalgaonkar
+   7. http://www.facebook.com/neilkandalgaonkar
+   8. http://wikimediafoundation.org/
+   9. http://wikipedia.org/
+  10. http://www.mediawiki.org/wiki/Extension:UploadWizard
+  11. http://svn.wikimedia.org/svnroot/mediawiki/trunk/phase3/includes/upload/UploadStash.php
+  12. http://www.mediawiki.org/wiki/Special:Code/MediaWiki/author/neilk
+  13. http://flickr.com/
+  14. http://upcoming.org/
+  15. https://checkout.google.com/
+  16. http://enfoldsystems.com/
+  17. http://brevity.org/lickr
+  18. http://flickr.com/
+  19. http://simonwillison.net/2005/Apr/10/lickr/
+  20. http://brainhunter.com/
+  21. http://www.activestate.com/
+  22. http://aspn.activestate.com/ASPN/docs/ActivePerl/faq/ActivePerl-faq2.html
+  23. http://aspn.activestate.com/
+  24. http://ardentheavyindustries.com/
+  25. http://www.frontiercollege.ca/
+  26. http://brevity.org/cherokee
+  27. mailto:resume@brevity.org

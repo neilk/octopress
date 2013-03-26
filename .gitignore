@@ -10,7 +10,8 @@ sass.old
 source.old
 source/_stash
 source/stylesheets/screen.css
-source/resume/*
+source/resume/references/*
+source/resume/old/*
 vendor
 node_modules
 .themes/darkstripes/

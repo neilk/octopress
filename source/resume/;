@@ -1,0 +1,225 @@
+---
+layout: none
+---
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html><head><title>neilk.net -- resume of Neil Kandalgaonkar</title>
+<style type="text/css">
+    body {
+        font-family: lucida sans unicode, lucida grande, lucida sans, lucida, helvetica, arial, verdana, bitstream vera sans, sans-serif;
+        padding: 2em;
+        font-size: 10pt;
+    }
+    
+    h1#name {
+        font-size: 18pt;
+        font-weight: 400; 
+        text-align: center
+    }
+
+    p#contact {
+        text-align: center;
+        margin-bottom: 2em;
+    }
+    
+    h2 {
+        font-weight: normal;
+        font-size: 13pt;
+        font-style: italic;
+    }
+
+    h3 {
+        margin-bottom: 0px; 
+        font-size: 10pt;
+        font-weight: bold;
+        font-variant: italic, oblique;
+    }
+
+    h4 {
+        font-size: 10pt;
+        margin-top: 0px;
+        font-weight: bold;
+    }
+
+    
+    div.indent {
+        padding-left: 2em;
+    }
+
+    div.indent ul {
+        margin-left: 0em;
+        padding-left: 2em;
+    }
+
+    div.highlight {
+        background: #f9e9b0;
+	text-align: center;
+	padding: 1em;
+    }
+</style>
+
+<div style="background: #ffdd00; padding: 1em"><p>
+I am a Canadian citizen, but worked in the San Francisco Bay Area from 2005-2012. I am currently limiting my entries into the USA as I need to spend 365 days outside the country to reset my H-1B visa status.</p>
+
+<p>I will be working on personal projects and traveling until at least April 2013.</p>
+</div>
+
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Language" content="en-us"></head><body>
+
+<h1 id="name">Neil Kandalgaonkar</h1>
+
+<p id="contact">
+Based in Vancouver, Canada<br/>
+  <a href="http://neilk.net/">website</a> 
+  &middot;
+  {% email neilk@neilk.net email %}
+  &middot;
+  <a href="http://www.linkedin.com/in/neilkandalgaonkar">LinkedIn</a>
+  &middot;
+  <a href="http://github.com/neilk/">GitHub</a>
+  &middot;
+  <a href="https://www.ohloh.net/accounts/neilk">Ohloh</a>
+</p>
+
+<h2>Goal</h2>
+
+<div class="indent">
+<p>Help people to cooperate at internet scale.</p>
+</div>
+
+<h2>Work Experience</h2>
+
+<h3>Software Engineer, Wikimedia Foundation</h3>
+<h4>December 2009 - January 2012</h4>
+
+<div class="indent">
+<p>The <a href='http://wikimediafoundation.org/'>Wikimedia Foundation</a> is the organization behind <a href="http://wikipedia.org/">Wikipedia</a>. 
+I worked on HTML5 interfaces, multimedia, file storage, internationalization, APIs, GUI editing, parsing, live collaboration while editing, and more (<a href="http://www.mediawiki.org/wiki/Special:Code/MediaWiki/author/neilk">commit log</a>). Frequently deployed and configured code running live on all Wikipedia. Mentored other paid and community developers, including Google Summer of Code 2011, and winning team for Wikipedia SF Hackathon in January 2012. Left amicably to pursue personal projects and reset visa status.</p></div>
+
+<h3>Software Engineer, Yahoo (Flickr)</h3>
+<h4>August 2008 - April 2009</h4>
+
+<div class="indent">
+<p><a href="http://flickr.com/">Flickr</a> is one of the leading photo-sharing websites in the
+world. I joined the PHP team and made various improvements to
+Flickr's payment system, FlickrMail, and mobile APIs. I was let go as part of
+Yahoo-wide layoffs in April 2009.</a>
+</p>
+</div>
+
+<h3>Software Engineer, Yahoo (Upcoming.org)</h3>
+<h4>December 2006 - August 2008</h4>
+
+<div class="indent">
+<p><a href="http://upcoming.org/">Upcoming.org</a> 
+is a collaborative events calendar, acquired by Yahoo in 2005, using
+PHP and Perl.  I integrated event listings into Yahoo Search,
+redesigned the event data and geographic models, improved user
+interface and responsiveness, wrote a deploy system to automatically
+optimize site load time, and mentored new hires. Received Excellence
+and Hack Day Awards in 2008.</p>
+</div>
+
+<h3>Software Engineer, Google</h3>
+<h4>September 2005 - October 2006</h4>
+
+<div class="indent"><p>
+I was part of the team that launched <a href="https://checkout.google.com/">Google Checkout</a>, a Java-based
+commerce and payments system. My primary role was to refactor Google Checkout
+for international markets. This included the frontend, the data
+store, order processing and taxation policy, the Merchant API and more. I also worked closely
+with the Google Accounts team to create a Checkout-specific account creation flow.
+</p></div>
+
+<h3>Developer, Enfold Systems</h3>
+<h4>April 2005 - July 2005</h4>
+
+<div class="indent">
+<p><a href="http://enfoldsystems.com/">Enfold Systems</a> provides consulting and enterprise tools for Plone, an open 
+  source, Python-based content management system. I left the company amicably when I got a job offer from Google.</p>
+</div>
+
+
+<h3>Lickr, open source project</h3>
+<h4>April 2005</h4>
+
+<div class="indent">
+
+<p><a href="http://neilk.net/lickr">Lickr</a> was the first complete AJAX interface for <a href="http://flickr.com/">Flickr</a>, implemented as a Greasemonkey extension for Firefox. Previously, Flickr
+had relied on Flash and it was an <a href="http://simonwillison.net/2005/Apr/10/lickr/">open question</a> whether an AJAX interface was even possible or desirable. 
+Flickr followed soon after with their own AJAX interface for all browsers.</p>
+
+</p>
+</div>
+
+
+<h3>Self-employed Consultant</h3>
+<h4>May 2002 - November 2004</h4>
+
+<div class="indent">
+<p>During this period I consulted for a number of clients, particularly  
+Vision2Hire Solutions (acquired by <a href="http://brainhunter.com/">BrainHunter</a>), a maker of online human resources software.</p>
+</div>
+
+<h3>Developer, ActiveState Corporation</h3>
+<h4>September 2000 - December 2001</h4>
+
+<div class="indent">
+<p><a href="http://www.activestate.com/">ActiveState</a> 
+produces tools for scripting language programmers. I
+re-engineered <a href="http://aspn.activestate.com/ASPN/docs/ActivePerl/faq/ActivePerl-faq2.html">Programmer's Package Manager</a> Server,
+part of a system for installing Perl and Python software libraries. I also helped architect and code 
+the <a href="http://aspn.activestate.com/">ActiveState Programmer Network</a>, a site which aggregated knowledge about such languages.
+</p></div>
+
+<h3>Systems Architect, Stylus Strategic Communications</h3>
+<h4>June 1997 - November 1999</h4>
+
+<div class="indent">
+<p>At Stylus, I designed and programmed web applications for some of Canada's most successful corporations.</p>
+</div> 
+    
+
+<h2>Other experience</h2>
+
+<div class="indent">
+<ul>
+<li>Assisted or instigated various projects with <a href="http://ardentheavyindustries.com/">Ardent Heavy Industries</a>, a Bay Area art collective, 2007 - present</li>
+<li>Volunteer tutor with <a href="http://www.frontiercollege.ca/">Frontier College</a>, at Britannia High School in East Vancouver, 2005</li>
+<li><a href="http://neilk.net/blog/2002/06/01/undesigning-cherokee-syllabary/">Font designer</a>, <i>A Handbook of the Cherokee Verb: A Preliminary Study</i>,
+Cherokee National Historical Society, 2002</li>
+</ul>
+</div>
+
+<h2>Education</h2>
+
+<div class="indent">
+<p>Bachelor of Arts, Communication Studies, Spring 2000
+<br>Concordia University, Montreal, Quebec
+</p>
+</div>
+
+<h2>Languages</h2>
+
+<div class="indent">
+<p>English, French</p>
+</div> 
+
+<h2>Buzzword-compliant section</h2>
+
+<div class="indent">
+<p>Open Source, OSS, Java, Javascript, Perl, PHP, Python, MediaWiki, jQuery, Node.JS, JasmineBDD, PHPUnit, JUnit, XML, HTTP, HTML, HTML5, SMTP, REST, Apache, MySQL, Linux,
+GLaDOS, UX, User Experience</p>
+</div>
+
+<h2>References and letters of recommendation</h2>
+
+<div class="indent">
+  
+<p>Available upon 
+{% email neilk@neilk.net request %}  
+  . Also see <a href="http://www.linkedin.com/in/neilkandalgaonkar">LinkedIn</a>.</p>
+</div>
+
+
+</body></html>
