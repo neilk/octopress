@@ -3,6 +3,6 @@ layout: post
 title: "50 people see..."
 date: 2005-03-15
 comments: true
-categories: flickr art
+categories: flickr art hack
 ---
 {% flickr_set 164195 m %}

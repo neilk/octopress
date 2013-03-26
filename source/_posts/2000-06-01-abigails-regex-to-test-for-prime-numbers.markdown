@@ -3,7 +3,7 @@ layout: post
 title: "Abigail's regex to test for prime numbers"
 date: 2000-06-01 16:16
 comments: true
-categories: perl regex prime math
+categories: hack
 ---
 The prolific Perl hacker [Abigail](http://abigail.be/) is famous for posting enigmatic but ingenious one-liner scripts in her signatures on newsgroups. 
 

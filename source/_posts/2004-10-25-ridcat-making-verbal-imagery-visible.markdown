@@ -3,7 +3,7 @@ layout: post
 title: "ridcat: Making verbal imagery visible"
 date: 2004-10-25 00:00
 comments: true
-categories: art visuals politics
+categories: art hack politics
 ---
 {% img right /projects/ridcat/sample.jpg Sample cluster of icons, arranged by ridcat %}
 

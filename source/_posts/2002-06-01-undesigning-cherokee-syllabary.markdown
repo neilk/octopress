@@ -4,7 +4,7 @@ title: "Undesigning Cherokee syllabary"
 subtitle: Restoring the usability of a Native American writing system
 date: 2002-06-01 00:00
 comments: true
-categories: typography font cherokee design
+categories: hack internationalization design
 ---
 My friend [Sean M. Burke](http://interglacial.com/) was complaining on IRC about how this font he was reading was hurting his eyes. 
 As a linguist and programmer specializing in Native American languages, he was used to his share of unusual scripts, but he couldn't

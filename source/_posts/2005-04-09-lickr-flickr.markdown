@@ -3,7 +3,7 @@ layout: post
 title: "Lickr: Flickr, without the Flash"
 date: 2005-04-09 22:37
 comments: true
-categories: flickr javascript
+categories: flickr javascript hack
 ---
 <div class="alert">This post is from the dark ages, when Flickr used Flash extensively. Historical interest only.</div> 
 

@@ -4,7 +4,7 @@ title: Google Transit Heatmap
 subtitle: Or, way-too-data-driven-decisions
 date: 2008-08-01 23:52
 comments: true
-categories: google flickr datavis map heatmap googlemaps kml
+categories: google flickr map hack
 ---
 I'm a public transit user. I was moving back to San Francisco to work
 for Flickr. I've read research that says that a short commute has a
