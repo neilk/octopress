@@ -7,7 +7,7 @@ article {
   }
   header {
     position: relative;
-    padding-top: 2em;
+    padding-top: 1em;
     padding-bottom: 1em;
     margin-bottom: 1em;
     background: $img-border bottom left repeat-x;
@@ -27,7 +27,7 @@ article {
       margin: 0;
       &.meta {
         @extend .sans;
-        position: absolute; top: 0;
+        margin-bottom: .5em;
       }
     }
     @media only screen and (min-width: 768px) {
