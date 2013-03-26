@@ -1,0 +1,42 @@
+---
+layout: post
+title: "New site launched"
+date: 2013-03-25 23:56
+comments: true
+categories: meta
+---
+
+{% flickr_image 4506123 m left "Shameless unrelated puppy picture" %}
+
+Welcome to the new site! My stuff used to be over at [brevity.org](http://brevity.org/), but I've blog-ified all the content that was over there,
+and am having fun making new posts here. 
+
+Like a lot of people, these days I'm dissatisfied with pretty much all the social networks out there. [App.net](http://alpha.app.net/) isn't quite
+ready for prime time. And I'm a bit sick of never having control over my own words.
+
+Plus, I have a lot of longer-form thoughts I want to push out there. You've been warned.
+
+<!-- more -->
+
+<p style="clear:both;"></p>
+## Hacking it up
+
+This site is based on [Octopress](http://octopress.org), and I've learned a lot of [Ruby](http://ruby-lang.org/) putting this site together. I've
+always been suspicious of Rails and other ORM frameworks, and I've lost my faith in objects, so I don't think it's going to be a language 
+that I do a lot of hacking in. The Ruby community is indiscriminate in their love for monkey-patching and metaprogramming, and 
+the spookier features of Ruby still bug me. But...
+
+{% tweet https://twitter.com/flipzagging/status/312343745288884224 %}
+
+As you can see I'm tweaked it a lot so I can pull in content from other sites. I think for now I'll pursue a hybrid approach - I'll post whereever
+it makes sense, but copy some of that content here when it's of lasting value.
+
+In particular I wanted a way to tell stories with [Flickr](http://flickr.com/) sets. I have used them in the past the way some people use Powerpoint.
+Check out the entry for [HaloWall](/blog/2009/10/18/halowall/) for an example - the Flickr set is appended at the end.
+
+Finally, I'm happy to say that I wrote a long piece about my experience [creating a typeface for Cherokee](/blog/2002/06/01/undesigning-cherokee-syllabary/). 
+I've wanted to write about it for more than ten years. It's interesting to see what's changed about how I think, and what's stayed the same. A
+theme of trusting people over technology - but also seeing technology as an expression of their spirit - has been part of my belief system, perhaps for longer than I know.
+
+
+
