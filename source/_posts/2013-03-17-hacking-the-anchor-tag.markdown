@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Re: 'hacking' the anchor tag"
+title: "\"Hacking\" the anchor tag"
 date: 2013-03-17 12:14
 comments: true
 categories: security javascript
