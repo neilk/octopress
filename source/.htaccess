@@ -18,6 +18,8 @@ Redirect 301 /code/google/linedraw-sample.png http://neilk.net/projects/google-d
 Redirect 301 /code/google/transitheatmap.html http://neilk.net/blog/2008/08/01/google-transit-heatmaps/
 Redirect 301 /code/mozilla/greasemonkey/lickr/flickr-screenshot-tn.jpg http://www.flickr.com/photos/brevity/8560664119
 Redirect 301 /code/mozilla/greasemonkey/lickr/flickr-screenshot.jpg http://www.flickr.com/photos/brevity/8560664119
+Redirect 301 /code/mozilla/greasemonkey/lickr http://neilk.net/blog/2005/04/09/lickr-flickr/
+Redirect 301 /code/mozilla/greasemonkey/lickr http://neilk.net/blog/2005/04/09/lickr-flickr/
 Redirect 301 /code/mozilla/greasemonkey/lickr/index.html http://neilk.net/blog/2005/04/09/lickr-flickr/
 Redirect 301 /code/mozilla/greasemonkey/lickr/lickr-screenshot-tn.jpg http://www.flickr.com/photos/brevity/9076272
 Redirect 301 /code/mozilla/greasemonkey/lickr/lickr-screenshot.jpg http://www.flickr.com/photos/brevity/9076272
@@ -190,6 +192,8 @@ Redirect 301 /code/ridcat/analyses/rnc2004/schwarz.txt http://neilk.net/projects
 Redirect 301 /code/ridcat/analyses/rnc2004/schwarz.txt.html http://neilk.net/projects/ridcat/analyses/rnc2004/schwarz.txt.html
 Redirect 301 /code/ridcat/analyses/rnc2004/schwarz.txt.jpg http://neilk.net/projects/ridcat/analyses/rnc2004/schwarz.txt.jpg
 Redirect 301 /code/ridcat/anim-algorithm.gif http://neilk.net/projects/ridcat/anim-algorithm.gif
+Redirect 301 /code/ridcat http://neilk.net/blog/2004-10-25-ridcat-making-verbal-imagery-visible
+Redirect 301 /code/ridcat http://neilk.net/blog/2004-10-25-ridcat-making-verbal-imagery-visible
 Redirect 301 /code/ridcat/index.html http://neilk.net/blog/2004-10-25-ridcat-making-verbal-imagery-visible
 Redirect 301 /code/ridcat/sample.jpg http://neilk.net/projects/ridcat/sample.jpg
 Redirect 301 /code/set_pl.txt https://github.com/neilk/set-solver
@@ -197,6 +201,8 @@ Redirect 301 /kml/downtownTransit.kml http://neilk.net/projects/transit-heatmap/
 Redirect 301 /kml/eastbayTransit.kml http://neilk.net/projects/transit-heatmap/eastbayTransit.kml
 Redirect 301 /lickr/flickr-screenshot-tn.jpg http://www.flickr.com/photos/brevity/8560664119
 Redirect 301 /lickr/flickr-screenshot.jpg http://www.flickr.com/photos/brevity/8560664119
+Redirect 301 /lickr http://neilk.net/blog/2005/04/09/lickr-flickr/
+Redirect 301 /lickr http://neilk.net/blog/2005/04/09/lickr-flickr/
 Redirect 301 /lickr/index.html http://neilk.net/blog/2005/04/09/lickr-flickr/
 Redirect 301 /lickr/lickr-screenshot-tn.jpg http://www.flickr.com/photos/brevity/9076272
 Redirect 301 /lickr/lickr-screenshot.jpg http://www.flickr.com/photos/brevity/9076272
