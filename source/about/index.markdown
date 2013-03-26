@@ -1,8 +1,10 @@
 ---
 layout: page
-title: "about"
-date: 2013-02-22 16:45
-comments: true
+title: "About"
 sharing: true
 footer: true
 ---
+
+This is the about page.
+
+
