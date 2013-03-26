@@ -73,16 +73,19 @@ module Jekyll
 
     def initialize(tag_name, text, tokens)
       super
-      @email = text.strip
+      @email, @linkText = text.strip.split(' ')
+      if @linkText.nil?
+        @linkText = @email
+      end
     end
 
     def render(context)
       # We can't encode just once. Reversal of html entities will
       # not work as expected.
-      reversed = encode(@email.each_char.to_a.reverse.join)
-      obfuscated = encode(@email)
+      linkTextReversed = encode(@linkText.each_char.to_a.reverse.join)
+      emailObfuscated = encode(@email)
       "<script type=\"text/javascript\">" +
-      " document.write('<a style=\"#{STYLE}\" href=\"#{MAIL_TO}#{obfuscated}\">#{reversed}</a>');" + 
+      " document.write('<a style=\"#{STYLE}\" href=\"#{MAIL_TO}#{emailObfuscated}\">#{linkTextReversed}</a>');" + 
       "</script>"
     end
 
