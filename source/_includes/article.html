@@ -1,7 +1,7 @@
 {% unless page.no_header %}
   <header>
     {% unless page.meta == false %}
-      {% if page.date %}
+      {% if page.date or post.date %}
       <p class="meta">
         {% include post/date.html %}{{ time }}
         {% if site.disqus_short_name and page.comments != false and post.comments != false and site.disqus_show_comment_count == true %}
