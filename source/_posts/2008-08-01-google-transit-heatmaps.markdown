@@ -43,5 +43,7 @@ This map did have an impact on where I eventually got an apartment. I hadn't eve
 
 By request: the East Bay. Click for higher resolution.
 
-{% photo /projects/transit-heatmap/downtown-transit-eastbay.png /projects/transit-heatmap/downtown-transit-eastbay.png H Heatmap of San Francisco, Oakland, and Berkeley, colored by transit time to Flickr offices %}
+{% photo /projects/transit-heatmap/downtown-transit-eastbay.png /projects/transit-heatmap/downtown-transit-eastbay.png Heatmap of San Francisco, Oakland, and Berkeley, colored by transit time to Flickr offices %}
+
+Here's the [code](/projects/transit-heatmap/googleTransitHeatmap-pl.txt), although it's not very clever at all. Please don't abuse their bandwidth.
 

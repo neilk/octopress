@@ -1,0 +1,190 @@
+#!/usr/bin/perl -w
+
+# googleTransitHeatmap.pl
+
+# Creates KML representing a 'heatmap' of
+# travel times from all points in the bounding box
+# to a particular address. 
+
+# THIS SOFTWARE IS SUPPLIED WITHOUT WARRANTY OF ANY KIND, AND MAY BE
+# COPIED, MODIFIED OR DISTRIBUTED IN ANY WAY, AS LONG AS THIS NOTICE
+# AND ACKNOWLEDGEMENT OF AUTHORSHIP REMAIN.
+
+# original script by Neil Kandalgaonkar <neilk(a)brevity.org>
+
+
+use strict;
+
+# destination address (url-encoded)
+$destinationAddress = '475+Sansome,+San+Francisco,+CA';
+
+# sf (cuts a bit off north beach...)
+# my ($minLat, $minLon) = (37.723651, -122.513866); # sw
+# my ($maxLat, $maxLon) = (37.803717, -122.378597); # ne
+
+# east bay
+my ($minLat, $minLon) = (37.613833, -122.346497); # sw
+my ($maxLat, $maxLon) = (37.93297,  -122.103424); # ne
+
+
+my $delta = 0.00541075999999975;
+my $radius = $delta/2;
+# my $delta = ($maxLon - $minLon) / 25;
+
+printHeader();
+printPlaceMarkData($minLat, $minLon, $maxLat, $maxLon);
+printFooter();
+
+
+sub printPlaceMarkData {
+  my ($minLat, $minLon, $maxLat, $maxLon) = @_;
+  for (my $lat = $minLat; $lat <= $maxLat; $lat += $delta) {
+    for (my $lon = $minLon; $lon <= $maxLon; $lon += $delta) {
+      sleep(1);
+      print STDERR ".";
+      my $averageTime = getAverageTransitTime($lat, $lon);
+      if (not defined $averageTime) {
+        print STDERR "E";
+        next;
+      } 
+      print STDERR "$lat $lon $averageTime\n";
+      printPlaceMark($lat, $lon, $averageTime);
+    }
+    print STDERR "\n";
+  }
+}
+  
+sub getStyle {
+  my ($time) = @_;
+  my $style;
+  if ($time <= 20) {  
+    $style = 'Green';
+  } elsif ($time > 20 and $time <= 35) {
+    $style = 'Yellow';
+  } elsif ($time > 35 and $time <= 50) {
+    $style = 'Red';
+  } else {
+    $style = 'Blue';
+  }
+  return $style;
+}
+
+sub printPlaceMark {
+  my ($lat, $lon, $time) = @_;
+  my $style = getStyle($time);
+  $minLat = $lat - $radius;
+  $maxLat = $lat + $radius;
+  $minLon = $lon - $radius;
+  $maxLon = $lon + $radius;
+  my @coords;
+  foreach my $pair ([$minLat, $minLon], 
+                    [$maxLat, $minLon], 
+                    [$maxLat, $maxLon], 
+                    [$minLat, $maxLon], 
+                    [$minLat, $minLon]) {
+    my ($thisLat, $thisLon) = @$pair;
+    # ugh, Google Earth KML wants x,y not lat,lon
+    push @coords, "$thisLon,$thisLat,10";   
+
+  }
+  $style = ucfirst($style);
+  print <<"EOXML";
+      <Placemark>
+        <name>$time mins</name>
+        <styleUrl>#trans${style}Poly</styleUrl>
+        <Polygon>
+          <extrude>1</extrude>
+          <altitudeMode>relativeToGround</altitudeMode>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>
+                @coords
+              </coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+      </Placemark>
+EOXML
+}
+
+sub getAverageTransitTime {
+  my ($lat, $lon) = @_;
+  my $averageTime = undef;
+  my $url = getGoogleTransitTimeUrl($lat, $lon);
+  my $response = qx(curl -s '$url');
+  my @time;
+  while ($response =~ m/\((\d+) mins\)/g) {
+    push @time, int($1);
+  }
+  if (@time) {
+    my $total;
+    for my $t (@time) {
+      $total += $t;
+    }
+    $averageTime = $total/@time;
+  }
+  return $averageTime;
+}
+
+
+sub getGoogleTransitTimeUrl {
+  my ($lat, $lon) = @_;
+  return   "http://maps.google.com/maps?f=d&source=s_d"
+         . "&daddr=$destinationAddress&saddr=$lat,$lon"
+         . "&hl=en&mra=ls&dirflg=r&date=08%2F18%2F08&time=9:00am"
+         . "&ttype=arr&noexp=0&noal=0";
+}
+
+sub printHeader {
+  print <<EOXML;
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.1">
+  <Document>
+    <Style id="transGreenPoly">
+      <LineStyle>
+        <width>1.5</width>
+      </LineStyle>
+      <PolyStyle>
+        <color>7d00ff00</color>
+      </PolyStyle>
+    </Style>
+    <Style id="transYellowPoly">
+      <LineStyle>
+        <width>1.5</width>
+      </LineStyle>
+      <PolyStyle>
+        <color>7d00ffff</color>
+      </PolyStyle>
+    </Style>
+    <Style id="transRedPoly">
+      <LineStyle>
+        <width>1.5</width>
+      </LineStyle>
+      <PolyStyle>
+        <color>7d0000ff</color>
+      </PolyStyle>
+    </Style>
+    <Style id="transBluePoly">
+      <LineStyle>
+        <width>1.5</width>
+      </LineStyle>
+      <PolyStyle>
+        <color>7dff0000</color>
+      </PolyStyle>
+    </Style>
+    <Folder>
+      <name>Heat Map - Flickr Transit Time</name>
+      <open>0</open>
+      <description>0-20 minutes = green, 21-35 minutes = yellow, 36-50 minutes = red, 51-inf = blue. </description>
+ 
+EOXML
+}
+
+
+sub printFooter {
+  print <<EOXML;
+    </Folder>
+  </Document>
+</kml>
+EOXML
+}
