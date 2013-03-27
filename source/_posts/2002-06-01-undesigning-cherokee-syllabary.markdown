@@ -127,8 +127,8 @@ But it wasn't all about change:
 - Each glyph should be instantly recognizable to someone already familiar with the traditional Cherokee font.
 - If, given the examples from handwritten Cherokee, certain aspects of these glyphs seem to be important to preserve, then they are preserved. 
 
-I created an "affinity" chart to track my progress. Glyphs which used the same basic forms were grouped together visually, and particularly
-hard-to-distinguish glyphs were highlighted in red:
+This chart shows some of the difficulties and how they were solved. Glyphs which use the same basic forms are grouped together visually, and particularly
+hard-to-distinguish glyphs are highlighted in red:
 
 <form class="btn-group" id="affinity-form" style="text-align: center;">
   <input type="radio" name="affinity" value="traditional" id="traditional-affinity" checked="checked" /><label class="btn" for="traditional-affinity">Traditional</label><input type="radio" name="affinity" value="new" id="new-affinity" /><label class="btn" for="new-affinity"> nkCherokee</label>
