@@ -149,6 +149,24 @@ Other interface quirks and differences from the Flickr Flash interface
 
 ## Updates
 
+### April 10, 2005
+
+I had no idea at the time, but there had been a session called the 
+["Flash versus DHTML game show"](http://blog.fawny.org/2005/03/14/sxsw2005-14c/)
+at [SxSW](http://sxsw.com/) just a few weeks prior, trying to explore 
+whether Flash interfaces like Flickr's could be redone with JavaScript.
+Simon Willison [wrote](http://simonwillison.net/2005/Apr/10/lickr/):
+
+> I don't know if Neil Kandalgaonkar was at SxSW, but he's taken the
+> inspired step of combining a JavaScript reimplementation of Flickr's
+> annotations with [greasemonkey](http://greasemonkey.mozdev.org/). The
+> result is [Lickr](#), by far the most impressive userscript released to
+> date. Lickr hooks in to Flickr, removes the Flash annotation interface
+> entirely and replaces it with a HTML/JavaScript/Ajax equivalent. Get
+> this though... the JavaScript one is **better** than the original Flash.
+> It loads faster, feels smoother and allows you to open dozens of photos
+> in new tabs without your browser slowing to a crawl.
+
 ### May 13, 2005
 
 Flickr has moved to a
