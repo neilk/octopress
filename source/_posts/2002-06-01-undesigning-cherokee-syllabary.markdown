@@ -175,7 +175,7 @@ And in this case, by meditating on these glyph forms for a few months, I might h
 
 When this font was almost finished, I had a revelation. Cherokee Syllabary wants to be scribal. It doesn't want to be a roman. It wants to be more like an italic.
 
-Look at the glyphs reminiscent of *S* - when lines cross through them, like ~~S~~, it's hard to read, even a bit brutal. But it becomes graceful when
+Look at the glyphs reminiscent of *S*, such as &#x13D5; (*DE* ) and &#x13A6; (*GA* ) With lines crossing through them, it's hard to read, even a bit brutal. But it becomes graceful when
 that *S* shape is elongated and at an angle, like an integration sign, that is, *~~&#x222b; ~~*. Same thing with &#x13eb; (*WI* ). The stair-step is hard to balance
 within the O-shape, but translated to an italic, it would be a gentle wavy downward stroke.
 
