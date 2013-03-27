@@ -11,9 +11,37 @@ categories: flickr javascript hack
 
 _Lickr_ removes the need for Flash. It runs within the web browser Firefox, stripping the Flash before the user can even see it, and replacing it with an equivalent interface in pure HTML and Javascript.
 
-{% flickr_set 72157633003368091 m nodesc %}
+Click the buttons to see the difference (or rather, the similarities).
+
+<form class="btn-group" id="screenshot-form" style="text-align: center;">
+  <input type="radio" name="screenshot" value="flash" id="screenshot-flash" checked="checked" /><label class="btn" for="screenshot-flash">Flash</label><input type="radio" name="screenshot" value="lickr" id="screenshot-lickr" /><label class="btn" for="screenshot-lickr">Lickr</label>
+</form>
+<div id="screenshots">
+<div id="image-flash">
+  {% flickr_image 8560664119 z center %}
+</div>
+<div id="image-lickr" style="display: none;">
+  {% flickr_image 9076272 z center %}
+</div>
+</div>
+<script type="text/javascript">
+  function bindSwitcher(divId, name) {
+    var $div = $('#image-' + divId);
+    if ($div[0]) {
+      var optionName = name + '-' + divId;
+      $('#' + optionName).click( function() {
+        $('#screenshots div').hide();
+        $div.show();
+      });
+    }
+  }
+  bindSwitcher('flash', 'screenshot');
+  bindSwitcher('lickr', 'screenshot');
+</script>
 
 Lickr combines [Flickr](http://flickr.com/), [Greasemonkey](http://greasemonkey.mozdev.org/), and [Ajax](http://www.adaptivepath.com/publications/essays/archives/000385.php), and is worth triple points in buzzword bingo.
+
+
 
 <!-- more -->
 
