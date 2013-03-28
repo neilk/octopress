@@ -25,8 +25,13 @@ refactoring just in time to prevent everything from falling apart. I sometimes f
 that the people who came before me had had a lot more fun than I
 was having.
 
+<<<<<<< HEAD
 I've learned so much, but I think it's time for me to get back into creating the rough new ideas,
 rather than be the person who shows up years later to smooth everything out.
+=======
+I've learned so much, but I think it's time for me to get back into creating new things, to make
+those early mistakes, rather than be the one who shows up later to fix them.
+>>>>>>> 642d4e2034359dcc95b4e8c8099ab4f850f30df3
 
 So now is the time for new ideas, both serious and frivolous, things that I hope
 will have great impact, and some things that I hope just make you smile.
