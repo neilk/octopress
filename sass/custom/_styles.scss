@@ -120,14 +120,18 @@ figure.video-preview .video-icon {
   display: block;
   position: absolute;
   width: 2em;
-  height: 2em;
-  margin-left: -1em;
-  margin-top: -1em;
-  top: 50%;
-  left: 50%;
+  height: 1.5em;
+  bottom: 0.75em;
+  left: 0.75em;
   color: white;
   text-align: center;
-  text-shadow: 0px 0px 4px #000;
+  background: #000; /* fallback */
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 0.25em;
+  /* this just gets the triangle visually balanced - would have to change for some other icon */
+  padding-left: .2em;
+  padding-top: .1em;
+  padding-right: .15em;
 }
 
 .alert {
