@@ -1,6 +1,10 @@
 {% if site.twitter_user %}
 <section>
+  {% if site.twitter_tweet_count == 1 %}
+  <h1>Latest Tweet</h1>
+  {% else %}
   <h1>Latest Tweets</h1>
+  {% endif %}
   <ul id="tweets">
     <li class="loading">Status updating...</li>
   </ul>
