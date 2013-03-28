@@ -1,3 +1,4 @@
+Options -Indexes
 Redirect 301 /cherokee http://neilk.net/blog/2002/06/01/undesigning-cherokee-syllabary
 Redirect 301 /cherokee.html http://neilk.net/blog/2002/06/01/undesigning-cherokee-syllabary
 Redirect 301 /cherokee/abosans-vs-nk.png http://neilk.net/projects/cherokee/abosans-vs-nk.png
