@@ -5,6 +5,13 @@ sharing: true
 footer: true
 ---
 
+<p style="text-align: center;">
+<a href="https://github.com/neilk">Github</a> &middot;
+ <a href="https://twitter.com/flipzagging">Twitter</a> &middot;
+ <a href="https://secure.flickr.com/photos/brevity/">Flickr</a> &middot;
+ <a href="https://alpha.app.net/neilk">App.net</a>
+</p>
+
 Hello. Thank you for visiting.
 
 Many people know me for some one-off [hacks with graphics and UI](/blog/categories/hack/). I'm glad if you enjoy those!
@@ -16,12 +23,7 @@ to prevent everything from falling apart. I always had the sense
 that the people who came before me had had a lot more fun than I
 was having.
 
-I've learned so much doing this -- in particular, my Google experience
-made me a vastly better engineer, the Yahoo/Upcoming/Flickr experience put me in
-touch with some of the most creative people on the web, and my
-Wikipedia experience has shown me what a truly empowered community looks like.
-
-But I think it's time for me to get back into creating new things, to make
+I've learned so much, but I think it's time for me to get back into creating new things, to make
 those early mistakes, rather than be the one who shows up later to fix them.
 
 So now is the time for new ideas, both serious and frivolous, things that I hope
