@@ -70,11 +70,19 @@ class FlickrRawAuth
 end
 
 class FlickrPhotoHtml
-  @@zoom_size = 'z'
 
   def initialize(id, params)
     @id = id
     @size = params['size'] || 's'
+
+    case @size
+    when 'o'
+      @zoom_size = 'o'
+    when 'z', 'b'
+      @zoom_size = 'b'
+    else
+      @zoom_size = 'z'
+    end
 
     if params['title'].nil? or params['title'].empty?
       @title = "Untitled photo"
@@ -110,7 +118,7 @@ class FlickrPhotoHtml
   end
 
   def getAnchorAttrs(dataTitleId)
-    zoomUrl, zoomWidth, zoomHeight = FlickrSizes.getSourceAndDimensionsForSize(@sizes, @@zoom_size)
+    zoomUrl, zoomWidth, zoomHeight = FlickrSizes.getSourceAndDimensionsForSize(@sizes, @zoom_size)
     return {
       'href' => zoomUrl,
       'class' => 'fancybox',
@@ -212,7 +220,6 @@ end
 
 
 class FlickrVideoPreviewHtml < FlickrPhotoHtml
-  @@zoom_size = 'z'
 
   def initialize(id, params)
     super(id, params)
@@ -221,6 +228,7 @@ class FlickrVideoPreviewHtml < FlickrPhotoHtml
     @origHeight = params['origHeight']
     @contentId = 'flickr-video-content-' + @id
     @klass = 'video-preview'
+    @zoom_size = 'z'
   end
 
   def getAnchorAttrs(dataTitleId)
@@ -249,7 +257,7 @@ class FlickrVideoPreviewHtml < FlickrPhotoHtml
     html = ""
     html << super 
     html << "<div style='display:none'><div id='#{@contentId}'>"
-    html << FlickrVideoHtml.new(@id, @secret, @@zoom_size, @origWidth, @origHeight).toHtml
+    html << FlickrVideoHtml.new(@id, @secret, @zoom_size, @origWidth, @origHeight).toHtml
     html << "</div></div>"          
     html
   end
