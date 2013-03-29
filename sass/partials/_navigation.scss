@@ -61,6 +61,9 @@ body > nav {
       padding: .1em 0;
       line-height: 1.5em;
     }
+    a:hover {
+      text-decoration: none;
+    }
     li + li {
       margin-left: .4em;
       a {
