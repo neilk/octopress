@@ -89,4 +89,95 @@ just scan or skip over letters as they match:
     }
 ```
 
+You might have noticed that this function isn't quite the classic way to solve this problem - for one, we're stuck in JavaScript, so 
+while it would be nice, and hella fast, to do this with pointers, we have to use `substr` to obtain characters in a string. A `while` loop might be more
+elegant, but it was slightly slower.
 
+Also, this function would be more efficient at iterating through arrays, but the string representation was more convenient for other reasons (more on that
+later).
+
+Many Letterpress solver apps stop right here. They just give you the longest word that fits on the board. 
+
+Do we stop there? Of course not. The longest word is rarely the most *strategic* word to play. To do that we're going to have to examine board state and 
+all the possible ways to play words.
+
+## Board state
+
+Let's say the game looks like this: 
+
+
+We need some way of representing that board state.
+
+It's easy enough to represent the board, with just a 25-letter string:
+
+And as for the colors? Let's look at just the blue squares for now.
+
+We note that each square can either be colored or not. So we could say each square was on, or off. 
+
+Which immediately suggests a binary number, to represent the entire board. 
+
+Conveniently, we can now represent board state for a single color by a simple decimal number. 
+
+And that's how LetterPwn currently stores and transmits board state, with these three values:
+
+    board: msgzxcbjlqblmgeppjxmjynxs
+    oursBitMask: 3310592
+    theirsBitMask: 17180
+
+Note that in this example, `oursBitMask` might seem much larger, but that just means that we've captured squares on the lower part of the board.
+
+### Evaluating board state
+
+I chose the bitmap representation just for its compactness but it turns out to be very valuable for computing various properties of board states.
+
+A lot of Letterpress is about adjacency - enemy squares that sidle up to yours make you vulnerable. And you protect squares by surrounding them with your own
+
+We could do this with some complicated `getAdjacent` function, but it turns out to be possible to do all the above with simple bitmap operations. 
+
+The main trick here is to have an "adjacency map" of which squares are next to each other. For instance, to the right of square 0, we have square 1. And right
+below square 0, we have square 5.
+
+If we combine adjacent squares together:
+
+    square 0 -> square 1 | square 5
+    2**0 -> 2**1 | 2**5
+    0 -> 2 | 32
+
+Which in binary, would look like this. Since each square occupies its own bit, we can `bitwise-or` them together to get the combined positions.
+
+    0000000000000000000000000 -> 0000000000000000000000001
+                                 0000000000000000000100000
+    
+    0000000000000000000000000 -> 0000000000000000000100001
+
+Converted back into decimal:
+ 
+    0 -> 34
+
+Now that we have a simple mapping of which squares are adjacent to which, we can easily calculate, for instance, which squares we've surrounded. 
+
+    if (oursBitMask | 1) && (oursBitMask | 34) {
+      // square 1 is a protected square
+    }
+
+I also made up a 'vulnerability' score, which is calculated like this:
+
+``` js
+function getVulnerability(bitMask) {                                                                                                                                                                   
+  var vulnerability = 0;
+  lpBitMask.adjacent.forEach(function(a) {
+    if (a[0] & bitMask) {
+      vulnerability += countBits(a[1] & ~bitMask);
+    }
+  });
+  return vulnerability;
+}
+```
+
+It's a bit complicated, but it's saying this: if a current square is used, then count up all the squares which are adjacent which we don't own. 
+Add up this value for all squares. This is how "vulnerable" that position is.
+
+Bitwise operations are insanely fast, and as you can see it's easy to use them to make calculations about the entire state of the board, so this is 
+a big reason why LetterPwn can rank moves so quickly.
+
+## Determining all the ways to play this  
