@@ -19,6 +19,8 @@ when points are scored, attend a bicycle jousting event....
 
 <!-- more -->
 
+{% flickr_image 7792765416 m left %}
+
 Incidentally, it is fun to terrorize small children with robots. Hacked on [MC Hawking](https://www.noisebridge.net/wiki/Noise-Bot)'s 
 software with some other NoiseBridge folks so it could be remotely controlled.
 Was a bit surprised that it was all in Java (it's some standard package for doing robots, apparently). That made consuming a 

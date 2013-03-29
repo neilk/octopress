@@ -175,9 +175,11 @@ function getVulnerability(bitMask) {
 ```
 
 It's a bit complicated, but it's saying this: if a current square is used, then count up all the squares which are adjacent which we don't own. 
-Add up this value for all squares. This is how "vulnerable" that position is.
+Add up this value for all squares. This is how "vulnerable" that position is. This is how LetterPwn knows how to avoid recommending moves which
+just scatter all your letters all over the board; it will tend to recommend moves which result in compact, well protected positions. I didn't even
+have to tell LetterPwn about the common strategy to grab a corner first; it does that naturally as a consequence of finding a less vulnerable position.
 
 Bitwise operations are insanely fast, and as you can see it's easy to use them to make calculations about the entire state of the board, so this is 
 a big reason why LetterPwn can rank moves so quickly.
 
-## Determining all the ways to play this  
+## Determining all the ways to play words  
