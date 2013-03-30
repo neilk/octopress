@@ -7,9 +7,8 @@ footer: true
 ---
 This site is produced with the static site generator [Octopress](http://octopress.org/).
 
-I wrote several custom Octopress plugins to manage and create content, particularly to pull in images and
-video from [Flickr](http://flickr.com/). They are free to use, but at the moment you will have difficulty 
-extracting all the changes you need to make from [my Octopress fork](https://github.com/neilk/octopress).
+Most of the photos and video are hosted on [Flickr](https://flickr.com/). I wrote a plugin, 
+[octopress-flickr](https://github.com/neilk/octopress-flickr), to make that easy and efficient.
 
 The theme is a heavily modified version of [darkstripes](https://github.com/amelandri/darkstripes) by [Alessandro Melandri](http://melandri.net/).
 
